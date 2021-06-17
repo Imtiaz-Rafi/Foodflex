@@ -1,0 +1,184 @@
+* {
+	margin: 0;
+	padding: 0;
+	font-family:  'Work Sans Medium', sans-serif;
+}
+.header{
+	box-shadow: 0px 0px 2px 0px #959595;
+	height: 80px;
+}
+.logo img{
+	height: 80px;
+	width: 110px;
+	margin-left: 40px;
+}
+.nav-area{
+	float: right;
+	list-style: none;
+	margin-top: -55px;
+	position: relative;
+	left: -50px;
+}
+.nav-area li {
+	display: inline-table;
+	margin-left: 0px;
+	
+}
+.nav-area li a{
+	color:rgb(255, 255, 255);
+	text-decoration: none;
+	padding: 12px 15px 12px 38px;
+	margin-top: 20px;
+	font-size: 16px;
+	background: rgb(0,166,81);
+	border-radius: 5px;
+	text-transform: uppercase;
+}
+.nav-area-user li a{
+	float: right;
+    list-style: none;
+    top: -90px;
+    position: relative;
+    left: -50px;
+    display: inline-table;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: rgb(0,166,81);
+	border-radius: 10px;
+    text-transform: uppercase;
+	text-decoration: none;
+}
+.logout li a {
+    float: right;
+    list-style: none;
+    top: -108px;
+    position: relative;
+    left: -68px;
+    display: inline-table;
+    color: rgb(139,138,138);
+    text-decoration: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: rgb(241,241,241);
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+}
+.logout li a:hover{
+	color: rgb(0, 0, 0);
+	background: rgb(139, 139, 139);
+	font-family: 'Work Sans Medium', sans-serif;
+}
+.nav-area li a:hover,.nav-area-user li a:hover{
+	background: rgb(8, 110, 57);
+	color:rgb(255, 255, 255);
+}
+li.fas.fa-sign-in-alt.login {
+    position: relative;
+    left: 35px;
+	color :#fff;
+}
+.main{
+	background: 
+	radial-gradient(
+		rgba(255, 255, 255, 0.900),
+		rgba(255,255,255,0.5),
+		rgb(255, 255, 255, 0),
+		rgba(255,255,255,0))
+		,
+	linear-gradient(
+		 rgba(0, 0, 0, 0),
+		 rgba(255,255,255,0.5),
+		 rgba(255,255,255,0.5),
+		 rgba(0,0,0,0)),
+		 url("../images/Food_background4.jpg")no-repeat; 
+	height: 100vh;
+	/* -webkit-background-size: cover; */
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+.welcome-text{
+	position:absolute;
+	text-align:center;
+	top:35%;
+	left: 22%;
+}
+.welcome-text h1{
+	font-family:  'Work Sans thin', sans-serif;
+	text-align: center;
+	color:black;
+	font-size: 45px;
+	
+}
+
+.welcome-text a{
+	background: rgb(0,166,81);
+	border-radius: 10px;
+	padding: 15px 15px 15px 45px;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 20px;
+	margin-top: 20px;
+	display: inline-block;
+	color: rgb(255, 255, 255);
+}
+.welcome-text a:hover{
+	background: rgb(8, 110, 57);
+	color:rgb(255, 255, 255);
+}
+.welcome-text i.fas.fa-search{
+	position: relative;
+    left: 37px;
+	color :#fff;
+}
+
+.welcome-text span{
+	font-weight: bold;
+	color: rgb(38 76 88);
+}
+
+/* Responsive */
+
+@media (max-width:600px) {
+	.header {
+		width: 100%;
+	}
+	.logo img{
+		padding-left: 0px;
+		float: none;
+		text-align: left;
+		margin: 0;
+	}
+	.nav-area {
+		text-align: right;
+		margin-top: -65px;
+		float: none;
+		position: relative;
+		left: -105px;
+	}
+	li.fas.fa-sign-in-alt.login {
+		position: relative;
+		left: 30px;
+		color: rgba(255, 255, 255, 0);
+	}
+	.nav-area li a {
+		font-size: 17px;
+		padding: 10px;
+		float: none;
+	}
+	.welcome-text {
+		width: 100%;
+		height: auto;
+		top:35%;
+		left: 0;
+	}
+	.welcome-text h1 {
+		font-size: 30px;
+	}
+}
