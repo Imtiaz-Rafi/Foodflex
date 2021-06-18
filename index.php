@@ -51,7 +51,7 @@
         
     </div>
     <div class="footer">
-        
+        <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
     </div>
 
 </body>

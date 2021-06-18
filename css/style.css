@@ -143,6 +143,17 @@ li.fas.fa-sign-in-alt.login {
 	color: rgb(38 76 88);
 }
 
+.footer{
+	background-color: #d6eaef;
+	color: #177e49;
+	width: 100%;
+    height: 10%;
+    padding: 20px;
+    text-align: center;
+    margin: auto;
+}
+
+
 /* Responsive */
 
 @media (max-width:600px) {
