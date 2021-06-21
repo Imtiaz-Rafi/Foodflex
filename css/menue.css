@@ -190,11 +190,13 @@ ul{
 	font-size: 11px;
 	color: rgb(81,81,81)
 }
+/* Item-mid */
 .item-mid ul li{
 	background: white;
     display: inline-block;
     width: 100%;
     padding: 15px;
+	margin-bottom: 10px;
     border-radius: 4px;
     box-shadow: 0px 0px 5px 0px rgb(216 216 216); 
 }
@@ -204,6 +206,54 @@ ul{
 .line{
 	margin-bottom: 15px;
 }
+.item-mid h3{
+	margin:15px 0;
+	font-size: 20px;
+}
+.item-mid img{
+	border:2px rgb(147, 147, 147) solid;
+	width:65px;
+	height:65px;
+	position: absolute;
+}
+.beside-img{
+	padding-left: 80px;
+}
+.item-mid ul li h4{
+	font-size: 15px;
+	margin-bottom: 5px;
+	margin-top:	5px;
+}
+.price{
+	margin-right: 100px;
+}
+.add-item{
+	color: rgb(0,166,81);
+    border-radius: 4px;
+    padding: 7px;
+    border: 1px rgb(0,166,81) solid;
+    margin-left: 100px;
+    background: white;
+	cursor: pointer;
+}
+.add-item:hover{
+	color: rgb(255, 255, 255);
+	border: 1px rgb(255, 255, 255) solid;
+	background: rgb(0, 166, 81);
+}
+.w100{
+	width:100%;
+}
+.d-tab{
+	display: table!important;
+}
+.d-tab-c{
+	vertical-align: middle;
+	display: table!important;
+	margin-bottom: 0px;
+	margin-top:	0px;
+}
+/* Cart */
 .cart{
 	background: white;
     display: inline-block;
