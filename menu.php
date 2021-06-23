@@ -43,7 +43,6 @@
                 <div class="col-1">
                     <div class="sidebar">
                         <h3 class="upper">Menu Items</h3>
-                        <hr class="line">
                         <ul>
                             <li>
                                 <i class="fas fa-chevron-left"></i>
@@ -108,21 +107,6 @@
                                 <li>
                                     <img src="images/Burgir.jpg" alt="burger">
                                     <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
                                         <h4>Beef Burger</h4>
                                         <div class="d-tab w100">
                                             <div class="d-tab-c">
@@ -138,7 +122,7 @@
                                 <li>
                                     <img src="images/Burgir.jpg" alt="burger">
                                     <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
+                                        <h4>Double Beef Delight</h4>
                                         <div class="d-tab w100">
                                             <div class="d-tab-c">
                                                 <span class="price">150.00 Taka</span>
@@ -153,7 +137,7 @@
                                 <li>
                                     <img src="images/Burgir.jpg" alt="burger">
                                     <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
+                                        <h4>Six Pack Burger</h4>
                                         <div class="d-tab w100">
                                             <div class="d-tab-c">
                                                 <span class="price">150.00 Taka</span>
@@ -820,21 +804,51 @@
 
                 <div class="col-3">
                     <div class="cart">
-                        <h1>Your Cart</h1>
-                        <hr class="line">
-                        <ul>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                        </ul>
+                        <h3>
+                            Your Cart 
+                            <span class="item">
+                                <i class="fas fa-cart-plus"></i>
+                                1
+                            </span>
+                        </h3>
+                        <div class="cart-title">
+                            <ul>
+                                <li class="item">Item</li>
+                                <li class="qty">Qty</li>
+                                <li class="taka">Price</li>
+                            </ul>
+                        </div>
+                        <!-- <div class="added-item">
+                                    <li>
+                                        <i class="fas fa-minus"></i>
+                                        <i class="fas fa-plus"></i>
+                                    </li>
+                            
+                        </div> -->
+                        <div class="cart-body">
+                            
+                                    <ul class="sub">
+                                            <li class="txt">Subtotal</li>
+                                            <li class="taka">100.0 Taka</li>
+                                    </ul>
+                                    <ul class="vat">
+                                        <li class="txt">VAT</li>
+                                        <li class="taka">0.0 Taka</li>
+                                    </ul>
+                                    <ul class="amount">
+                                        <li class="txt">Total Amount</li>
+                                        <li class="taka">0.0 Taka</li>
+                                    </ul>
+                                
+                            
+                        </div>
+                        <div class="checkout">Checkout</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <div class="footer">
+    <section class="footer">
         <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
     </div>
 </body>

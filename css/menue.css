@@ -87,7 +87,7 @@ li.fas.fa-sign-in-alt.login {
 	/* display:inline-block; */
 	width:100%;
 	background:#ffff;
-	padding: 95px 0px 15px 0px;
+	padding: 85px 0px 5px 0px;
 	float: left;
 	box-shadow: 0px 7px 13px 0px #dedede;
 	position: relative;
@@ -112,10 +112,7 @@ li.fas.fa-sign-in-alt.login {
 	border:none;
 }
 .nav-tabs{
-	border-bottome:1px solid #dee2e6;
-}
-.nav-item{
-
+	border-bottom:1px solid #dee2e6;
 }
 .nav{
 	display: -ms-flexbox;
@@ -139,7 +136,7 @@ ul{
 .grey-bg{
 	display: flex;
 	width: 100%;
-	padding: 50px 0;
+	padding: 30px 0;
 	float:left;
 	background:rgb(238, 238, 238);
 }
@@ -170,14 +167,19 @@ ul{
 .sidebar{
 	background: white;
 	display: inline-block;
-	width: 100%;
+	position: fixed;
+	width: 20.5%;
 	padding:15px;
 	border-radius: 4px;
 	box-shadow: 0px 0px 5px 0px rgb(216, 216, 216);
 }
 .sidebar h3{
 	position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
+	border-bottom: 2px solid;
+	border-color: rgb(0, 166, 81);
+	border-spacing: 5px;
+	margin-bottom: 10px;
 }
 .sidebar ul li a{
 	text-decoration: none;
@@ -257,11 +259,62 @@ ul{
 .cart{
 	background: white;
     display: inline-block;
-    width: 100%;
-    padding: 15px;
+	position: fixed;
+    width: 27.5%;
+    padding: 0px;
     border-radius: 4px;
     box-shadow: 0px 0px 5px 0px rgb(216 216 216); 
 }
+.cart h3{
+	border: none;
+	background: rgb(0,166,81);
+	font-size: 18px;
+	color: white;
+	border-radius: 4px;
+	padding: 10px;
+
+
+}
+.cart h3 span.item{
+	float: right;
+}
+.cart .cart-title ul{
+	padding: 5px 10px 5px 10px;
+	background: rgb(238,238,238);
+	border-bottom: 1px solid rgb(216,216,216);
+	float: left;
+    width: 100%;
+	font-size: 15px;
+}
+.cart .cart-title ul li{
+	float: left;
+}
+.cart .cart-title ul li.item{
+	padding-right: 60px;
+}
+.cart .cart-title ul li.qty{
+	padding-right: 40px;
+	padding-left: 90px;
+}
+.cart .cart-title ul li.taka{
+	padding-left: 30px;
+}
+.cart .cart-body{
+	margin:10px;
+}
+.cart .cart-body ul.sub li,.vat li,.amount li{
+	float:left;
+	background-color: rgb(81,81,81);
+}
+
+.cart .cart-body ul li.txt{
+	padding-right: 15%;
+}
+.cart .cart-body ul li.taka{
+	padding-left: 42%;
+}
+
+/* Footer */
 .footer{
 	background-color: #d6eaef;
 	color: #177e49;
