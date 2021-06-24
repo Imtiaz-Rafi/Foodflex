@@ -811,38 +811,44 @@
                                 1
                             </span>
                         </h3>
-                        <div class="cart-title">
-                            <ul>
-                                <li class="item">Item</li>
-                                <li class="qty">Qty</li>
-                                <li class="taka">Price</li>
-                            </ul>
-                        </div>
-                        <!-- <div class="added-item">
-                                    <li>
-                                        <i class="fas fa-minus"></i>
-                                        <i class="fas fa-plus"></i>
-                                    </li>
-                            
-                        </div> -->
                         <div class="cart-body">
-                            
-                                    <ul class="sub">
-                                            <li class="txt">Subtotal</li>
-                                            <li class="taka">100.0 Taka</li>
-                                    </ul>
-                                    <ul class="vat">
-                                        <li class="txt">VAT</li>
-                                        <li class="taka">0.0 Taka</li>
-                                    </ul>
-                                    <ul class="amount">
-                                        <li class="txt">Total Amount</li>
-                                        <li class="taka">0.0 Taka</li>
-                                    </ul>
-                                
-                            
+                            <table class="table" id="mini-cart">
+                                <thead>
+                                    <tr>
+                                        <th>Item</th>
+                                        <th>Qty</th>
+                                        <th class="text-right">Price</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+
+                                </tbody>
+                            </table>
                         </div>
-                        <div class="checkout">Checkout</div>
+                        <div class="cart-footer">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td>0.0 Taka</td>
+                                    </tr>
+                                    <tr>
+                                        <td>VAT(%)</td>
+                                        <td>0.0 Taka</td>
+                                    </tr>
+                                    <tr class="green-cart">
+                                        <td>Total Amount</td>
+                                        <td>0.0 Taka</td>
+                                    </tr>
+                                </tbody>
+                            </table>  
+                        </div>
+                        <div class="checkout">
+                            <a href="#">
+                                <button class="btn btn-primary loader">Checkout</button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
