@@ -44,812 +44,147 @@
                     <div class="sidebar">
                         <h3 class="upper">Menu Items</h3>
                         <ul>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#burger">Burger</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#pizza">Pizza</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#wings">Wings</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#soup">Soup & Salad</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#chicken">Chicken</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#beef">Beef</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#mutton">Mutton</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#rice">Biriany/Rice</a>
-                            </li>
-                            <li>
-                                <i class="fas fa-chevron-left"></i>
-                                <a href="#set">Set Meal</a>
-                            </li>
+                            <?php 
+                                $sql = "SELECT * FROM category";
+                                $result = $con->query($sql);
+                                if($result->num_rows > 0){
+                                    while($row = $result->fetch_assoc()){
+                                        ?>
+                                        <li>
+                                            <i class="fas fa-chevron-left"></i>
+                                            <a href="#<?php $row['Cat_name'];?>"><?= $row['Cat_name'];?></a>
+                                        </li>
+                            <?php }} ?>
                         </ul>
                     </div>
                 </div>
+
                 <div class="col-2">
                     <div class="item-mid">
-                        <!-- BURGER  -->
-                        <div id="burger">
-                            <h3>Burger</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- PIZZA -->
-                        <div id="pizza">
-                            <h3>Pizza</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- WINGS -->
-                        <div id="wings">
-                            <h3>Wings</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- Soup & Salad -->
-                        <div id="soup">
-                            <h3>Soup & Salad</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- CHICKEN -->
-                        <div id="chicken">
-                            <h3>Chicken</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- BEEF -->
-                        <div id="beef">
-                            <h3>Beef</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- MUTTON -->
-                        <div id="mutton">
-                            <h3>Mutton</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- RICE -->
-                        <div id="rice">
-                            <h3>Biriany/Rice</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <!-- SET MEAL -->
-                        <div id="set">
-                            <h3>Set Meal</h3>
-                            <ul>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Six Pack Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Beef Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>BBQ Chicken Burger</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <img src="images/Burgir.jpg" alt="burger">
-                                    <div class="beside-img">
-                                        <h4>Double Beef Delight</h4>
-                                        <div class="d-tab w100">
-                                            <div class="d-tab-c">
-                                                <span class="price">150.00 Taka</span>
-                                                <button class="add-item">
-                                                    <i class="fa fa-plus"></i>
-                                                    Add
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                        <?php
+                            $cat_sql = "SELECT * FROM category";
+                            $cat_result = $con->query($cat_sql);
+                            if($cat_result->num_rows > 0){
+                                while($cat_row = $cat_result->fetch_assoc()){
+                                    ?>
+                                <div id="<?php $cat_row['Cat_name'];?>">
+                                    <h3> <?= $cat_row['Cat_name'];?> </h3>
+                                    <ul>
+                                        <?php
+                                            $cat_id = $cat_row['ID'];
+                                            $sql="SELECT * FROM food_list WHERE cat_id=$cat_id";
+                                            $result = $con->query($sql);
+                                            if($result->num_rows>0){
+                                                while($row = $result->fetch_assoc()){
+                                                    ?>
+                                            <li>
+                                                <img src="images/<?= $row["Image"];?>" alt="burger">
+                                                <div class="beside-img">
+                                                    <h4><?= $row["FoodName"];?></h4> <!-- auto echo -->
+                                                    <div class="d-tab w100">
+                                                        <span class="price"><?= $row["Price"];?> Taka</span>
+                                                        <button class="add-item">
+                                                            
+                                                            <a href="addcart.php?productid=<?php echo $row['ID'];?>">
+                                                                <i class="fa fa-plus"></i>
+                                                                Add
+                                                            </a>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        <?php }} ?>
+                                    </ul>
+                                </div>
+                        <?php }} ?>
                     </div>
                 </div>
 
                 <div class="col-3">
                     <div class="cart">
-                        <h3>
-                            Your Cart 
-                            <span class="item">
-                                <i class="fas fa-cart-plus"></i>
-                                1
-                            </span>
-                        </h3>
-                        <div class="cart-body">
+                        <div class="cart-top">
+                            <h3>
+                                Your Cart 
+                                <span class="item">
+                                    <i class="fas fa-cart-plus"></i>
+                                    <?php 
+                                        $sql="SELECT * FROM order_cart";
+                                        $result = $con->query($sql);
+                                        $result->fetch_assoc();
+                                        
+                                        echo $row = $result->num_rows;
+                                    ?>
+                                </span>
+                            </h3>
+                            <div class="cart-body">
+                                <table class="table" id="mini-cart">
+                                    <thead>
+                                        <tr>
+                                            <th>Item</th>
+                                            <th class="text-right">Qty</th>
+                                            <th class="text-right">Price</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="cart-middle">
                             <table class="table" id="mini-cart">
-                                <thead>
-                                    <tr>
-                                        <th>Item</th>
-                                        <th>Qty</th>
-                                        <th class="text-right">Price</th>
-                                        <th></th>
-                                    </tr>
-                                </thead>
                                 <tbody>
-
+                                    <?php 
+                                        $sql="SELECT * FROM order_cart";
+                                        $result = $con->query($sql);
+                                        while($row = $result->fetch_assoc()){
+                                    ?>
+                                    <tr>
+                                        <td><?= $row['Name'];?></td>
+                                        <td>
+                                        <i class="fa fa-plus"></i>
+                                        1
+                                        <i class="fas fa-minus"></i>
+                                        </td>
+                                        <td class="text-right"><?= $row['Price'];?></td>
+                                        <td><i class="fas fa-minus-circle"></i></td>
+                                    </tr>
+                                        <?php } ?>
                                 </tbody>
                             </table>
                         </div>
                         <div class="cart-footer">
                             <table class="table">
                                 <tbody>
-                                    <tr>
+                                    <!-- <tr>
                                         <td>Subtotal</td>
                                         <td>0.0 Taka</td>
-                                    </tr>
-                                    <tr>
+                                    </tr> -->
+                                    <!-- <tr>
                                         <td>VAT(%)</td>
                                         <td>0.0 Taka</td>
-                                    </tr>
+                                    </tr> -->
                                     <tr class="green-cart">
                                         <td>Total Amount</td>
-                                        <td>0.0 Taka</td>
+                                        <td><?php 
+                                            $sql = "SELECT * FROM order_cart";
+                                            $result = $con->query($sql);
+                                            $total_price=0;
+                                            while($row = $result->fetch_assoc()){
+                                                $total_price = $total_price + $row['Price'];
+                                            }
+                                            echo $total_price;
+                                        ?> Taka</td>
                                     </tr>
                                 </tbody>
                             </table>  
                         </div>
-                        <div class="checkout">
-                            <a href="#">
-                                <button class="btn btn-primary loader">Checkout</button>
-                            </a>
-                        </div>
                     </div>
+                </div>
+                <div class="checkout">
+                    <a href="#">
+                        <button class="btn btn-primary loader">Checkout</button>
+                    </a>
                 </div>
             </div>
         </div>

@@ -31,6 +31,9 @@
                     $MobileErr = "*Mobile is required";
                 }else{
                     $Mobile = test_data($_REQUEST["mobile"]);
+                    if(strlen($Mobile)<11 || strlen($Mobile)>11){
+                        $MobileErr = "*Invalid Mobile Format";
+                    }
                 }
                 if(empty($_REQUEST["email"])){
                     $EmailErr = "*Email is required";

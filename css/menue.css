@@ -158,9 +158,11 @@ ul{
 	padding-left: 15px;
 }
 .col-3{
-	position:relative;
+	position: relative;
 	width:33%;
-	min-height: 1px;
+	/* min-height: 1px; */
+	height: 400px!important;
+	overflow-y: scroll;
 	padding-right: 15px;
 	padding-left: 15px;
 }
@@ -227,21 +229,32 @@ ul{
 	margin-top:	5px;
 }
 .price{
-	margin-right: 100px;
+	/* margin-right: 100px; */
 }
 .add-item{
-	color: rgb(0,166,81);
-    border-radius: 4px;
-    padding: 7px;
-    border: 1px rgb(0,166,81) solid;
-    margin-left: 100px;
-    background: white;
+	border: none;
+	float:right;
 	cursor: pointer;
 }
-.add-item:hover{
+.add-item a{
+	text-decoration: none;
+	padding: 7px;
+	border-radius: 4px;
+	background: white;
+	color: rgb(0,166,81);
+	border: 1px rgb(0,166,81) solid;
+}
+.add-item i{
+	border: none;
+}
+
+.add-item a:hover{
 	color: rgb(255, 255, 255);
 	border: 1px rgb(255, 255, 255) solid;
 	background: rgb(0, 166, 81);
+}
+.add-item a:hover{
+	color: rgb(255, 255, 255);
 }
 .w100{
 	width:100%;
@@ -258,14 +271,15 @@ ul{
 /* Cart */
 .cart{
 	background: white;
-    display: inline-block;
-	position: fixed;
-    width: 27.5%;
-    padding: 0px;
-    border-radius: 4px;
-    box-shadow: 0px 0px 5px 0px rgb(216 216 216); 
+	display: inline-block;
+	/* margin-top: 50px; */
+	position: relative;
+	width: 100%;
+	padding: 0px;
+	border-radius: 4px;
+	box-shadow: 0px 0px 5px 0px rgb(216 216 216);
 }
-.cart h3{
+.cart-top h3{
 	border: none;
 	background: rgb(0,166,81);
 	font-size: 18px;
@@ -275,7 +289,7 @@ ul{
 
 
 }
-.cart h3 span.item{
+.cart-top h3 span.item{
 	float: right;
 }
 table{
@@ -377,9 +391,16 @@ td {
     color: #00a651;
     font-weight: 600;
 }
+.cart-middle {
+    height: 305px;
+}
 .checkout {
     display: inline-block;
-    width: 100%;
+    position: absolute;
+    width: 26.30%;
+    top: 530px;
+    right: 97px;
+    /* height: 100%; */
     text-align: center;
     background: #fff;
     padding: 20px 30px;
@@ -418,3 +439,5 @@ td {
     text-align: center;
     margin: auto;
 }
+
+
