@@ -38,6 +38,7 @@ body{
 	list-style: none;
 	margin-top: -55px;
 	position: relative;
+	padding-right: 15px;
 }
 .nav-area li {
 	display: inline-table;
@@ -136,7 +137,7 @@ ul{
 .grey-bg{
 	display: flex;
 	width: 100%;
-	padding: 15px 0;
+	padding: 10px 0;
 	float:left;
 	background:rgb(238, 238, 238);
 }
@@ -158,11 +159,11 @@ ul{
 	padding-left: 15px;
 }
 .col-3{
-	position: relative;
+	/* position: relative; */
 	width:33%;
 	/* min-height: 1px; */
 	height: 400px!important;
-	overflow-y: scroll;
+	/* overflow-y: scroll; */
 	padding-right: 15px;
 	padding-left: 15px;
 }
@@ -284,10 +285,10 @@ ul{
 	background: rgb(0,166,81);
 	font-size: 18px;
 	color: white;
+	position: fixed;
+	width: 27.5%;
 	border-radius: 4px;
 	padding: 10px;
-
-
 }
 .cart-top h3 span.item{
 	float: right;
@@ -305,9 +306,11 @@ table{
 }
 .cart-body{
 	display: inline-block;
-    width: 100%;
-    background: white;
-    float: left;
+	width: 27.5%;
+	background: white;
+	position: fixed;
+	float: left;
+	top: 175px;
 }
 .cart-body .table{
 	margin-bottom: 0px;
@@ -337,12 +340,15 @@ tr {
 .text-right {
     text-align: right!important;
 }
+.text-center {
+    text-align: center!important;
+}
 .table thead th {
     vertical-align: bottom;
     border-bottom: 2px solid #dee2e6;
 }
 .table td, .table th {
-    padding: .75rem;
+    padding: 10px;
     vertical-align: top;
     border-top: 1px solid #dee2e6;
 }
@@ -360,14 +366,34 @@ tbody {
     vertical-align: middle;
     border-color: inherit;
 }
+.fas.fa-minus-circle{
+	color:rgb(0, 166, 81);
+}
+.qty{
+	width:60px;
+	height:30px;
+	border:1px solid;
+	border-radius: 4px;
+}
+td input {
+    width: 50px;
+    height: 25px;
+    padding: 5px;
+    font-size: 15px;
+    border: 1px solid rgb(0,166,81);
+    border-radius: 4px;
+    background: rgb(242 242 242);
+}
 .cart-footer{
 	display: inline-block;
-    width: 100%;
-    float: left;
-    border-top: 1px solid rgb(222, 226, 230);
-    border-bottom: 1px solid rgb(222, 226, 230);
-    padding: 14px 0;
-    background: rgb(248, 248, 248);
+	position: fixed;
+	width: 27.5%;
+	top: 505px;
+	float: left;
+	border-top: 1px solid rgb(222, 226, 230);
+	border-bottom: 1px solid rgb(222, 226, 230);
+	padding: 14px 0;
+	background: rgb(248, 248, 248);
 }
 .cart-footer table {
     width: 100%;
@@ -380,7 +406,7 @@ tbody {
     font-size: 15px;
     border: none;
 }
-.cart-footer table tr td:last-child {
+td:last-child {
     text-align:right;
 }
 td {
@@ -392,14 +418,19 @@ td {
     font-weight: 600;
 }
 .cart-middle {
-    height: 305px;
+    height: 295px;
+    top: 211px;
+    position: fixed;
+    width: 27.5%;
+    overflow-y: scroll;
+    background: white;
 }
 .checkout {
     display: inline-block;
-    position: absolute;
-    width: 26.30%;
-    top: 530px;
-    right: 97px;
+    position: fixed;
+    width: 27.5%;
+    top: 561px;
+    /* right: 97px; */
     /* height: 100%; */
     text-align: center;
     background: #fff;
