@@ -231,9 +231,7 @@ ul{
 	margin-bottom: 5px;
 	margin-top:	5px;
 }
-.price{
-	/* margin-right: 100px; */
-}
+
 .add-item{
 	border: none;
 	float:right;
@@ -311,7 +309,7 @@ table{
 	width: 27.5%;
 	background: white;
 	position: fixed;
-	float: left;
+	/* float: left; */
 	top: 175px;
 }
 .cart-body .table{
