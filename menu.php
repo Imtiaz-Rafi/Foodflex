@@ -33,7 +33,7 @@
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a href="#">Menu</a></li>
-                <li class="nav-item"><a href="#">Info</a></li>
+                <!-- <li class="nav-item"><a href="#">Info</a></li> -->
             </ul>
         </div>
     </section>
@@ -119,7 +119,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Item</th>
-                                        <th class="text-right">Qty</th>
+                                        <th class="text-center">Qty</th>
                                         <th class="text-center">Price</th>
                                         <!-- <th><div class="blank"></div> </th> -->
                                     </tr>
@@ -137,7 +137,17 @@
                                 ?>
                                 <tr>
                                     <td><?= $row['Name'];?></td>
-                                    <td><input type="number" value="<?= $row['Qty']?>"></td>
+                                    <td>
+                                        <div class="add">
+                                            <a href="inccart.php?productid=<?php echo $row['ID'];?>">
+                                                <i class="fas fa-plus"></i>
+                                            </a>
+                                            <input type="input" value="<?= $row['Qty']?>">
+                                            <a href="deccart.php?productid=<?php echo $row['ID'];?>">
+                                                <i class="fas fa-minus"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                     <td class="text-right"><?= $row['Total_price'];?>৳</td>
                                     <td>
                                         <a href="removecart.php?productid=<?php echo $row['ID'];?>">

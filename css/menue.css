@@ -6,6 +6,8 @@
 *, ::after, ::before {
     box-sizing: border-box;
 }
+
+
 body{
 	line-height: 1.5;
 }
@@ -369,6 +371,9 @@ tbody {
 .fas.fa-minus-circle{
 	color:rgb(0, 166, 81);
 }
+.fas.fa-minus-circle:hover{
+	color:rgb(5, 109, 55);
+}
 .qty{
 	width:60px;
 	height:30px;
@@ -376,13 +381,39 @@ tbody {
 	border-radius: 4px;
 }
 td input {
-    width: 50px;
-    height: 25px;
+    width: 30px;
+    height: 30px;
     padding: 5px;
     font-size: 15px;
-    border: 1px solid rgb(0,166,81);
-    border-radius: 4px;
+    text-align: center;
+    border: none;
     background: rgb(242 242 242);
+}
+td a {
+    color: white;
+    width: 22px;
+    text-align: center;
+    vertical-align: middle!important;
+}
+.add {
+    border: 1px solid;
+    display: flex;
+    background: rgb(100,100,100);
+    border-radius: 4px;
+    float: right;
+    align-content: center;
+    vertical-align: middle;
+    color: white;
+    /* width: 81px; */
+}
+.add:hover{
+	background: rgb(55,55,55);
+}
+i.fas.fa-plus {
+    font-size: 10px;
+}
+i.fas.fa-minus{
+	font-size: 10px;
 }
 .cart-footer{
 	display: inline-block;
