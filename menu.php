@@ -22,9 +22,9 @@
             <div class="navbar">
                 <ul class="nav-area">
                     <li class="fas fa-sign-in-alt login"></li>
-                    <li> <a href="signup.php">Sign Up</a></li>
+                    <li> <a href="login/signup.php">Sign Up</a></li>
                     <li class="fas fa-sign-in-alt login"></li>
-                    <li><a href="signin.php">Sign In</a></li>
+                    <li><a href="login/signin.php">Sign In</a></li>
                 </ul>
             </div>
         </div>
@@ -86,7 +86,7 @@
                                                         <span class="price"><?= $row["Price"];?> Taka</span>
                                                         <button class="add-item">
                                                             
-                                                            <a href="addcart.php?productid=<?php echo $row['ID'];?>">
+                                                            <a href="cart/addcart.php?productid=<?php echo $row['ID'];?>">
                                                                 <i class="fa fa-plus"></i>
                                                                 Add
                                                             </a>
@@ -139,18 +139,18 @@
                                     <td><?= $row['Name'];?></td>
                                     <td>
                                         <div class="add">
-                                            <a href="inccart.php?productid=<?php echo $row['ID'];?>">
+                                            <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                             <input type="input" value="<?= $row['Qty']?>">
-                                            <a href="deccart.php?productid=<?php echo $row['ID'];?>">
+                                            <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>">
                                                 <i class="fas fa-minus"></i>
                                             </a>
                                         </div>
                                     </td>
                                     <td class="text-right"><?= $row['Total_price'];?>৳</td>
                                     <td>
-                                        <a href="removecart.php?productid=<?php echo $row['ID'];?>">
+                                        <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>">
                                             <i class="fas fa-minus-circle"></i>
                                         </a>
                                     </td>

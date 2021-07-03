@@ -1,2 +1,0 @@
-<?php
-Total_p

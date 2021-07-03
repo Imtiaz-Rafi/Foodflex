@@ -1,4 +1,4 @@
-<?php include 'Connection.php'; ?>
+<?php include '../Connection.php'; ?>
 <?php
     if(isset($_GET['productid'])){
         $productid = $_GET['productid'];
@@ -13,7 +13,7 @@
         $cart_sql = "UPDATE order_cart SET Qty='$qty',Total_price='$total_price' Where ID='$productid';";
         $cart_result = $con->query($cart_sql);
         if($cart_result){
-            header("location: menu.php");
+            header("location: ../menu.php");
         }else{
             echo "ERROR";
         }

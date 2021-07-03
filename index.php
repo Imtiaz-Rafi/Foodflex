@@ -31,9 +31,9 @@
                     <?php }else{ ?>
                     <ul class="nav-area">
                         <li class="fas fa-sign-in-alt login"></li>
-                        <li> <a href="signup.php">Sign Up</a></li>
+                        <li> <a href="login/signup.php">Sign Up</a></li>
                         <li class="fas fa-sign-in-alt login"></li>
-                        <li><a href="signin.php">Sign In</a></li>
+                        <li><a href="login/signin.php">Sign In</a></li>
                     </ul>
                 <?php  }?>
             </div>
