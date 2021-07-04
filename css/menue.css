@@ -66,6 +66,46 @@ li.fas.fa-sign-in-alt.login {
     left: 35px;
 	color :#fff;
 }
+.nav-area-user li a{
+	float: right;
+    list-style: none;
+    top: -95px;
+    position: relative;
+    left: -50px;
+    display: inline-table;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: rgb(0,166,81);
+	border-radius: 10px;
+    text-transform: uppercase;
+	text-decoration: none;
+}
+.logout li a {
+    float: right;
+    list-style: none;
+    top: -95px;
+    position: relative;
+    left: -68px;
+    display: inline-table;
+    color: rgb(139,138,138);
+    text-decoration: none;
+    padding: 15px 15px 15px 15px;
+    margin-top: 20px;
+    font-size: 16px;
+    background: rgb(241,241,241);
+    border-radius: 10px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Work Sans', sans-serif;
+}
+.logout li a:hover{
+	color: rgb(0, 0, 0);
+	background: rgb(139, 139, 139);
+	font-family: 'Work Sans Medium', sans-serif;
+}
 .main{
 	background-color: rgb(216, 215, 215);
 }

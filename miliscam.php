@@ -1,16 +1,25 @@
-<?php include 'Connection.php'?>
+<?php
+      session_start();
+      include 'Connection.php';
+      include 'login/login_check.php';
+      $data = is_logged($con);
+?>
         <?php
-        $sql = "SELECT * FROM food_cat WHERE ID=10001";
-        $result = $con->query($sql);
-
-        if ($result->num_rows > 0) {
-            // output data of each row
-            while($row = $result->fetch_assoc()) {
-              echo "id: " . $row['ID']. " - Food Name: " . $row["FoodName"]. " - Price: " . $row["Price"]. "<br>";
-            }
-          } else {
-            echo "0 results";
+        if($data){
+          echo $data['Name'];
         }
+        
+        // $sql = "SELECT * FROM food_cat WHERE ID=10001";
+        // $result = $con->query($sql);
+
+        // if ($result->num_rows > 0) {
+        //     // output data of each row
+        //     while($row = $result->fetch_assoc()) {
+        //       echo "id: " . $row['ID']. " - Food Name: " . $row["FoodName"]. " - Price: " . $row["Price"]. "<br>";
+        //     }
+        //   } else {
+        //     echo "0 results";
+        // }
 
         // $name = "Imtiaz rafi";
         //     $Email = $password = ""; 

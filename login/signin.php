@@ -1,4 +1,8 @@
-<?php include '../Connection.php'?>
+<?php
+    session_start();
+    include '../Connection.php';
+    include 'login_check.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -35,12 +39,13 @@
                 
                 if(empty($EmailErr) && empty($PassErr)){
                     //--Check Duplicate--
-                    $query = "select * from customers";
+                    $query = "SELECT * FROM customers";
                     $result = $con->query($query);
                     while($row = $result->fetch_assoc()){
                         if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
-                            $Name = $row["Name"];
-                            header("location: ../index.php?name=$Name");
+                            $_SESSION['Name'] = $Name = $row["Name"];
+                            $_SESSION['ID'] = $row['ID'];
+                            header("location: ../index.php");
                             return;
                         }else{
                             header("location: signin.php?wrong=0");

@@ -1,4 +1,9 @@
-<?php include 'Connection.php'; ?>
+<?php
+    session_start();
+    include 'Connection.php';
+    include 'login/login_check.php';
+    $data = is_logged($con);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,12 +19,12 @@
             </div>
             <div class="navbar">
                 <?php 
-                    if(isset( $_REQUEST['name'])){ $Name = $_REQUEST['name']; ?>
+                    if($data){ $Name = $data['Name']; ?>
                     <ul class="nav-area-user">
-                        <li><a href="#"><?php echo $Name;?> </a></li>
+                        <li><a href="profile.php"><?php echo $Name;?> </a></li>
                     </ul>
                     <ul class="logout">
-                        <li><a href="index.php"> Log Out </a> </li>
+                        <li><a href="login/logout.php"> Log Out </a> </li>
                     </ul>
                     <?php }else{ ?>
                     <ul class="nav-area">
