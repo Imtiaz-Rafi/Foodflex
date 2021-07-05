@@ -1,4 +1,8 @@
-<?php include '../Connection.php'?>
+<?php
+    session_start();
+    include '../Connection.php';
+    include 'login_check.php';
+?>
 
 <!DOCTYPE html>
 <html>
@@ -58,9 +62,17 @@
                 
                 if(empty($NameErr) && empty($MobileErr) && empty($EmailErr) && empty($PassErr) && empty($ConPassErr) && empty($ConPassErr2)){
                     //--INSERT DATA--
+                    $sql = "SELECT * FROM customers ORDER BY ID DESC LIMIT 1";
+                    $result = $con->query($sql);
+                    $ID = 0;
+                    while($row=$result->fetch_assoc()){
+                        $ID = $row['ID'];
+                    }
+                    $ID = $ID+1;
                     $sql = "INSERT INTO customers(ID,Name,Mobile,Email,Password)
-                        VALUES('0','$Name','$Mobile','$Email','$Password')";
-                    
+                        VALUES('$ID','$Name','$Mobile','$Email','$Password')";
+                   
+
                     //--Check Duplicate--
                     $query = "SELECT * FROM customers";
                     $result = $con->query($query);
@@ -76,7 +88,10 @@
                         }
                     }
                     if($con->query($sql)===TRUE){
-                        header("location: ../index.php?name=$Name");
+                        $_SESSION['Name'] = $Name;
+                        $_SESSION['ID'] = $ID;
+                        header("location: ../index.php");
+                        return;
                     }else{
                         header("?msg=error");
                     }

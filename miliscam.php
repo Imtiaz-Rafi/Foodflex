@@ -5,10 +5,16 @@
       $data = is_logged($con);
 ?>
         <?php
-        if($data){
-          echo $data['Name'];
+        // if($data){
+        //   echo $data['Name'];
+        // }
+        $sql = "SELECT * FROM lol ORDER BY ID DESC LIMIT 1";
+        $result = $con->query($sql);
+        $ID = 1;
+        while($row=$result->fetch_assoc()){
+          $ID = $row['ID'];
         }
-        
+        echo $ID;
         // $sql = "SELECT * FROM food_cat WHERE ID=10001";
         // $result = $con->query($sql);
 
