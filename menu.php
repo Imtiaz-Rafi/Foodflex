@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php include 'header.php';?>
-    <link rel="stylesheet" href="css/menue.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Menue</title>
 </head>
 <body>
@@ -156,7 +156,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right"><?= $row['Total_price'];?>৳</td>
+                                    <td class="text-right">৳ <?= $row['Total_price'];?></td>
                                     <td>
                                         <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>">
                                             <i class="fas fa-minus-circle"></i>
@@ -180,7 +180,7 @@
                                 </tr> -->
                                 <tr class="green-cart">
                                     <td>Total Amount</td>
-                                    <td><?php 
+                                    <td>৳ <?php 
                                         $sql = "SELECT * FROM order_cart";
                                         $result = $con->query($sql);
                                         $total_price=0;
@@ -188,7 +188,8 @@
                                             $total_price = $total_price + $row['Total_price'];
                                         }
                                         echo $total_price;
-                                    ?> Taka</td>
+                                        ?>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>  
