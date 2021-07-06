@@ -156,7 +156,7 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">৳ <?= $row['Total_price'];?></td>
+                                    <td class="text-right">৳<?= $row['Total_price'];?></td>
                                     <td>
                                         <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>">
                                             <i class="fas fa-minus-circle"></i>

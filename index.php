@@ -51,9 +51,42 @@
             </div>
         </div>
     </section>
-    <section class="footer">
-        <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
-    </section>
+    <footer class="footer">
+        <div class="container">
+            <ul class="footer_top">
+                <li class="text-left">
+                    <div class="logo">
+                        <a href="index.php"><img src="images/logo.png" alt="Logo" ></a>
+                    </div>
+                </li>
+                <li class="text-center">
+                    <div class="social_media">
+                        <i class="fab fa-facebook-f"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-google-plus-g"></i>
+                    </div>
+                </li>
+                <li class="text-right">
+                    <div class="footer_login">
+                        <p>My Foodflex</p>
+                        <a href="#">Sign In/Register</a>
+                    </div>
+                </li>
+            </ul>
+            
+            <ul class="footer_mid">
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <ul class="feedback">
+                Help Us Serving You Better
+                <button>Give Feedback</button>
+            </ul>
+            <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
+            
+        </div>
+    </footer>
 </body>
 </html>
 
