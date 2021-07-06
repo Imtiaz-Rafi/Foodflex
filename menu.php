@@ -60,7 +60,7 @@
                                         ?>
                                         <li>
                                             <i class="fas fa-chevron-left"></i>
-                                            <a href="#<?php $row['Cat_name'];?>"><?= $row['Cat_name'];?></a>
+                                            <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?></a>
                                         </li>
                             <?php }} ?>
                         </ul>
@@ -76,7 +76,7 @@
                                 while($cat_row = $cat_result->fetch_assoc()){
                                         $rid_link = $cat_row['Cat_name'];
                                     ?>
-                                <div id="<?php $cat_row['Cat_name'];?>">
+                                <div id="<?= $cat_row['Cat_name'];?>">
                                     <h3> <?= $cat_row['Cat_name'];?> </h3>
                                     <ul>
                                         <?php
