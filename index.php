@@ -61,15 +61,15 @@
                 </li>
                 <li class="text-center">
                     <div class="social_media">
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-instagram"></i>
-                        <i class="fab fa-google-plus-g"></i>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-google-plus-g"></i></a>
                     </div>
                 </li>
                 <li class="text-right">
                     <div class="footer_login">
                         <p>My Foodflex</p>
-                        <a href="#">Sign In/Register</a>
+                        <a href="login/signin.php">Sign In/Register</a>
                     </div>
                 </li>
             </ul>
@@ -81,7 +81,7 @@
             </ul>
             <ul class="feedback">
                 Help Us Serving You Better
-                <button>Give Feedback</button>
+                <a href="#"> Give Feedback</a>
             </ul>
             <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
             
