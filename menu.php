@@ -174,7 +174,7 @@
                         </table>  
                     </div>
                     <div class="checkout">
-                        <a href="checkout.php">
+                        <a href="cart.php">
                             <button class="btn btn-primary loader">Checkout</button>
                         </a>
                     </div>

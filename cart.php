@@ -9,7 +9,7 @@
 <head>
     <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
-    <title>Checkout</title>
+    <title>Cart</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -17,14 +17,23 @@
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="#">Checkout</a></li>
+                <li class="nav-item"><a href="#">Cart</a></li>
                 <!-- <li class="nav-item"><a href="#">Info</a></li> -->
             </ul>
         </div>
     </section>
     <section class="grey-bg">
         <div class="container">
-            
+            <div class="cart-main">
+                <table>
+                    <thead>
+                        <tr>Description</tr>
+                        <tr>Quantity</tr>
+                        <tr>Price</tr>
+                    </thead>
+                    
+                </table>
+            </div>
         </div>
     </section>
     <!-- FOOTER -->
