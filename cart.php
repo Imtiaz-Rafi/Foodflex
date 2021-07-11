@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php include 'links.php';?>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cart.css">
     <title>Cart</title>
 </head>
 <body>
@@ -24,15 +24,72 @@
     </section>
     <section class="grey-bg">
         <div class="container">
-            <div class="cart-main">
-                <table>
-                    <thead>
-                        <tr>Description</tr>
-                        <tr>Quantity</tr>
-                        <tr>Price</tr>
-                    </thead>
-                    
-                </table>
+            <div class="container-full">
+                <div class="cart-main">
+                    <table class="table">
+                        <thead class="grey">
+                            <tr>
+                                <th>Description</th>
+                                <th class="text-right">Quantity</th>
+                                <th>Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                $sql="SELECT * FROM order_cart";
+                                $result = $con->query($sql);
+                                while($row = $result->fetch_assoc()){
+                            ?>
+                            <tr>
+                                <td>
+                                    <h4><?= $row['Name'];?></h4>
+                                    <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>" class="remove sans">Remove</a>
+                                    </td>
+                                <td>
+                                    <div class="add">
+                                        <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>">
+                                            <i class="fas fa-plus"></i>
+                                        </a>
+                                        <input type="input" value="<?=$row['Qty']?>">
+                                        <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>">
+                                            <i class="fas fa-minus"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                                <td class="sans"><?= $row['Total_price'];?></td>
+                            </tr>
+                            <?php }?>
+                            
+                            <tr class="grey">
+                                <td colspan="2" class="text-right sans">Subtotal</td>
+                                <td class="sans">
+                                    <?php 
+                                        $sql = "SELECT * FROM order_cart";
+                                        $result = $con->query($sql);
+                                        $sub_total=0;
+                                        while($row = $result->fetch_assoc()){
+                                            $sub_total = $sub_total + $row['Total_price'];
+                                        }
+                                        echo $sub_total;
+                                    ?>
+                                     Taka</td>
+                            </tr>
+                            <tr class="grey">
+                                <td colspan="2" class="text-right sans">Delivery Charge</td>
+                                <td class="sans">100 Taka</td>
+                            </tr>
+                            <tr class="grey">
+                                <td colspan="2" class="text-right sans">Total Amount</td>
+                                <td class="sans"><?php echo $sub_total+100;?> Taka</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="chkout grey text-right upper">
+                            <a href="#checkout">Check Out
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

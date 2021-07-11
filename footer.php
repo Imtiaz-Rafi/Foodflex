@@ -6,7 +6,6 @@
 <head>
     <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
-    <title>Checkout</title>
 </head>
 <body>
     <footer class="footer">
