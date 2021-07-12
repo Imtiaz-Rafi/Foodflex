@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'header.php';?>
+    <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
     <title>Menue</title>
 </head>

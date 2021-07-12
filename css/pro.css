@@ -1,0 +1,120 @@
+body{
+    margin:0;
+    padding: 0;
+    font-family:'Work Sans Medium', sans-serif;
+    background:linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)),
+        url("../images/Restaurant_background.jpg")no-repeat;
+    background-size: cover;
+	background-position: center center;
+	position: relative;
+}
+.profile-page
+{
+    display: flex;
+    margin:auto;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+}
+
+
+.wrapper{
+    max-width:1000px;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0,0,0,.10);
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5);
+    height:600px;
+    border-radius: 10px;
+  
+}
+.input-box{
+    
+    border-radius: 20px;
+    border-width: 500px;
+    padding: 5px 120px 20px 20px;
+    margin: 20px;
+    border: 1px solid rgb(40, 105, 131);
+    outline:none;
+
+}
+.btn{
+        color: rgb(18, 107, 6);
+        text-transform: uppercase;
+        font-weight: bold;
+        width: 35%;
+        padding: 10px;
+        border-radius: 20px;
+        font-size: 15px;
+        margin:200px;
+        border: none;
+        outline: none;
+        cursor: pointer;
+      
+        
+
+
+}
+#divleft{
+    float: left;
+}
+#divright{
+    float:right;
+}
+.wrapper label{
+   font-style: italic;
+    margin:5px;
+    padding: 0;
+    font-weight:bold;
+    color:seashell;
+    float:left;
+
+
+}
+.wrapper input{
+    margin-bottom: 20px;
+
+
+}
+.wrapper input[type=Name],
+.wrapper input[type=email],
+.wrapper input[type=phone],
+.wrapper input[type=text]{
+    border:none;
+    border-bottom:1px solid #ffffff;
+    background-color:gray;
+    outline:none;
+    height:10px;
+    color:whitesmoke;
+    display:16px;
+    
+
+}
+::placeholder{
+    color:white;
+    text-align: left;
+
+}
+h4{
+    margin-left: -800px;
+    color:snow;
+}
+h2{
+    color:springgreen;
+}
+
+
+
+
+
+
+
+
+
+
+
