@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<div class="header">
+    <div class="header">
         <div class="container">
             <div class="logo">
                 <a href="index.php"><img src="images/logo.png" alt="Logo" ></a>
