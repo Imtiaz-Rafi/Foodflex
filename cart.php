@@ -1,8 +1,8 @@
 <?php
     session_start();
     include 'Connection.php';
-    include 'login/login_check.php';
-    $data = is_logged($con);
+    include 'login/login_check.php'; 
+    $data = is_logged($con); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,9 +85,15 @@
                         </tbody>
                     </table>
                     <div class="chkout grey text-right upper">
+                        <?php if($data){ ?>
                             <a href="#checkout">Check Out
                                 <i class="fas fa-chevron-right"></i>
                             </a>
+                        <?php }else{?>
+                            <a href="login/signin.php?baal=2">Check Out
+                                <i class="fas fa-chevron-right"></i>
+                            </a>
+                            <?php }?>
                     </div>
                 </div>
             </div>

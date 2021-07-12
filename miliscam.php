@@ -4,37 +4,61 @@
       include 'login/login_check.php';
       $data = is_logged($con);
 ?>
-        <?php
-        $sql = "SELECT * FROM category";
-        $result = $con->query($sql);
-        while($row = $result->fetch_assoc()){
-          $name = $row['Cat_name'];;
-          ?>
-            <a href="#<?=$row['Cat_name'];?>"><?=$row['Cat_name'];?></a>
-        <?php }
+<!DOCTYPE html>
+<html>
+<body>
 
-        $cat_sql = "SELECT * FROM category";
-        $cat_result = $con->query($cat_sql);
-        if($cat_result->num_rows > 0){
-            while($cat_row = $cat_result->fetch_assoc()){
-                    $rid_link = $cat_row['Cat_name'];
+<?php
+echo $_SERVER['PHP_SELF'];
+echo "<br>";
+echo $_SERVER['SERVER_NAME'];
+echo "<br>";
+echo $_SERVER['HTTP_HOST'];
+echo "<br>";
+if(isset($_SESSION['HTTP_REFERER'])){
+    echo $_SERVER['HTTP_REFERER'];
+    echo "<br>";
+}
+echo $_SERVER['REMOTE_ADDR'];
+echo "<br>";
+echo $_SERVER['HTTP_USER_AGENT'];
+echo "<br>";
+echo $_SERVER['SCRIPT_NAME'];
+?>
+
+</body>
+</html>
+        <?php
+        // $sql = "SELECT * FROM category";
+        // $result = $con->query($sql);
+        // while($row = $result->fetch_assoc()){
+        //   $name = $row['Cat_name'];;
+        //   ?>
+        <!-- //     <a href="#<?//=$row['Cat_name'];?>"><?//=$row['Cat_name'];?></a> -->
+         <?php //}
+
+        // $cat_sql = "SELECT * FROM category";
+        // $cat_result = $con->query($cat_sql);
+        // if($cat_result->num_rows > 0){
+        //     while($cat_row = $cat_result->fetch_assoc()){
+        //             $rid_link = $cat_row['Cat_name'];
                 ?>
-            <div id="<?= $cat_row['Cat_name'];?>">
-                <h3> <?= $cat_row['Cat_name'];?> </h3>
+            <!-- <div id="<?//= $cat_row['Cat_name'];?>">
+                <h3> <?//= $cat_row['Cat_name'];?> </h3>
                 <ul>
                     <?php
-                        $cat_id = $cat_row['ID'];
-                        $sql="SELECT * FROM food_list WHERE cat_id=$cat_id";
-                        $result = $con->query($sql);
-                        if($result->num_rows>0){
-                            while($row = $result->fetch_assoc()){
+                        // $cat_id = $cat_row['ID'];
+                        // $sql="SELECT * FROM food_list WHERE cat_id=$cat_id";
+                        // $result = $con->query($sql);
+                        // if($result->num_rows>0){
+                        //     while($row = $result->fetch_assoc()){
                                 ?>
                         <li>
-                            <img src="images/<?= $row["Image"];?>" alt="burger">
+                            <img src="images/<?//= $row["Image"];?>" alt="burger">
                             <div class="beside-img">
-                                <h4><?= $row["FoodName"];?></h4> <!-- auto echo -->
+                                <h4><?//= $row["FoodName"];?></h4>
                                 <div class="d-tab w100">
-                                    <span class="price"><?= $row["Price"];?> Taka</span>
+                                    <span class="price"><?//= $row["Price"];?> Taka</span>
                                     <button class="add-item">
                                         
                                         <a href="cart/addcart.php?productid=<?php echo $row['ID'];?>">
@@ -45,10 +69,10 @@
                                 </div>
                             </div>
                         </li>
-                    <?php }} ?>
+                    <?php //}} ?>
                 </ul>
-            </div>
-        <?php }} 
+            </div> -->
+        <?php //}} 
 
 
 

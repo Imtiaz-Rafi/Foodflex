@@ -2,6 +2,11 @@
     session_start();
     include '../Connection.php';
     include 'login_check.php';
+    $baal = "";
+    if(isset($_REQUEST['baal'])){
+        $_SESSION['baal'] = $_REQUEST['baal'];
+        $baal = $_SESSION['baal'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -22,37 +27,76 @@
         <?php
             $Email = $Password = "";
             $EmailErr = $PassErr = "";
-            if($_SERVER['REQUEST_METHOD']=='POST'){
-                if(empty($_REQUEST["email"])){
-                    $EmailErr = "*Email is required";
-                }else{
-                    $Email = test_data($_REQUEST["email"]);
-                    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-                        $EmailErr = "Invalid email format";
-                      }
-                }
-                if(empty($_REQUEST["pass"])){
-                    $PassErr = "*Password is required";
-                }else{
-                    $Password = test_data($_REQUEST["pass"]);
-                }
-                
-                if(empty($EmailErr) && empty($PassErr)){
-                    //--Check Duplicate--
-                    $query = "SELECT * FROM customers";
-                    $result = $con->query($query);
-                    while($row = $result->fetch_assoc()){
-                        if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
-                            $_SESSION['Name'] = $Name = $row["Name"];
-                            $_SESSION['ID'] = $row['ID'];
-                            header("location: ../index.php");
-                            return;
-                        }else{
-                            header("location: signin.php?wrong=0");
+            $bool = 0;
+            if($baal == 2){
+                if($_SERVER['REQUEST_METHOD']=='POST'){
+                    if(empty($_REQUEST["email"])){
+                        $EmailErr = "*Email is required";
+                    }else{
+                        $Email = test_data($_REQUEST["email"]);
+                        if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+                            $EmailErr = "Invalid email format";
                         }
                     }
-                }else{
-                    header("?msg=error");
+                    if(empty($_REQUEST["pass"])){
+                        $PassErr = "*Password is required ";
+                        
+                    }else{
+                        $Password = test_data($_REQUEST["pass"]);
+                    }
+                    
+                    if(empty($EmailErr) && empty($PassErr)){
+                        //--Check Duplicate--
+                        $query = "SELECT * FROM customers";
+                        $result = $con->query($query);
+                        while($row = $result->fetch_assoc()){
+                            if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
+                                $_SESSION['Name'] = $Name = $row["Name"];
+                                $_SESSION['ID'] = $row['ID'];
+                                header("location: ../cart.php");
+                                return;
+                            }else{
+                                header("location: signin.php?wrong=0");
+                            }
+                        }
+                    }else{
+                        header("?msg=error");
+                    }
+                }
+            }else{
+                if($_SERVER['REQUEST_METHOD']=='POST'){
+                    if(empty($_REQUEST["email"])){
+                        $EmailErr = "*Email is required";
+                    }else{
+                        $Email = test_data($_REQUEST["email"]);
+                        if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+                            $EmailErr = "Invalid email format";
+                        }
+                    }
+                    if(empty($_REQUEST["pass"])){
+                        $PassErr = "*Password is required ";
+                        
+                    }else{
+                        $Password = test_data($_REQUEST["pass"]);
+                    }
+                    
+                    if(empty($EmailErr) && empty($PassErr)){
+                        //--Check Duplicate--
+                        $query = "SELECT * FROM customers";
+                        $result = $con->query($query);
+                        while($row = $result->fetch_assoc()){
+                            if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
+                                $_SESSION['Name'] = $Name = $row["Name"];
+                                $_SESSION['ID'] = $row['ID'];
+                                header("location: ../index.php");
+                                return;
+                            }else{
+                                header("location: signin.php?wrong=0");
+                            }
+                        }
+                    }else{
+                        header("?msg=error");
+                    }
                 }
             }
             function test_data($data){

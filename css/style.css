@@ -8,7 +8,7 @@
 }
 
 .footer p {
-    font-family: 'Work Sans light';
+    font-family: 'Work Sans';
 }
 body{
 	line-height: 1.5;
@@ -635,21 +635,41 @@ td {
     vertical-align: middle;
 }
 .social_media i{
-	border: 1px solid rgb(0, 0, 0);
-    border-radius: 50%;
-    font-size: 20px;
+    font-size: 40px;
     padding: 15px;
-    margin: 0 20px;
+    margin: 0 10px;
     cursor: pointer;
 }
-.social_media i:hover{
+.social_media .fab.fa-facebook-square{
+	color:#1877F1;
+}
+.social_media .fab.fa-facebook-square:hover{
+	color:#1D4594;
+}
+
+.social_media .fab.fa-instagram-square{
+	/* background:radial-gradient(red 25%,yellow 15%,white 60%); */
+	background: linear-gradient(225deg,#7938AB 23%,#F70205 60%,#FAD800 74%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.social_media .fab.fa-instagram-square:hover{
+	background: linear-gradient(225deg,#FAD800 23%,#F70205 60%,#7938AB 74%);
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+.social_media .fas.fa-envelope-square{
 	color:rgb(0, 166, 81);
-	border: 1px solid rgb(0, 166, 81);
+}
+.social_media .fas.fa-envelope-square:hover{
+	color: rgb(5, 109, 55);
 }
 .footer_login a {
     color: rgb(0, 0, 0);
     text-decoration: none;
-    font-family: 'Work Sans Light';
+    font-family: 'Work Sans';
 }
 .footer_login a:hover {
     color: rgb(0, 166, 81);
@@ -667,7 +687,7 @@ td {
 }
 .footer_mid li a{
 	display: inline-block;
-	font-family: 'Work Sans light';
+	font-family: 'Work Sans';
 	text-decoration: none;
 	color: rgb(0, 0, 0);
 	margin: 0px 14px 0px 14px;
@@ -689,14 +709,15 @@ td {
 .feedback a{
 	padding: 10px;
 	margin: 20px;
-	background: rgb(45,65,79);
-	color: rgb(221,221,221);
+	background: rgb(237,237,237);
+	color: rgb(83,83,83);
 	border-radius: 4px;
 	font-size: 15px;
 	text-decoration: none;
 }
 .feedback a:hover{
-	background: rgb(25,44,56);
+	background: rgb(71, 71, 71);
+	color: rgb(240, 240, 240);
 }
 
 
