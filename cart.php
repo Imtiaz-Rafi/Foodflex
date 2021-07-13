@@ -90,7 +90,7 @@
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         <?php }else{?>
-                            <a href="login/signin.php?baal=2">Check Out
+                            <a href="login/signin.php?value=2">Check Out
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                             <?php }?>

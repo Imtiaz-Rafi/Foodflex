@@ -7,23 +7,23 @@
 <!DOCTYPE html>
 <html>
 <body>
-
+    <button ><a href="query.php?value=5">Submit</a> </button>
 <?php
-echo $_SERVER['PHP_SELF'];
-echo "<br>";
-echo $_SERVER['SERVER_NAME'];
-echo "<br>";
-echo $_SERVER['HTTP_HOST'];
-echo "<br>";
-if(isset($_SESSION['HTTP_REFERER'])){
-    echo $_SERVER['HTTP_REFERER'];
-    echo "<br>";
-}
-echo $_SERVER['REMOTE_ADDR'];
-echo "<br>";
-echo $_SERVER['HTTP_USER_AGENT'];
-echo "<br>";
-echo $_SERVER['SCRIPT_NAME'];
+// echo $_SERVER['PHP_SELF'];
+// echo "<br>";
+// echo $_SERVER['SERVER_NAME'];
+// echo "<br>";
+// echo $_SERVER['HTTP_HOST'];
+// echo "<br>";
+// if(isset($_SESSION['HTTP_REFERER'])){
+//     echo $_SERVER['HTTP_REFERER'];
+//     echo "<br>";
+// }
+// echo $_SERVER['REMOTE_ADDR'];
+// echo "<br>";
+// echo $_SERVER['HTTP_USER_AGENT'];
+// echo "<br>";
+// echo $_SERVER['SCRIPT_NAME'];
 ?>
 
 </body>

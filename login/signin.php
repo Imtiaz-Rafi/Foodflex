@@ -1,12 +1,21 @@
 <?php
     session_start();
     include '../Connection.php';
-    include 'login_check.php';
-    $baal = "";
-    if(isset($_REQUEST['baal'])){
-        $_SESSION['baal'] = $_REQUEST['baal'];
-        $baal = $_SESSION['baal'];
+    $value="";
+    if(isset($_REQUEST['value'])){
+        $_SESSION['value'] = $_REQUEST['value'];
+        $value = $_SESSION['value'];
     }
+    // if(!empty($value)){
+    //     if($value==2){
+    //        header("location: ../cart.php?haha=$value ");
+    //     }else{
+    //        header("location: ../index.php?lol=$value");
+    //    }
+        
+    // }else{
+    //     header('location: ../index.php');
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -27,8 +36,8 @@
         <?php
             $Email = $Password = "";
             $EmailErr = $PassErr = "";
-            $bool = 0;
-            if($baal == 2){
+            if(!empty($value) && $value==2){
+                
                 if($_SERVER['REQUEST_METHOD']=='POST'){
                     if(empty($_REQUEST["email"])){
                         $EmailErr = "*Email is required";
@@ -36,11 +45,10 @@
                         $Email = test_data($_REQUEST["email"]);
                         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
                             $EmailErr = "Invalid email format";
-                        }
+                          }
                     }
                     if(empty($_REQUEST["pass"])){
-                        $PassErr = "*Password is required ";
-                        
+                        $PassErr = "*Password is required";
                     }else{
                         $Password = test_data($_REQUEST["pass"]);
                     }
@@ -53,8 +61,8 @@
                             if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
                                 $_SESSION['Name'] = $Name = $row["Name"];
                                 $_SESSION['ID'] = $row['ID'];
-                                header("location: ../cart.php");
-                                return;
+                                header("location: ../cart.php?firse=$value ");
+                                die();
                             }else{
                                 header("location: signin.php?wrong=0");
                             }
@@ -71,11 +79,10 @@
                         $Email = test_data($_REQUEST["email"]);
                         if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
                             $EmailErr = "Invalid email format";
-                        }
+                          }
                     }
                     if(empty($_REQUEST["pass"])){
-                        $PassErr = "*Password is required ";
-                        
+                        $PassErr = "*Password is required";
                     }else{
                         $Password = test_data($_REQUEST["pass"]);
                     }
@@ -89,7 +96,7 @@
                                 $_SESSION['Name'] = $Name = $row["Name"];
                                 $_SESSION['ID'] = $row['ID'];
                                 header("location: ../index.php");
-                                return;
+                                die();
                             }else{
                                 header("location: signin.php?wrong=0");
                             }
@@ -99,6 +106,7 @@
                     }
                 }
             }
+            
             function test_data($data){
                 $data = trim($data);
                 $data = stripslashes($data);

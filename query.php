@@ -1,15 +1,41 @@
 <?php
     session_start();
     include 'Connection.php';
+    $value = "";
+    if(isset($_REQUEST['value'])){
+        $_SESSION['value'] = $_REQUEST['value'];
+        $value = $_SESSION['value'];
+    }
 ?>
-        <?php
-        $sql = "SELECT * FROM customers WHERE ID=56";
-        $result = $con->query($sql);
-        while($row = $result->fetch_assoc()){
-            echo $row['ID']."<br>".$row['Name']."<br>".$row['Mobile']."<br>";
-            echo $_SESSION['ID'] = $row['ID'];
-            echo $_SESSION['Name'] = $row['Name'];
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div>This is Query</div>
+    <?php
+     if(!empty($value)){
+         if($value==5){
+            header("location: miliscam.php?haha=$value ");
+         }else{
+            header('location: index.php?lol=$value');
         }
+         
+     }else{
+         header('location: index.php');
+     }
+     
+     ?> 
+</body>
+</html>
+        <?php
+        // $sql = "SELECT * FROM customers WHERE ID=56";
+        // $result = $con->query($sql);
+        // while($row = $result->fetch_assoc()){
+        //     echo $row['ID']."<br>".$row['Name']."<br>".$row['Mobile']."<br>";
+        //     echo $_SESSION['ID'] = $row['ID'];
+        //     echo $_SESSION['Name'] = $row['Name'];
+        // }
 
 
 
