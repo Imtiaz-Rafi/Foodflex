@@ -134,18 +134,18 @@
                                     <td><?= $row['Name'];?></td>
                                     <td>
                                         <div class="add">
-                                            <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>">
+                                            <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>&&id=1">
                                                 <i class="fas fa-plus"></i>
                                             </a>
                                             <input type="input" value="<?= $row['Qty']?>">
-                                            <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>">
+                                            <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>&&id=1">
                                                 <i class="fas fa-minus"></i>
                                             </a>
                                         </div>
                                     </td>
                                     <td class="text-right">৳<?= $row['Total_price'];?></td>
                                     <td>
-                                        <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>">
+                                        <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>&&id=1">
                                             <i class="fas fa-minus-circle"></i>
                                         </a>
                                     </td>

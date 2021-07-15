@@ -10,8 +10,10 @@
         if($cart_result){
             if(isset($_GET['id']) && $_GET['id']==2){
                 header("location: ../cart.php");
-            }else{
+            }else if(isset($_GET['id']) && $_GET['id']==1){
                 header("location: ../menu.php");
+            }else{
+                header("location: ../menu.php?id=0");
             }
         }else{
             echo "WA";

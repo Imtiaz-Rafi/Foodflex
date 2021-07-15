@@ -13,7 +13,13 @@
         $cart_sql = "UPDATE order_cart SET Qty='$qty',Total_price='$total_price' Where ID='$productid';";
         $cart_result = $con->query($cart_sql);
         if($cart_result){
-            header("location: ../menu.php");
+            if(isset($_GET['id']) && $_GET['id']==2){
+                header("location: ../cart.php");
+            }else if(isset($_GET['id']) && $_GET['id']==1){
+                header("location: ../menu.php");
+            }else{
+                header("location: ../menu.php?id=0");
+            }
         }else{
             echo "ERROR";
         }

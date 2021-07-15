@@ -54,11 +54,11 @@
                                     </td>
                                 <td>
                                     <div class="add">
-                                        <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>">
+                                        <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>&&id=2">
                                             <i class="fas fa-plus"></i>
                                         </a>
                                         <input type="input" value="<?=$row['Qty']?>">
-                                        <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>">
+                                        <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>&&id=2">
                                             <i class="fas fa-minus"></i>
                                         </a>
                                     </div>
@@ -93,7 +93,7 @@
                     </table>
                     <div class="chkout grey text-right upper">
                         <?php if($data){ ?>
-                            <a href="#checkout">Check Out
+                            <a href="checkout.php">Check Out
                                 <i class="fas fa-chevron-right"></i>
                             </a>
                         <?php }else{?>
