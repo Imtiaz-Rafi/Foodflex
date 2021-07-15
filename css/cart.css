@@ -95,6 +95,26 @@ ul{
 table{
     border-collapse: collapse;
 }
+td.text-left.sans.back-to-menue {
+    padding: 20px 20px;
+}
+.back-to-menue a{
+    border: 1px solid rgb(0, 166, 81);
+    color:rgb(0, 166, 81);
+    padding: 10px 20px 10px 5px;
+    border-radius: 4px;
+    width: 170px;
+    margin: 0;
+}
+.back-to-menue a:hover{
+    border: 1px solid rgb(0, 166, 81);
+    color:rgb(255, 255, 255);
+    background: rgb(0, 166, 81);
+}
+.fas.fa-arrow-left{
+    font-size: 14px;
+    padding: 0px 5px 0px 10px;
+}
 
 th:last-child{
     text-align:right;

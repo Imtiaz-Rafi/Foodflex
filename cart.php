@@ -27,6 +27,13 @@
             <div class="container-full">
                 <div class="cart-main">
                     <table class="table">
+                        <thead>
+                            <tr>
+                                <td colspan="3" class="text-left sans back-to-menue">
+                                    <a href="menu.php"><i class="fas fa-arrow-left"></i>Back to Menue</a>
+                                </td>
+                            </tr>
+                        </thead>
                         <thead class="grey">
                             <tr>
                                 <th>Description</th>
@@ -43,7 +50,7 @@
                             <tr>
                                 <td>
                                     <h4><?= $row['Name'];?></h4>
-                                    <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>" class="remove sans">Remove</a>
+                                    <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>&&id=2" class="remove sans">Remove</a>
                                     </td>
                                 <td>
                                     <div class="add">

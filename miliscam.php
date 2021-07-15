@@ -1,13 +1,104 @@
 <?php
-      session_start();
+      //session_start();
       include 'Connection.php';
-      include 'login/login_check.php';
-      $data = is_logged($con);
+      //include 'login/login_check.php';
+      //$data = is_logged($con);
 ?>
-<!DOCTYPE html>
+<?php
+
+if(isset($_POST["submit"])) {
+
+    $fname = $_POST["fname"];
+    $lname = $_POST["lname"];
+    $gender = $_POST["gender"];
+    $age = $_POST["age"];
+    $address = $_POST["address"];
+    $media = $_POST['media'];
+
+    $errormessage =  array();
+
+    if(empty($fname)) {
+        $errormessage[0] = "Please enter your first name";
+    }
+
+    if(empty($lname)) {
+        $errormessage[1] = "Please enter your last name";
+    }
+
+    if(empty($gender)) {
+        $errormessage[2] = "Please select your gender";
+    }
+
+    if(empty($age)) {
+        $errormessage[3] = "Please select your age";
+    }
+
+    if(empty($address)) {
+        $errormessage[4] = "Please enter your address";
+    }
+
+    if(empty($media)) {
+        $errormessage = "Please select the type of media";
+
+    }
+
+}
+?>
+<html>
+<head>
+    <title>Sample Registration</title>
+</head>
+<body>
+    <h2>Sample registration</h4>
+        <form name="registration" method="post" action="query.php">
+            <div>
+                First Name: <br />
+                <input type="text" name="fname" value="">
+            </div>
+
+            <div>
+                Last Name: <br />
+                <input type="text" name="lname" value="">
+            </div>
+
+            <div>
+                Gender: <br />
+                male<input type="radio" name="gender" value="male">
+                female<input type="radio" name="gender" value="female">
+            </div>
+
+            <div>
+                Age: <br />
+                <select name="age">
+                    <option value="">Please select your age</option>
+                    <option value="18-25">18-25</option>
+                    <option value="26-33">26-33</option>
+                </select>
+            </div>
+
+            <div>
+                Address: <br />
+                <textarea name="address" cols="10" rows="10"></textarea>
+            </div>
+
+            <div>
+                Sign-me up: <br />
+                <input type="checkbox" name="media['newsletter']" value="newsletter"> newsletter
+                <input type="checkbox" name="media['specials']" value="specials"> specials
+                <input type="checkbox" name="media['events']" value="events"> events
+
+            <div>
+                <input type="submit" name="submit" value="submit">
+            </div>
+        </form>
+</body>
+</html>
+
+
+<!-- <!DOCTYPE html>
 <html>
 <body>
-    <button ><a href="query.php?value=5">Submit</a> </button>
+    <button ><a href="query.php?value=5">Submit</a> </button> -->
 <?php
 // echo $_SERVER['PHP_SELF'];
 // echo "<br>";

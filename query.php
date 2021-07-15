@@ -1,11 +1,11 @@
 <?php
-    session_start();
+    // session_start();
     include 'Connection.php';
-    $value = "";
-    if(isset($_REQUEST['value'])){
-        $_SESSION['value'] = $_REQUEST['value'];
-        $value = $_SESSION['value'];
-    }
+    // $value = "";
+    // if(isset($_REQUEST['value'])){
+    //     $_SESSION['value'] = $_REQUEST['value'];
+    //     $value = $_SESSION['value'];
+    // }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -14,16 +14,16 @@
 <body>
     <div>This is Query</div>
     <?php
-     if(!empty($value)){
-         if($value==5){
-            header("location: miliscam.php?haha=$value ");
-         }else{
-            header('location: index.php?lol=$value');
-        }
+    //  if(!empty($value)){
+    //      if($value==5){
+    //         header("location: miliscam.php?haha=$value ");
+    //      }else{
+    //         header('location: index.php?lol=$value');
+    //     }
          
-     }else{
-         header('location: index.php');
-     }
+    //  }else{
+    //      header('location: index.php');
+    //  }
      
      ?> 
 </body>

@@ -23,39 +23,22 @@
             $Name = $Email = $Password = $Mobile = $ConPass="";
             $NameErr = $EmailErr = $PassErr = $MobileErr = $ConPassErr = $ConPassErr2 ="";
             if($_SERVER['REQUEST_METHOD']=='POST'){
-                if (empty($_REQUEST["name"])) {
-                    $NameErr = "*Name is required";
-                } else {
-                    $Name = test_data($_REQUEST["name"]);
-                    if (!preg_match("/^[a-zA-Z-' ]*$/",$Name)) {
-                        $NameErr = "Only letters and white space allowed";
-                      }
+            
+                $Name = test_data($_REQUEST["name"]);
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$Name)) {
+                    $NameErr = "Only letters and white space allowed";
                 }
-                if(empty($_REQUEST["mobile"])){
-                    $MobileErr = "*Mobile is required";
-                }else{
-                    $Mobile = test_data($_REQUEST["mobile"]);
-                    if(strlen($Mobile)<11 || strlen($Mobile)>11){
-                        $MobileErr = "*Invalid Mobile Format";
-                    }
+                $Mobile = test_data($_REQUEST["mobile"]);
+                if(strlen($Mobile)<11 || strlen($Mobile)>11){
+                    $MobileErr = "*Invalid Mobile Format";
                 }
-                if(empty($_REQUEST["email"])){
-                    $EmailErr = "*Email is required";
-                }else{
-                    $Email = test_data($_REQUEST["email"]);
-                    if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
-                        $EmailErr = "Invalid email format";
-                      }
+                $Email = test_data($_REQUEST["email"]);
+                if (!filter_var($Email, FILTER_VALIDATE_EMAIL)) {
+                    $EmailErr = "Invalid email format";
                 }
-                if(empty($_REQUEST["pass"])){
-                    $PassErr = "*Password is required";
-                }else{
-                    $Password = test_data($_REQUEST["pass"]);
-                }
-                if(empty($_REQUEST["conpass"])){
-                    $ConPassErr = "*Confirm Password is required";
-                }else if($_REQUEST["conpass"]!=$_REQUEST["pass"]){
-                    $ConPassErr2 = "*Password Doesn't Match";
+                $Password = test_data($_REQUEST["pass"]);
+                if($_REQUEST["conpass"]!=$_REQUEST["pass"]){
+                    $ConPassErr = "*Password Doesn't Match";
                 }else{
                     $ConPass = test_data($_REQUEST["conpass"]);
                 }
@@ -88,9 +71,7 @@
                         }
                     }
                     if($con->query($sql)===TRUE){
-                        $_SESSION['Name'] = $Name;
-                        $_SESSION['ID'] = $ID;
-                        header("location: ../index.php");
+                        header("location: signin.php");
                         return;
                     }else{
                         header("?msg=error");
@@ -125,29 +106,28 @@
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="Name">
                 <li class="far fa-user" id="icon"></li>
-                <input type= "Name" class="input-box" placeholder="Enter your Name" name="name" size="25">
+                <input type= "Name" class="input-box" placeholder="Enter your Name" name="name" size="25" required>
                 <span class="error"><br><?php echo $NameErr;?></span>
             </div>
             <div class="Mobile">
                 <li class="fas fa-phone-alt" id="icon"></li>
-                <input type= "phone" class="input-box" placeholder="Enter your Mobile No." name="mobile" size="25">
+                <input type= "phone" class="input-box" placeholder="Enter your Mobile No." name="mobile" size="25" required>
                 <span class="error"><br><?php echo $MobileErr;?></span>
             </div>
             <div class="Email">
                 <li class="far fa-envelope" id="icon"></li>
-                <input type= "email" class="input-box" placeholder="Enter your Email" name="email" size="25">
+                <input type= "email" class="input-box" placeholder="Enter your Email" name="email" size="25" required>
                 <span class="error"><br><?php echo $EmailErr;?></span>
             </div>
             <div class="Pass">
                 <li class="fas fa-lock" id="icon"></li>
-                <input type= "password" class="input-box" placeholder="Enter your Password" name="pass" size="25">
+                <input type= "password" class="input-box" placeholder="Enter your Password" name="pass" size="25" required>
                 <span class="error"><br><?php echo $PassErr;?></span>
             </div>
             <div class="ConPass">
                 <li class="fas fa-lock" id="icon"></li>
-                <input type= "password" class="input-box" placeholder="Confirm Password" name="conpass" size="25">
+                <input type= "password" class="input-box" placeholder="Confirm Password" name="conpass" size="25" required>
                 <span class="error"><br><?php echo $ConPassErr;?></span>
-                <span class="error"><?php echo $ConPassErr2;?></span>
             </div>
             <hr>
             <input type="submit" value="Sign up" class="submit">

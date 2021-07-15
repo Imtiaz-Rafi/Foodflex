@@ -579,6 +579,14 @@ td {
     overflow-y: scroll;
     background: white;
 }
+.warning{
+	font-size: 16px;
+    color: rgb(144,142,142);
+    background: #e9e9e9;
+    text-align: center;
+    padding: 10px 60px;
+    margin: 100px 0;
+}
 .checkout {
     display: inline-block;
     position: fixed;

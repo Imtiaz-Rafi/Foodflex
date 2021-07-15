@@ -27,6 +27,7 @@
     <section class="grey-bg">
         <div class="container">
             <div class="contain-flex">
+                <!-- MENU LIST -->
                 <div class="col-1">
                     <div class="sidebar">
                         <h3 class="upper">Menu Items</h3>
@@ -45,7 +46,7 @@
                         </ul>
                     </div>
                 </div>
-
+                <!-- FOOD LIST -->
                 <div class="col-2">
                     <div class="item-mid">
                         <?php
@@ -87,8 +88,9 @@
                         <?php }} ?>
                     </div>
                 </div>
-                
+                <!-- MINI CART -->
                 <div class="col-3">
+                    <!-- MINI CART HEADER -->
                     <div class="cart-top">
                         <h3>Your Cart 
                             <span class="item">
@@ -114,12 +116,18 @@
                             </table>
                         </div>
                     </div>
+                    <!-- MINI CART ELEMENT -->
                     <div class="cart-middle">
                         <table class="table" id="mini-cart">
                             <tbody>
                                 <?php 
                                     $sql="SELECT * FROM order_cart";
                                     $result = $con->query($sql);
+                                    $row = $result->num_rows;
+                                    if($row == 0){
+                                        if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
+                                        <div class="warning">Please Add some food for CHECKOUT</div>
+                                    <?php }}
                                     while($row = $result->fetch_assoc()){
                                 ?>
                                 <tr>
@@ -146,19 +154,12 @@
                             </tbody>
                         </table>
                     </div>
+                    <!--SUB TOTAL-->
                     <div class="cart-footer">
                         <table class="table">
                             <tbody>
-                                <!-- <tr>
-                                    <td>Subtotal</td>
-                                    <td>0.0 Taka</td>
-                                </tr> -->
-                                <!-- <tr>
-                                    <td>VAT(%)</td>
-                                    <td>0.0 Taka</td>
-                                </tr> -->
                                 <tr class="green-cart">
-                                    <td>Total Amount</td>
+                                    <td>Sub Total</td>
                                     <td>৳ <?php 
                                         $sql = "SELECT * FROM order_cart";
                                         $result = $con->query($sql);
@@ -173,10 +174,22 @@
                             </tbody>
                         </table>  
                     </div>
+                    <!-- CHECKOUT -->
                     <div class="checkout">
-                        <a href="cart.php">
-                            <button class="btn btn-primary loader">Checkout</button>
-                        </a>
+                        
+                            <?php 
+                                $sql="SELECT * FROM order_cart";
+                                $result = $con->query($sql);
+                                $result->fetch_assoc();
+                                $row = $result->num_rows;
+                                ?>
+                                    <a <?php if($row==0){ ?>
+                                        href="menu.php?item=0"
+                                    <?php }else{ ?>
+                                        href="cart.php"
+                                    <?php ;}?> >
+                                        <button class="btn btn-primary loader">Checkout</button>
+                                    </a>
                     </div>
                 </div>
                 
