@@ -1,5 +1,5 @@
 *{
-    
+    box-sizing: border-box;
 }
 /* Millescnous */
 a{
@@ -82,10 +82,13 @@ ul{
     float: left;
     background: rgb(238, 238, 238);
 }
-.cart-main{
+.cart-main, .cart-row{
     width: 100%;
     background: white;
     border-radius: 3px;
+}
+.cart-row{
+    display:flex;
 }
 .cart-main .table{
     border: 1px solid rgb(222, 226, 230);
@@ -142,3 +145,28 @@ th:last-child{
 .chkout a:hover{
     background: rgb(8, 110, 57);
 }
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+th{
+    display:table-cell;
+    vertical-align: inherit;
+    font-weight: bold;
+    text-align: -internal-center;
+}
+.contact-details .table-bordered th,.contact-details .table-bordered td{
+    display: table-cell;
+    border: 1px solid rgb(222,226,230);
+    width: 100%;
+    max-width: 100%;
+    padding: 7px 10px;
+    font-size: 15px;
+    text-align: left!important;
+}
+
+
+
+

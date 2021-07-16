@@ -108,7 +108,7 @@
                                 <thead>
                                     <tr>
                                         <th class="text-center">Item</th>
-                                        <th class="text-center">Qty</th>
+                                        <th class="text-right">Qty</th>
                                         <th class="text-center">Price</th>
                                         <!-- <th><div class="blank"></div> </th> -->
                                     </tr>
@@ -143,14 +143,14 @@
                                             </a>
                                         </div>
                                     </td>
-                                    <td class="text-right">৳<?= $row['Total_price'];?></td>
-                                    <td>
+                                    <td class="text-right">
+                                        ৳<?= $row['Total_price'];?>
                                         <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>&&id=1">
                                             <i class="fas fa-minus-circle"></i>
                                         </a>
                                     </td>
                                 </tr>
-                                    <?php } ?>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>

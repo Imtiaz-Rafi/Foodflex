@@ -510,8 +510,8 @@ td input {
     padding: 5px;
     font-size: 15px;
     text-align: center;
-    border: none;
-    background: rgb(242 242 242);
+    border:	1px solid rgb(100,100,100);
+    background: rgb(242,242,242);
 }
 td a {
     color: white;
