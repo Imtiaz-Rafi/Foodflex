@@ -426,6 +426,7 @@ table{
     text-indent: initial;
     border-spacing: 2px;
     border-color: grey;
+	width:100%;
 }
 table{
 	border-collapse: collapse;
@@ -644,8 +645,7 @@ td {
 }
 .social_media i{
     font-size: 40px;
-    padding: 15px;
-    margin: 0 10px;
+    margin: 0 25px;
     cursor: pointer;
 }
 .social_media .fab.fa-facebook-square{
@@ -656,14 +656,13 @@ td {
 }
 
 .social_media .fab.fa-instagram-square{
-	/* background:radial-gradient(red 25%,yellow 15%,white 60%); */
-	background: linear-gradient(225deg,#7938AB 23%,#F70205 60%,#FAD800 74%);
+	background: linear-gradient(225deg,#7938AB 10%,#F70205 60%,#FAD800 90%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
 .social_media .fab.fa-instagram-square:hover{
-	background: linear-gradient(225deg,#FAD800 23%,#F70205 60%,#7938AB 74%);
+	background: linear-gradient(225deg,#FAD800 10%,#F70205 60%,#7938AB 90%);
 	-webkit-background-clip: text;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;

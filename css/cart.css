@@ -41,6 +41,15 @@ ul{
 .sans{
     font-family: 'Work Sans'!important;
 }
+table{
+	display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+	width:100%;
+}
 /* Container */
 .container{
 	display:table;
@@ -94,6 +103,14 @@ ul{
     border: 1px solid rgb(222, 226, 230);
     margin-bottom: 0;
     border-bottom: none!important;
+}
+.col-sm-8 {
+    width: 680px;
+    padding: 0px 15px 0px 0px;
+}
+.col-sm-4{
+    width: 360px;
+    padding: 0px 0px 0px 15px;
 }
 table{
     border-collapse: collapse;
@@ -157,16 +174,166 @@ th{
     font-weight: bold;
     text-align: -internal-center;
 }
+
 .contact-details .table-bordered th,.contact-details .table-bordered td{
     display: table-cell;
     border: 1px solid rgb(222,226,230);
-    width: 100%;
     max-width: 100%;
     padding: 7px 10px;
     font-size: 15px;
     text-align: left!important;
 }
-
-
-
-
+.contact-details .table-bordered td {
+    font-family: "work sans";
+}
+.contact-details h4 {
+    margin-bottom: 15px;
+}
+.save-addr{
+    width:100%;
+    margin:25px 0 20px;
+}
+.save-addr a{
+    background:rgb(125, 140, 145);
+    padding: 10px 15px;
+    border-radius: 4px;
+}
+.save-addr a:hover{
+    background:rgb(100, 112, 116);
+}
+.address-list{
+    border: 1px solid #dedede;
+    padding: 25px;
+    background: rgb(238,238,238);
+    margin: 25px 0 25px;
+    border-radius: 3px;
+}
+.list-row{
+    background: white;
+    padding: 15px;
+    border: rgb(222 222 222);
+    box-shadow: 0px 0px 10px 0px #c1c1c1;
+    border-radius: 4px;
+}
+.list-row h4{
+    text-transform: uppercase;
+    border-bottom: 2px solid #00a651;
+    margin-bottom: 20px;
+    width: 15%;
+}
+.list-row address{
+    width: 100%;
+    font-family: "Work Sans";
+    font-size: 15px;
+    font-style: normal;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgb(222 222 222);
+    color: rgb(102 102 102);
+}
+.option{
+    width: 100%;
+    vertical-align: middle;
+    padding-top: 15px;
+}
+.option label{
+    font-family: "Work Sans"!important;
+    padding-right: 10px;
+}
+.delivery-time{
+    width: 100%;
+    padding: 0px 0 20px;
+}
+.delivery-time h4{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgb(149,149,149);
+}
+.col-sm-6 .form-group h5{
+    width: 100%;
+    font-family: "Work Sans Light";
+    font-size: 15px;
+    padding-top: 15px;
+    color: rgb(102 102 102);
+}
+.payment-mode h4{
+    padding-bottom: 10px;
+    border-bottom: 1px dashed rgb(149,149,149);
+    margin-bottom: 20px;
+}
+input{
+    cursor:pointer;
+}
+.payment-mode .col-sm-6 .option{
+    border: 1px solid rgb(222,222,222);
+    padding: 10px;
+    background: rgb(248 248 248);
+    box-shadow: 0px 0px 1px 0px #c1c1c1;
+    margin-bottom: 20px;
+}
+/* PLACE ORDER BUTTON */
+.place-order{
+    margin-bottom: 15px;
+    margin-top: 40px;
+}
+.place-order a{
+    background: rgb(0, 166, 81);
+    padding: 15px 30px;
+    font-size: 15px;
+    border-radius: 4px;
+}
+.place-order a:hover{
+    background: rgb(8, 110, 57)
+}
+/* CART SUMMARY */
+.cart-summary{
+    padding: 20px;
+    border: 1px dashed rgb(222,226,230);
+    border-radius: 4px;
+    background: rgb(250 249 249);
+    margin-bottom: 20px
+}
+.cart-summary h4{
+    margin-bottom: 10px;
+    border-bottom: 1px dashed rgb(222,226,230);
+    padding-bottom: 15px;
+}
+.cart-summary td{
+    font-family:"work sans";
+}
+.cart-summary td:last-child{
+    text-align: right;
+}
+.cart-summary tr td{
+    padding: 6px 0;
+    font-size: 15px;
+}
+.cart-summary tr:last-child td{
+    color:rgb(0, 166, 81);
+    font-family: "Work Sans Medium";
+}
+.input-group-voucer{
+    display:flex;
+    margin-bottom: 15px;
+}
+.form-control {
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-family: "work sans";
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    cursor: text ;
+}
+.input-group-voucer .btn{
+    background: rgb(0, 166, 81);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 10px 10px;
+    font-size: 16px;
+}
+.cart-summary label{
+    font-family: "work sans";
+}

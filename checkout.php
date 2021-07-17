@@ -48,18 +48,25 @@
                             </table>
                         </div>
                         <div class="address w100">
-                            <div class="save-addr">
-                                <h4>Saved Address</h4>
-                            </div>
-                            <div class="add-new">
-                                <a href="#">Add New</a>
-                            </div>
+                            <table class="save-addr">
+                                <tr>
+                                    <td>
+                                        <h4>Saved Address</h4>
+                                    </td>
+                                    <td>
+                                        <a href="#">Add New</a>
+                                    </td>
+                                </tr>
+                            </table>
                             <div class="address-list">
                                 <div class="list-row">
                                     <div class="col-sm-12">
                                         <h4>Home</h4>
-                                        <address>Monsurabad,Wapda colony,554 Dhaka Trunk Rd.</address>
-                                        <div class="option">Delivery to this Address</div>
+                                        <address>Monsurabad,Wapda colony,554 Dhaka Trunk Rd.Chittagong, Bangladesh,Monsurabad,Wapda colony,554 Dhaka Trunk Rd.Chittagong, Bangladesh</address>
+                                        <div class="option">
+                                            <input type="radio" id="id-1" class="radio" checked>
+                                            <label for="id-1">Delivery to this Address</label>    
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -68,53 +75,86 @@
                             <h4>Delivery Type & Time</h4>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Delivery Type</label>
-                                    <span>
-                                        <input type="radio" id="ra1">
-                                        <label for="ra1">Delivery</label>
-                                    </span>
-                                    <span>
-                                        <input type="radio" id="ra2">
-                                        <label for="ra2">Take Away</label>
-                                    </span>
+                                    <h5>Delivery Type</h5>
+                                    <div class="option">
+                                        <span>
+                                            <input type="radio" id="ra1" class="radio" checked>
+                                            <label for="ra1">Delivery</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="ra2" class="radio">
+                                            <label for="ra2">Take Away</label>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label>Delivery Time</label>
-                                    <span>
-                                        <input type="radio" id="ra3">
-                                        <label for="ra1">As Soon As Possible</label>
-                                    </span>
-                                    <span>
-                                        <input type="radio" id="ra4">
-                                        <label for="ra2">Later</label>
-                                    </span>
+                                    <h5>Delivery Time</h5>
+                                    <div class="option">
+                                        <span>
+                                            <input type="radio" id="ra3" class="radio" checked>
+                                            <label for="ra1">As Soon As Possible</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="ra4" class="radio">
+                                            <label for="ra2">Later</label>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                         <div class="payment-mode">
                             <h4>Select Payment Mode</h4>
                             <div class="col-sm-6">
-                                <div class="form-group">
-                                    <span>
-                                        <input type="radio" id="ra5">
-                                        <label for="ra5">Cash On Delivery</label>
-                                    </span>
-                                    <span>
-                                        <input type="radio" id="ra5">
-                                        <label for="ra5">Online</label>
-                                    </span>
+                                <div class="option">
+                                    <div class="form-group">
+                                        <span>
+                                            <input type="radio" id="ra5" class="radio" checked>
+                                            <label for="ra5">Cash On Delivery</label>
+                                        </span>
+                                        <span>
+                                            <input type="radio" id="ra5" class="radio">
+                                            <label for="ra5">Online</label>
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="place-order">
+                        <div class="place-order upper">
                             <a href="#">Place Order Now</a>
                         </div>
                         
                     </div>
                     <div class="col-sm-4">
-                        this is Optional function
+                        <div class="cart-summary">
+                            <h4>Cart Summary</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Subtotal</td>
+                                        <td>50Taka</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Delivery Fee</td>
+                                        <td>100 Taka</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Total</td>
+                                        <td>150 Taka</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="cart-summary">
+                            <h4>Delivery Tips</h4>
+                            <div class="input-group-voucer">
+                                <input type="text" class="form-control">
+                                <input type="submit" class="btn">
+                            </div>
+                            <label>Order Notes</label>
+                            <textarea class="form-control" name="order_message" id="order-notes" cols="30" rows="10"></textarea>
+                        </div>
                     </div>
                 </div>
             </div>
