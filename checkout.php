@@ -60,19 +60,30 @@
                                                 <h4>Saved Address</h4>
                                             </td>
                                             <td>
-                                                <a href="#">Add New</a>
+                                                <a href="checkout.php?address=1">Add New</a>
                                             </td>
                                         </tr>
                                     </table>
                                     <div class="address-list">
                                         <div class="list-row">
                                             <div class="col-sm-12">
-                                                <h4>Home</h4>
-                                                <address><?= $row['Address']?></address>
-                                                <div class="option">
-                                                    <input type="radio" id="id-1" class="radio" checked>
-                                                    <label for="id-1">Delivery to this Address</label>    
-                                                </div>
+                                                <?php 
+                                                    if(isset($_REQUEST['address']) && $_REQUEST['address']==1){ ?>
+                                                        <textarea class="form-control" name="order_message" id="order-notes" cols="30" rows="4"></textarea>
+                                                        <input type="submit" class="btn">
+                                                    <?php }else{
+                                                        $address = '';
+                                                        $address = $row['Address'];
+                                                        if(empty($address)){ ?>
+                                                            <address>Add you Location.</address>
+                                                        <?php }else{ ?>
+                                                            <h4>Home</h4>
+                                                            <address><?= $row['Address']?></address>
+                                                            <div class="option">
+                                                                <input type="radio" id="id-1" class="radio" checked>
+                                                                <label for="id-1">Delivery to this Address</label>    
+                                                            </div>
+                                                <?php  }} ?>
                                             </div>
                                         </div>
                                     </div>
