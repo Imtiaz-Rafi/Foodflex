@@ -63,13 +63,13 @@
                                         </a>
                                     </div>
                                 </td>
-                                <td class="sans"><?= $row['Total_price'];?></td>
+                                <td class="sans">৳ <?= $row['Total_price'];?></td>
                             </tr>
                             <?php }?>
                             
                             <tr class="grey">
                                 <td colspan="2" class="text-right sans">Subtotal</td>
-                                <td class="sans">
+                                <td class="sans">৳ 
                                     <?php 
                                         $sql = "SELECT * FROM order_cart";
                                         $result = $con->query($sql);
@@ -79,15 +79,15 @@
                                         }
                                         echo $sub_total;
                                     ?>
-                                     Taka</td>
+                                    </td>
                             </tr>
                             <tr class="grey">
                                 <td colspan="2" class="text-right sans">Delivery Charge</td>
-                                <td class="sans">100 Taka</td>
+                                <td class="sans">৳ 100</td>
                             </tr>
                             <tr class="grey">
                                 <td colspan="2" class="text-right sans">Total Amount</td>
-                                <td class="sans"><?php echo $sub_total+100;?> Taka</td>
+                                <td class="sans">৳ <?php echo $sub_total+100;?></td>
                             </tr>
                         </tbody>
                     </table>

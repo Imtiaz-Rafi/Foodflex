@@ -28,49 +28,57 @@
             <div class="container-full">
                 <div class="cart-row">
                     <div class="col-sm-8">
-                        <div class="contact-details">
-                            <h4>Contact Details</h4>
-                            <table class="table table-bordered">
-                                <tbody>
-                                    <tr>
-                                        <th>Full Name</th>
-                                        <td>Imtiaz Rafi</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Email</th>
-                                        <td>imtiazrafi199918@gmail.com</td>
-                                    </tr>
-                                    <tr>
-                                        <th>Mobile Number</th>
-                                        <td style="color:#666">01858585858</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="address w100">
-                            <table class="save-addr">
-                                <tr>
-                                    <td>
-                                        <h4>Saved Address</h4>
-                                    </td>
-                                    <td>
-                                        <a href="#">Add New</a>
-                                    </td>
-                                </tr>
-                            </table>
-                            <div class="address-list">
-                                <div class="list-row">
-                                    <div class="col-sm-12">
-                                        <h4>Home</h4>
-                                        <address>Monsurabad,Wapda colony,554 Dhaka Trunk Rd.Chittagong, Bangladesh,Monsurabad,Wapda colony,554 Dhaka Trunk Rd.Chittagong, Bangladesh</address>
-                                        <div class="option">
-                                            <input type="radio" id="id-1" class="radio" checked>
-                                            <label for="id-1">Delivery to this Address</label>    
+
+                        <?php
+                            $ID = $data['ID'];
+                            $sql = "SELECT * FROM customers WHERE ID='$ID'";
+                            $result = $con->query($sql);
+                            while($row = $result->fetch_assoc()){ ?>
+                                <div class="contact-details">
+                                    <h4>Contact Details</h4>
+                                    <table class="table table-bordered">
+                                        <tbody>
+                                            <tr>
+                                                <th>Full Name</th>
+                                                <td><?= $row['Name']?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Email</th>
+                                                <td><?= $row['Email']?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Mobile Number</th>
+                                                <td style="color:#666"><?= $row['Mobile']?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="address w100">
+                                    <table class="save-addr">
+                                        <tr>
+                                            <td>
+                                                <h4>Saved Address</h4>
+                                            </td>
+                                            <td>
+                                                <a href="#">Add New</a>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <div class="address-list">
+                                        <div class="list-row">
+                                            <div class="col-sm-12">
+                                                <h4>Home</h4>
+                                                <address><?= $row['Address']?></address>
+                                                <div class="option">
+                                                    <input type="radio" id="id-1" class="radio" checked>
+                                                    <label for="id-1">Delivery to this Address</label>    
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
+                        <?php } ?>
+
                         <div class="delivery-time">
                             <h4>Delivery Type & Time</h4>
                             <div class="col-sm-6">
@@ -127,25 +135,41 @@
                         
                     </div>
                     <div class="col-sm-4">
-                        <div class="cart-summary">
-                            <h4>Cart Summary</h4>
-                            <table>
-                                <tbody>
-                                    <tr>
-                                        <td>Subtotal</td>
-                                        <td>50Taka</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Delivery Fee</td>
-                                        <td>100 Taka</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Total</td>
-                                        <td>150 Taka</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <?php
+                            $ID = $data['ID'];
+                            $sql = "SELECT * FROM order_cart";
+                            $result = $con->query($sql);
+                            while($row = $result->fetch_assoc()){ ?>
+                                <div class="cart-summary">
+                                    <h4>Cart Summary</h4>
+                                    <table>
+                                        <tbody>
+                                            <tr>
+                                                <td>Subtotal</td>
+                                                <td>৳ 
+                                                    <?php 
+                                                        $sql = "SELECT * FROM order_cart";
+                                                        $result = $con->query($sql);
+                                                        $sub_total=0;
+                                                        while($row = $result->fetch_assoc()){
+                                                            $sub_total = $sub_total + $row['Total_price'];
+                                                        }
+                                                        echo $sub_total;
+                                                    ?>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td>Delivery Fee</td>
+                                                <td>৳ 100</td>
+                                            </tr>
+                                            <tr>
+                                                <td>Total</td>
+                                                <td>৳ <?= $sub_total+100?></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            <?php  }?>
                         <div class="cart-summary">
                             <h4>Delivery Tips</h4>
                             <div class="input-group-voucer">
