@@ -73,8 +73,12 @@
                                                     <div class="d-tab w100">
                                                         <span class="price"><?= $row["Price"];?> Taka</span>
                                                         <button class="add-item">
-                                                            
-                                                            <a href="cart/addcart.php?productid=<?php echo $row['ID'];?>">
+                                                            <a 
+                                                            <?php if($data){?> 
+                                                                href="cart/addcart.php?productid=<?php echo $row['ID'];?>"
+                                                            <?php }else{ ?>
+                                                                href="menu.php?logged=0"
+                                                            <?php }?>>
                                                                 <i class="fa fa-plus"></i>
                                                                 Add
                                                             </a>
@@ -127,6 +131,8 @@
                                     if($row == 0){
                                         if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
                                         <div class="warning">Please Add some food for CHECKOUT</div>
+                                    <?php }else if(isset($_REQUEST['logged']) && $_REQUEST['logged']==0){?>
+                                        <div class="warning">Log In First to ADD Item.</div>
                                     <?php }}
                                     while($row = $result->fetch_assoc()){
                                 ?>
