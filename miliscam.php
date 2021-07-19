@@ -4,52 +4,114 @@
       //include 'login/login_check.php';
       //$data = is_logged($con);
 ?>
+<!DOCTYPE HTML>  
+<html>
+<head>
+</head>
+<body>  
+
+<?php
+// define variables and set to empty values
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<h2>PHP Form Validation Example</h2>
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+    Name: <input type="text" name="name">
+    <br><br>
+    E-mail: <input type="text" name="email">
+    <br><br>
+    Website: <input type="text" name="website">
+    <br><br>
+    Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+    <br><br>
+    Gender:
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">male</label>
+    <input type="radio" id="other" name="gender" value="other">
+    <label for="other">other</label>
+    <br><br>
+    <input type="submit" name="submit" value="Submit">  
+    </form>
+
+    <?php
+    echo "<h2>Your Input:</h2>";
+    echo $name;
+    echo "<br>";
+    echo $email;
+    echo "<br>";
+    echo $website;
+    echo "<br>";
+    echo $comment;
+    echo "<br>";
+    echo $gender;
+    ?>
+
+    </body>
+</html>
 <?php
 
-if(isset($_POST["submit"])) {
+// if(isset($_POST["submit"])) {
 
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $gender = $_POST["gender"];
-    $age = $_POST["age"];
-    $address = $_POST["address"];
-    $media = $_POST['media'];
+//     $fname = $_POST["fname"];
+//     $lname = $_POST["lname"];
+//     $gender = $_POST["gender"];
+//     $age = $_POST["age"];
+//     $address = $_POST["address"];
+//     $media = $_POST['media'];
 
-    $errormessage =  array();
+//     $errormessage =  array();
 
-    if(empty($fname)) {
-        $errormessage[0] = "Please enter your first name";
-    }
+//     if(empty($fname)) {
+//         $errormessage[0] = "Please enter your first name";
+//     }
 
-    if(empty($lname)) {
-        $errormessage[1] = "Please enter your last name";
-    }
+//     if(empty($lname)) {
+//         $errormessage[1] = "Please enter your last name";
+//     }
 
-    if(empty($gender)) {
-        $errormessage[2] = "Please select your gender";
-    }
+//     if(empty($gender)) {
+//         $errormessage[2] = "Please select your gender";
+//     }
 
-    if(empty($age)) {
-        $errormessage[3] = "Please select your age";
-    }
+//     if(empty($age)) {
+//         $errormessage[3] = "Please select your age";
+//     }
 
-    if(empty($address)) {
-        $errormessage[4] = "Please enter your address";
-    }
+//     if(empty($address)) {
+//         $errormessage[4] = "Please enter your address";
+//     }
 
-    if(empty($media)) {
-        $errormessage = "Please select the type of media";
+//     if(empty($media)) {
+//         $errormessage = "Please select the type of media";
 
-    }
+//     }
 
-}
+// }
 ?>
 <html>
 <head>
-    <title>Sample Registration</title>
+    <!-- <title>Sample Registration</title> -->
 </head>
 <body>
-    <h2>Sample registration</h4>
+    <!-- <h2>Sample registration</h4>
         <form name="registration" method="post" action="query.php">
             <div>
                 First Name: <br />
@@ -90,7 +152,7 @@ if(isset($_POST["submit"])) {
             <div>
                 <input type="submit" name="submit" value="submit">
             </div>
-        </form>
+        </form> -->
 </body>
 </html>
 

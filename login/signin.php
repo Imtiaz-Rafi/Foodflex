@@ -68,6 +68,13 @@
                 <p class="recheck">* Wrong E-mail/Password.</p>
         <?php } ?>
         <hr>
+
+        <!-- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
+        
+        <br><br>
+        <input type="submit" name="submit" value="Submit">  
+        </form> -->
+        
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="Email">
                 <li class="far fa-envelope" id="icon"></li>
