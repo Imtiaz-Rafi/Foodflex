@@ -168,6 +168,9 @@ tr {
     vertical-align: inherit;
     border-color: inherit;
 }
+.table tbody tr:last-child td {
+    color:rgb(0, 166, 81);
+}
 th{
     display:table-cell;
     vertical-align: inherit;

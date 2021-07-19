@@ -91,7 +91,7 @@
                             </tr>
                         </tbody>
                     </table>
-                    <div class="chkout grey text-right upper">
+                    <div class="chkout text-right upper">
                         <?php if($data){ ?>
                             <a href="checkout.php">Check Out
                                 <i class="fas fa-chevron-right"></i>
