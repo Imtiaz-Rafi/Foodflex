@@ -85,8 +85,6 @@ ul{
 }
 .nav-area{
 	text-align: right;
-	/* float: right;
-	list-style: none; */
 }
 .nav-area li {
 	display: inline-table;
