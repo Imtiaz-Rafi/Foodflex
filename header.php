@@ -8,30 +8,48 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="header">
+    <section class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.php"><img src="images/logo.png" alt="Logo" ></a>
+                <a href="index.php"><img src="images/logo.png" alt="Logo"></a>
             </div>
-            <?php 
-                if($data){ $Name = $data['Name']; ?>
-                <ul class="nav-area-user">
-                    <li><a href="profile.php"><?php echo $Name;?> </a></li>
-                </ul>
-                <ul class="logout">
-                    <li><a href="login/logout.php"> Log Out </a> </li>
-                </ul>
-                <?php }else{ ?>
-                <div class="navbar">
-                    <ul class="nav-area">
-                        <li class="fas fa-sign-in-alt login"></li>
-                        <li> <a href="login/signup.php">Sign Up</a></li>
-                        <li class="fas fa-sign-in-alt login"></li>
-                        <li><a href="login/signin.php">Sign In</a></li>
+            <div class="nav-area">
+                <?php
+                    if($data){ $Name = $data['Name']; ?>
+                    <ul>
+                        <li class="logout">
+                            <a href="login/logout.php">
+                                <i class="fas fa-sign-out-alt"></i>
+                                Log Out
+                            </a>
+                        </li>
+                        <li>
+                            <a href="profile.php">
+                                <i class="far fa-user"></i>
+                                Hi! 
+                                <?php echo $Name;?>
+                            </a>
+                        </li>
                     </ul>
-                </div>
-                <?php  }?>
+
+                <?php }else{ ?>
+                    <ul>
+                        <li>
+                            <a href="login/signup.php">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Sign Up
+                            </a>
+                        </li>
+                        <li>
+                            <a href="login/signin.php">
+                                <i class="fas fa-sign-in-alt"></i>
+                                Sign In
+                            </a>
+                        </li>
+                    </ul>
+                <?php }?>
+            </div>
         </div>
-    </div>
+    </section>
 </body>
 </html>

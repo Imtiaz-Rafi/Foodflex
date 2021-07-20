@@ -67,86 +67,53 @@ ul{
 /* HEADER */
 .header{
 	box-shadow: 0px 0px 2px 0px #959595;
-	height: 80px;
 	width: 100%;
 	position: fixed;
-    display: inline-block;
-    z-index: 231;
-    background: #fff;
+	z-index: 231;
+	background: #fff;
+}
+.header .container{
+	display: table;
+}
+.header .logo, .header .nav-area{
+	display: table-cell;
+	vertical-align: middle;
 }
 .logo img{
-	height: 80px;
-    width: 110px;
+	height: 70px;
+    width: 95px;
 }
 .nav-area{
-	float: right;
-	list-style: none;
-	margin-top: -60px;
-	position: relative;
-	padding-right: 15px;
+	text-align: right;
+	/* float: right;
+	list-style: none; */
 }
 .nav-area li {
 	display: inline-table;
-	margin-left: 0px;
+	margin-left: 5px;
 	
 }
 .nav-area li a{
 	color:rgb(255, 255, 255);
 	text-decoration: none;
-	padding: 10px 15px 10px 38px;
+	padding: 10px 15px;
 	margin-top: 20px;
 	font-size: 14px;
 	background: rgb(0,166,81);
 	border-radius: 4px;
 	text-transform: uppercase;
 }
+.nav-area li.logout a{
+	color: rgb(150,150,150);
+    background: rgb(235,235,235);
+}
 .nav-area li a:hover,.nav-area-user li a:hover{
 	background: rgb(8, 110, 57);
 	color:rgb(255, 255, 255);
 }
-li.fas.fa-sign-in-alt.login {
-    position: relative;
-    left: 35px;
-	color :#fff;
-}
-.nav-area-user li a {
-    float: right;
-    list-style: none;
-    top: -88px;
-    position: relative;
-    left: -20px;
-    display: inline-table;
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    padding: 10px 15px 10px 15px;
-    margin-top: 20px;
-    font-size: 14px;
-    background: rgb(0,166,81);
-    border-radius: 4px;
-    text-transform: uppercase;
-    text-decoration: none;
-}
-.logout li a {
-    float: right;
-    list-style: none;
-    top: -88px;
-    position: relative;
-    left: -35px;
-    display: inline-table;
-    color: rgb(139,138,138);
-    text-decoration: none;
-    padding: 10px 15px 10px 15px;
-    margin-top: 20px;
-    font-size: 14px;
-    background: rgb(241,241,241);
-    border-radius: 4px;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-family: 'Work Sans', sans-serif;
-}
-.logout li a:hover{
-	color: rgb(0, 0, 0);
-	background: rgb(139, 139, 139);
+.nav-area li.logout a:hover{
+	color: rgb(58, 58, 58);
+    background: rgb(201, 201, 201);
 	font-family: 'Work Sans Medium', sans-serif;
 }
 /* BODY */
