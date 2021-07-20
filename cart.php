@@ -92,15 +92,21 @@
                         </tbody>
                     </table>
                     <div class="chkout text-right upper">
-                        <?php if($data){ ?>
-                            <a href="checkout.php">Check Out
-                                <i class="fas fa-chevron-right"></i>
-                            </a>
-                        <?php }else{?>
-                            <a href="login/signin.php?value=2">Check Out
-                                <i class="fas fa-chevron-right"></i>
-                            </a>
-                            <?php }?>
+                        <?php 
+                            $sql="SELECT * FROM order_cart";
+                            $result = $con->query($sql);
+                            $result->fetch_assoc();
+                            $row = $result->num_rows;
+                            if($row==0){ ?>
+                                <a href="menu.php?item=0">Check Out
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            <?php }else{ ?>
+                                <a href="checkout.php">Check Out
+                                    <i class="fas fa-chevron-right"></i>
+                                </a>
+                            <?php }
+                        ?>
                     </div>
                 </div>
             </div>

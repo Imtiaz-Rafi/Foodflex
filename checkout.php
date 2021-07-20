@@ -15,7 +15,7 @@
     <!-- HEADER -->
     <?php include 'header.php';?>
     <?php 
-        $ID = $Name = $Email = $Mobile = $Address = $Del_Type = $Del_Time = $Payment = $Tips = $Notes = "";
+        $ID = $Name = $Email = $Mobile = $Address = $Del_Type = $Del_Time = $Payment = $Order_item = $Tips = $Notes = "";
         $Sub_total = $Total = 0;
         $ID = $data['ID'];
         $sql = "SELECT * FROM customers WHERE ID='$ID'";
@@ -26,10 +26,15 @@
             $Mobile = $row['Mobile'];
             $Address = $row['Address'];
         }
-        $order_sql = "SELECT * FROM order_cart";
-        $result2 = $con->query($order_sql);
-        while($row2 = $result2->fetch_assoc()){
-            $Sub_total = $Sub_total + $row2['Total_price'];
+        $sql = "SELECT * FROM order_cart";
+        $result = $con->query($sql);
+        while($row = $result->fetch_assoc()){
+            if(empty($Order_item)){
+                $Order_item = $row['Name'];
+            }else{
+                $Order_item .= ", ". $row['Name'];
+            }
+            $Sub_total = $Sub_total + $row['Total_price'];
         }
         $Total = $Sub_total+"100";
 
@@ -40,20 +45,20 @@
             $Tips = test_data($_REQUEST["delivery_tips"]);
             $Notes = test_data($_REQUEST["order_notes"]);
 
+            $sql = "INSERT INTO 
+            final_order(ID,Cust_id, Cust_name, Cust_email, Cust_mobile, Cust_address, Del_type, Del_time, 
+                    Payment_mode, Order_item, Order_total, Tips, Notes)
+                VALUES(0,'$ID','$Name','$Email','$Mobile','$Address','$Del_Type','$Del_Time','$Payment',
+                    '$Order_item','$Total','$Tips','$Notes')";
+            $result = $con->query($sql);
+            $sql = "DELETE FROM order_cart";
+            $result = $con->query($sql);
+            if($result){
+                header('location: order.php');
+            }else{
+                echo "WA";
+            }
         }  
-                    echo "<br>"."<br>"."<br>"."<br>";
-                    echo "YOUR INPUT"."<br>";
-                    echo $ID."<br>";  
-                    echo $Name."<br>";
-                    echo $Email."<br>";
-                    echo $Mobile."<br>";
-                    echo $Address."<br>";
-                    echo $Del_Time."<br>";
-                    echo $Del_Type."<br>";
-                    echo $Payment."<br>";
-                    echo $Total."<br>";
-                    echo $Tips."<br>";
-                    echo $Notes."<br>";
 
         function test_data($data){
             $data = trim($data);
@@ -208,25 +213,9 @@
                         </div>
                     </div>
                 </form>
-                <?php
-                    // echo "YOUR INPUT"."<br>";
-                    // echo $ID."<br>";  
-                    // echo $Name."<br>";
-                    // echo $Email."<br>";
-                    // echo $Mobile."<br>";
-                    // echo $Address."<br>";
-                    // echo $Del_Time."<br>";
-                    // echo $Del_Type."<br>";
-                    // echo $Payment."<br>";
-                    // echo $sub_total."<br>";
-                    // echo $Tips."<br>";
-                    // echo $Notes."<br>";
-                ?>
             </div>
         </div>
     </section>
-    
-
 
     <!-- FOOTER -->
     <?php include 'footer.php';?>
