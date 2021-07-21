@@ -90,8 +90,8 @@
         ?>
     <div class="Sign-up">
         <div class="back">
-            <a href="../index.php"><li class="fas fa-arrow-left"></li></a>
-            <li class="far fa-user-circle fa-3x"></li>
+            <a href="../index.php"><i class="fas fa-arrow-left"></i></a>
+            <i class="far fa-user-circle fa-3x"></i>
         </div>
         <h2>Sign Up to Your Account</h2>
 
@@ -105,34 +105,35 @@
         <hr>
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="Name">
-                <li class="far fa-user" id="icon"></li>
-                <input type= "Name" class="input-box" placeholder="Enter your Name" name="name" size="25" required>
+                <i class="far fa-user" id="icon"></i>
+                <input type= "Name" class="input-box first" placeholder="First Name" name="name" size="10" required>
+                <input type= "Name" class="input-box second" placeholder="Surname" name="name" size="7" required>
                 <span class="error"><br><?php echo $NameErr;?></span>
             </div>
             <div class="Mobile">
-                <li class="fas fa-phone-alt" id="icon"></li>
-                <input type= "phone" class="input-box" placeholder="Enter your Mobile No." name="mobile" size="25" required>
+                <i class="fas fa-phone-alt" id="icon"></i>
+                <input type= "phone" class="input-box" placeholder="Mobile Number" name="mobile" size="25" required>
                 <span class="error"><br><?php echo $MobileErr;?></span>
             </div>
             <div class="Email">
-                <li class="far fa-envelope" id="icon"></li>
-                <input type= "email" class="input-box" placeholder="Enter your Email" name="email" size="25" required>
+                <i class="far fa-envelope" id="icon"></i>
+                <input type= "email" class="input-box" placeholder="Email" name="email" size="25" required>
                 <span class="error"><br><?php echo $EmailErr;?></span>
             </div>
             <div class="Pass">
-                <li class="fas fa-lock" id="icon"></li>
-                <input type= "password" class="input-box" placeholder="Enter your Password" name="pass" size="25" required>
+                <i class="fas fa-lock" id="icon"></i>
+                <input type= "password" class="input-box" placeholder="Password" name="pass" size="25" required>
                 <span class="error"><br><?php echo $PassErr;?></span>
             </div>
             <div class="ConPass">
-                <li class="fas fa-lock" id="icon"></li>
+                <i class="fas fa-lock" id="icon"></i>
                 <input type= "password" class="input-box" placeholder="Confirm Password" name="conpass" size="25" required>
                 <span class="error"><br><?php echo $ConPassErr;?></span>
             </div>
             <hr>
             <input type="submit" value="Sign up" class="submit">
             <hr>
-            <div class="sign-in">Do you have an account already? <a href="signin.php">Sign in</a> </div>
+            <div class="sign-in">Already have an account? <a href="signin.php">Sign in</a> </div>
         </form>
         
     </div>

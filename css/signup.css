@@ -26,10 +26,11 @@
     color:rgb(255, 255, 255);
     margin: bottom 30px; ;
 }
-.Sign-up li{
+.Sign-up i{
     color:rgb(255, 255, 255);
+    margin-right: 4px;
 }
-.Sign-up li.fas.fa-arrow-left{
+.Sign-up i.fas.fa-arrow-left{
     height: 31px;
     width: 44px;
     float:left;
@@ -38,10 +39,10 @@
     margin-top: 5px;
     cursor:pointer;
 }
-.Sign-up li.fas.fa-arrow-left:hover{
+.Sign-up i.fas.fa-arrow-left:hover{
     color:seagreen;
 }
-.Sign-up li.far.fa-user-circle{
+.Sign-up i.far.fa-user-circle{
     margin-right: 35px;
 }
 .Sign-up p.recheck{
@@ -49,12 +50,17 @@
 }
 
 .input-box{
-    border-radius: 20px;
-    border-width: 10px;
-    padding: 10px 10px 10px 10px;
-    margin: 10px;
-    border: 1px solid rgb(40, 105, 131);
-    outline:none;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px 0px;
+    box-shadow: 0px 0px 2px 0px #959595;
+    border: none;
+}
+.Name .first{
+    border-radius: 10px 4px 4px 10px;
+}
+.Name .second{
+    border-radius: 4px 10px 10px 4px;
 }
 .input-box:hover{
     background: rgb(222, 235, 222);
