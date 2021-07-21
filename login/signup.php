@@ -20,13 +20,17 @@
 </head>
 <body class="body">
         <?php
-            $Name = $Email = $Password = $Mobile = $ConPass="";
-            $NameErr = $EmailErr = $PassErr = $MobileErr = $ConPassErr = $ConPassErr2 ="";
+            $Name = $FName = $SName = $Email = $Password = $Mobile = $ConPass="";
+            $FNameErr = $SNameErr = $EmailErr = $PassErr = $MobileErr = $ConPassErr = $ConPassErr2 ="";
             if($_SERVER['REQUEST_METHOD']=='POST'){
             
-                $Name = test_data($_REQUEST["name"]);
-                if (!preg_match("/^[a-zA-Z-' ]*$/",$Name)) {
-                    $NameErr = "Only letters and white space allowed";
+                $FName = test_data($_REQUEST["fname"]);
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$FName)) {
+                    $FNameErr = "Only letters and white space allowed";
+                }
+                $SName = test_data($_REQUEST["sname"]);
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$SName)) {
+                    $SNameErr = "Only letters and white space allowed";
                 }
                 $Mobile = test_data($_REQUEST["mobile"]);
                 if(strlen($Mobile)<11 || strlen($Mobile)>11){
@@ -43,7 +47,7 @@
                     $ConPass = test_data($_REQUEST["conpass"]);
                 }
                 
-                if(empty($NameErr) && empty($MobileErr) && empty($EmailErr) && empty($PassErr) && empty($ConPassErr) && empty($ConPassErr2)){
+                if(empty($FNameErr) && empty($SNameErr) && empty($MobileErr) && empty($EmailErr) && empty($PassErr) && empty($ConPassErr) && empty($ConPassErr2)){
                     //--INSERT DATA--
                     $sql = "SELECT * FROM customers ORDER BY ID DESC LIMIT 1";
                     $result = $con->query($sql);
@@ -52,6 +56,7 @@
                         $ID = $row['ID'];
                     }
                     $ID = $ID+1;
+                    $Name = $FName." ".$SName;
                     $sql = "INSERT INTO customers(ID,Name,Mobile,Email,Password)
                         VALUES('$ID','$Name','$Mobile','$Email','$Password')";
                    
@@ -106,9 +111,10 @@
         <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="Name">
                 <i class="far fa-user" id="icon"></i>
-                <input type= "Name" class="input-box first" placeholder="First Name" name="name" size="10" required>
-                <input type= "Name" class="input-box second" placeholder="Surname" name="name" size="7" required>
-                <span class="error"><br><?php echo $NameErr;?></span>
+                <input type= "Name" class="input-box first" placeholder="First Name" name="fname" size="10" required>
+                <input type= "Name" class="input-box second" placeholder="Surname" name="sname" size="7" required>
+                <span class="error"><br><?php echo $FNameErr;?></span>
+                <span class="error"><?php echo $SNameErr;?></span>
             </div>
             <div class="Mobile">
                 <i class="fas fa-phone-alt" id="icon"></i>

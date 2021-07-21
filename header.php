@@ -26,7 +26,6 @@
                         <li>
                             <a href="profile.php">
                                 <i class="far fa-user"></i>
-                                Hi! 
                                 <?php echo $Name;?>
                             </a>
                         </li>
