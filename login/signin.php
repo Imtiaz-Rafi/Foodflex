@@ -13,11 +13,11 @@
     <link rel="stylesheet" href="../../fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <script src="../../fontawesome/js/fontawesome.min.js"></script>
-    <link rel="stylesheet" href="../css/signin.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <title>Sign-In</title>
 </head>
-    <body class="body">
+    <body class="Sign-In-body">
         <?php
             $Email = $Password = "";
             $EmailErr = $PassErr = "";
@@ -55,43 +55,36 @@
                 return $data;
             }
         ?>
-    <div class="Sign-in">
-        <div class="back">
-            <a href="../index.php"><li class="fas fa-arrow-left"></li></a>
-            <li class="far fa-user-circle fa-3x"></li>
-        </div>
-        
-        <h2>Sign In to Your Account</h2>
-        <?php
-        //echo isset($_GET['wrong']);
-            if(isset($_GET['wrong'])){ ?>
-                <p class="recheck">* Wrong E-mail/Password.</p>
-        <?php } ?>
-        <hr>
+        <div class="Sign-in">
+            <div class="back">
+                <a href="../index.php"><i class="fas fa-arrow-left"></i></a>
+                <i class="far fa-user-circle fa-3x"></i>
+            </div>
+            
+            <h2>Sign In to Your Account</h2>
+            <?php
+                if(isset($_GET['wrong'])){ ?>
+                    <p class="recheck">* Wrong E-mail/Password.</p>
+            <?php } ?>
+            <hr>
 
-        <!-- <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"> 
-        
-        <br><br>
-        <input type="submit" name="submit" value="Submit">  
-        </form> -->
-        
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-            <div class="Email">
-                <li class="far fa-envelope" id="icon"></li>
-                <input type= "email" class="input-box" placeholder="Enter your Email" name="email" size="25" required>
-                <span class="error"><br><?php echo $EmailErr;?></span>
-            </div>
-            <div class="Pass">
-                <li class="fas fa-lock" id="icon"></li>
-                <input type= "password" class="input-box" placeholder="Enter your Password" name="pass" size="25" required>
-                <span class="error"><br><?php echo $PassErr;?></span>
-            </div>
-            <hr>
-            <input type="submit" value="Sign In" class="submit">
-            <hr>
-            <div class="Sign-up">Don't have an account? <a href="signup.php">Sign Up</a> Now </div>
-        </form>
-        
-    </div>
+            <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                <div class="Email">
+                    <i class="far fa-envelope" id="icon"></i>
+                    <input type= "email" class="input-box" placeholder="Enter your Email" name="email" size="25" required>
+                    <span class="error"><br><?php echo $EmailErr;?></span>
+                </div>
+                <div class="Pass">
+                    <i class="fas fa-lock" id="icon"></i>
+                    <input type= "password" class="input-box" placeholder="Enter your Password" name="pass" size="25" required>
+                    <span class="error"><br><?php echo $PassErr;?></span>
+                </div>
+                <hr>
+                <input type="submit" value="Log In" class="submit">
+                <hr>
+                <div class="Sign-up">Don't have an account? <a href="signup.php">Sign Up</a> Now </div>
+            </form>
+            
+        </div>
     </body>
 </html>

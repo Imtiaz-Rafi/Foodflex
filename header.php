@@ -42,7 +42,7 @@
                         <li>
                             <a href="login/signin.php">
                                 <i class="fas fa-sign-in-alt"></i>
-                                Sign In
+                                Log In
                             </a>
                         </li>
                     </ul>

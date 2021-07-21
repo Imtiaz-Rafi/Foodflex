@@ -14,11 +14,11 @@
     <link rel="stylesheet" href="../../fontawesome/css/fontawesome.min.css">
     <link rel="stylesheet" href="../../fontawesome/css/all.css">
     <script src="../../fontawesome/js/fontawesome.min.js"></script>
-    <link rel="stylesheet" href="../css/signup.css">
+    <link rel="stylesheet" href="../css/login.css">
 
     <title>Sign up</title>
 </head>
-<body class="body">
+<body class="Sign-Up-body">
         <?php
             $Name = $FName = $SName = $Email = $Password = $Mobile = $ConPass="";
             $FNameErr = $SNameErr = $EmailErr = $PassErr = $MobileErr = $ConPassErr = $ConPassErr2 ="";
@@ -139,7 +139,7 @@
             <hr>
             <input type="submit" value="Sign up" class="submit">
             <hr>
-            <div class="sign-in">Already have an account? <a href="signin.php">Sign in</a> </div>
+            <div class="Sign-in">Already have an account? <a href="signin.php">Log In</a> </div>
         </form>
         
     </div>
