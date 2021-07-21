@@ -61,7 +61,7 @@
                 <i class="far fa-user-circle fa-3x"></i>
             </div>
             
-            <h2>Sign In to Your Account</h2>
+            <h2>Log In to Your Account</h2>
             <?php
                 if(isset($_GET['wrong'])){ ?>
                     <p class="recheck">* Wrong E-mail/Password.</p>
