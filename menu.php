@@ -191,6 +191,8 @@
                                 ?>
                                     <a <?php if($row==0){ ?>
                                         href="menu.php?item=0"
+                                    <?php }else if(!$data){ ?>
+                                        href="menu.php?logged=0";
                                     <?php }else{ ?>
                                         href="cart.php"
                                     <?php ;}?> >
