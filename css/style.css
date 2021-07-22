@@ -64,6 +64,21 @@ ul{
 	height:100%;
 	display: table;
 }
+.container-full{
+    padding:30px;
+    max-width:1100px;
+    margin: auto;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 4px 0px #c1c1c1;
+    text-align: left;
+}
+.container-box{
+    display:inline-block;
+    border:1px solid;
+    border-radius: 8px;
+    padding:20px;
+}
 /* HEADER */
 .header{
 	box-shadow: 0px 0px 2px 0px #959595;
@@ -228,7 +243,7 @@ ul{
 	text-decoration: none;
 }
 .bg-row ul{
-	/* display: inline-block; */
+	display: inline-block;
 	border:none;
 }
 .nav-tabs{
@@ -587,8 +602,36 @@ td {
 .btn-primary:hover {
     background-color: rgb(5, 109, 55);
 }
+/* GREETINGS */
 
-
+.greetings{
+	text-align: center;
+}
+.greetings .thank_you{
+	font-size: 35px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: cursive;
+    color: rgb(85,85,85);
+	margin-bottom: 15px;
+}
+.greetings .thank_you i{
+	font-size: 38px;
+    color: rgb(0 192 94);
+	padding: 10px;
+}
+.greetings span{
+	font-size: 18px;
+	font-family: 'Work Sans';
+	color: rgb(40,40,40);
+}
+.greetings span a{
+	color:rgb(0, 166, 81);
+}
+.greetings span .delivery{
+	color: rgb(0 166 81);
+    margin: 25px 0px;
+}
 /* FOOTER */
 .footer{
 	background-color: rgb(255, 255, 255) !important;
