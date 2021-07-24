@@ -15,7 +15,7 @@
     <!-- HEADER -->
     <?php include 'header.php';?>
     <?php 
-        $ID = $Name = $Email = $Mobile = $Address = $Del_Type = $Del_Time = $Payment = $Order_item = $Tips = $Notes = "";
+        $ID = $Name = $Email = $Mobile = $Address = $City = $Del_Type = $Del_Time = $Payment = $Order_item = $Tips = $Notes = "";
         $Sub_total = $Total = 0;
         $ID = $data['ID'];
         $sql = "SELECT * FROM customers WHERE ID='$ID'";
@@ -25,6 +25,7 @@
             $Email = $row['Email'];
             $Mobile = $row['Mobile'];
             $Address = $row['Address'];
+            $City = $row['City'];
         }
         $sql = "SELECT * FROM order_cart";
         $result = $con->query($sql);
@@ -50,7 +51,7 @@
             $sql = "INSERT INTO 
             final_order(ID,Cust_id, Cust_name, Cust_email, Cust_mobile, Cust_address, Del_type, Del_time, 
                     Payment_mode, Order_item, Order_total, Tips, Notes)
-                VALUES(0,'$ID','$Name','$Email','$Mobile','$Address','$Del_Type','$Del_Time','$Payment',
+                VALUES(0,'$ID','$Name','$Email','$Mobile','$Address, $City','$Del_Type','$Del_Time','$Payment',
                     '$Order_item','$Total','$Tips','$Notes')";
             $result = $con->query($sql);
             $sql = "DELETE FROM order_cart";
@@ -128,7 +129,7 @@
                                             <address>Add your Location.</address>
                                             <?php }else{ ?>
                                                 <h4>Home</h4>
-                                                <address><?= $Address?></address>
+                                                <address><?= $Address.", ".$City?></address>
                                                 <div class="option">
                                                     <input type="radio" id="id-1" class="radio" checked>
                                                     <label for="id-1">Delivery to this Address</label>    

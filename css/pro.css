@@ -1,4 +1,4 @@
-body{
+.profile-page{
     margin:0;
     padding: 0;
     font-family:'Work Sans Medium', sans-serif;
@@ -14,12 +14,12 @@ body{
 }
 .profile-page
 {
-    display: flex;
-    margin:auto;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    display: inline-block!important;
+    width: 100%;
+    padding: 40px 0!important;
     text-align: center;
+    margin:auto;
+    min-height: 100vh;
 }
 
 
@@ -29,84 +29,89 @@ body{
     box-shadow: 0 0 5px rgba(0,0,0,.10);
     margin: auto;
     background: rgba(0, 0, 0, 0.5);
-    height:600px;
+    height:700px;
     border-radius: 10px;
   
 }
 .input-box{
     
-    border-radius: 20px;
-    border-width: 500px;
-    padding: 5px 120px 20px 20px;
+    border-radius: 10px;
+    padding: 10px 50px;
     margin: 20px;
     border: 1px solid rgb(40, 105, 131);
     outline:none;
+    text-align: left;
 
 }
 .btn{
-        color: rgb(18, 107, 6);
-        text-transform: uppercase;
-        font-weight: bold;
-        width: 35%;
-        padding: 10px;
-        border-radius: 20px;
-        font-size: 15px;
-        margin:200px;
-        border: none;
-        outline: none;
-        cursor: pointer;
-      
-        
-
-
+    color: rgb(8 186 95);
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 35%;
+    padding: 15px 20px;
+    border-radius: 15px;
+    font-size: 16px;
+    margin: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+.btn:hover{
+    color:rgb(255, 255, 255);
+    background:grey;
 }
 #divleft{
-    float: left;
+    float: left!important;
 }
 #divright{
-    float:right;
+    float:right!important;
 }
 .wrapper label{
-   font-style: italic;
-    margin:5px;
+    font-style:normal;
+    margin: 5px 20px;
     padding: 0;
-    font-weight:bold;
+    font-weight:lighter;
     color:seashell;
     float:left;
-
-
 }
 .wrapper input{
     margin-bottom: 20px;
-
-
 }
-.wrapper input[type=Name],
-.wrapper input[type=email],
-.wrapper input[type=phone],
-.wrapper input[type=text]{
+.wrapper input{
     border:none;
     border-bottom:1px solid #ffffff;
-    background-color:gray;
+    background-color:transparent;
     outline:none;
-    height:10px;
     color:whitesmoke;
-    display:16px;
-    
-
+    font-size: 16px;
 }
 ::placeholder{
     color:white;
     text-align: left;
+}
+.nav-item h4{
+    color:#08ba5f;
+}
+.personal{
+    color:#08ba5f;
+    padding: 15px 0px;
+    border-bottom: 1px solid white;
+}
+.Change-pass{
+    text-align: left;
+    padding: 0px 50px;
+    width: 100%;
+    margin: 10px 10px 50px 10px;
+    color: white;
+    float: left;
+}
+.Change-pass a{
+    color:rgb(0,166,81);
+}
+.Change-pass a:hover{
+    color:rgb(18, 107, 6);
+}
 
-}
-h4{
-    margin-left: -800px;
-    color:snow;
-}
-h2{
-    color:springgreen;
-}
 
 
 
