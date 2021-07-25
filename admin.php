@@ -20,7 +20,7 @@
             </div>
             <div class="nav-area">
                 <?php
-                    if($admin_data){ $Name = $admin_data['Name']; ?>
+                    if($admin_data){ $Name = $admin_data['Username']; ?>
                     <ul>
                         <li class="logout">
                             <a href="login/logout.php">
@@ -38,6 +38,7 @@
 
                 <?php }else{ ?>
                     <ul>
+                        <?php header('location: admin/admin_login.php');?>
                         <!-- <li>
                             <a href="login/signup.php">
                                 <i class="fas fa-sign-in-alt"></i>
@@ -66,7 +67,14 @@
     </section>
     <section class="grey-bg">
         <div class="container">
-            
+            <div class="admin_container">
+                <div class="admin_box">
+                    <a href="#">Add New Food to Menue</a>
+                </div>
+                <div class="admin_box">
+                    <a href="#">View Order List</a>
+                </div>
+            </div>
         </div>
     </section>
     <!-- FOOTER -->
@@ -90,7 +98,7 @@
                         <p>My Foodflex</p>
                         <?php 
                             if($admin_data){
-                                $Name = $admin_data['Name'];?>
+                                $Name = $admin_data['Username'];?>
                                 <a href="profile.php"><?= $Name?></a> / 
                                 <a href="login/logout.php">Log Out</a>
                             <?php }else{?>

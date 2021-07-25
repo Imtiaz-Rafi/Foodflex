@@ -6,7 +6,12 @@
         $sql = "DELETE FROM order_cart";
         $result = $con->query($sql);
         session_unset();
+        
+    }
+    if(isset($_SESSION['admin_id'])){
+        session_unset();
     }
     header('location: ../index.php');
     return;
+    
 ?>
