@@ -32,28 +32,53 @@
     <?php include 'header.php';?>
 
     <?php
-    $Mobile = $city=$address="";
+    $Mobile = $City = $Address = $CityErr = $MobileErr = $AddressErr ="";
     if(isset($_POST['submit']))
     {
-        $mobile=$_POST['mobile'];
-        $city=$_POST['city'];
-        $address=$_POST['address'];
-        $query="UPDATE customers SET mobile='$mobile',city='$city',address='$address'where id='{$_SESSION['ID']}'";
-        $query_run=mysqli_query($con,$query);
-
-        if($query_run)
-        {
-            $_SESSION['status']="Data updated successfully";
-            header("location:profile.php");
+        $Mobile = test_data($_REQUEST["mobile"]);
+        if(strlen($Mobile)<11 || strlen($Mobile)>11){
+            $MobileErr = "*Invalid Mobile Format";
         }
-        else
-        {
-            $_SESSION['status']="Not updated ";
-            header("location:profile.php");
+        $City = test_data($_REQUEST['city']);
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$City)) {
+            $CityErr = "Only letters and white space allowed";
+        }
+
+        $Address = test_data($_REQUEST["address"]);
+        if (!preg_match("/^[a-zA-Z-' ]*$/",$SName)) {
+            $AddressErr = "Only letters and white space allowed";
+        }
+
+        if(empty($MobileErr) && empty($CityErr) && empty($AddressErr)){
+            $query="UPDATE customers SET mobile='$Mobile',city='$City',address='$Address'where id='{$_SESSION['ID']}'";
+            $query_run=mysqli_query($con,$query);
+    
+            if($query_run)
+            {
+                $_SESSION['status']="Data updated successfully";
+                header("location:profile.php");
+            }
+            else
+            {
+                $_SESSION['status']="Not updated ";
+                header("location:profile.php");
+            }
+        }else{
+            header("?msg=error");
         }
         
+        
 
-    }?>
+    }
+
+    function test_data($data){
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
+    
+    ?>
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
@@ -83,19 +108,21 @@
                         <div id="divleft">
                             <label for="mobile">Mobile:</lable>
                             <input type="phone" class="input-box"id="mobile" name="mobile" placeholder="Mobile no." value="<?php echo$_SESSION['Mobile'] ;?>" size="25" required>
+                            <span class="error"><br><?php echo $MobileErr;?></span>
                         </div>
                     </div>
                     <div class="input-Box">
                         <div id="divright">
                             <label for="city">City:</lable> 
                             <input type="text"class="input-box" id="city" name="city" placeholder="Enter your city" value="<?php echo$_SESSION['City'] ;?>" size="25" required>
+                            <span class="error"><br><?php echo $CityErr;?></span>
                         </div> 
                     </div>
                     <div class="input-Box">
                         <div id="divleft">
                             <label for="Address">Address:</lable> 
                             <input type="text"class="input-box" id="address" name="address" placeholder="Enter your Address" value="<?php echo$_SESSION['Address'] ;?>" size="30" required>
-                            <!-- <textarea class="input-box" name="address" id="address" placeholder="Enter your Address" value="<?php //echo$_SESSION['Address'] ;?>" cols="30" rows="4" required></textarea> -->
+                            <span class="error"><br><?php echo $AddressErr;?></span>
                         </div> 
                     </div>
                     <div class="Change-pass">  

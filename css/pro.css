@@ -85,6 +85,12 @@
     color:whitesmoke;
     font-size: 16px;
 }
+.error{
+    color:rgb(255, 0, 0);
+    font-size: small;
+    position: relative;
+    top: -8px;
+}
 ::placeholder{
     color:white;
     text-align: left;
