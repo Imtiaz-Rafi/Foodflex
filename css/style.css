@@ -16,7 +16,7 @@ body{
 /* Millescnous */
 a{
 	text-decoration: none!important;
-	color: white;
+	/* color: white; */
 }
 .line{
 	margin-bottom: 15px;
@@ -310,7 +310,6 @@ ul{
 	text-decoration: none;
 	font-size:15px;
 	color: rgb(81,81,81);
-	padding-left: 5px;
 	font-family: 'Work Sans', sans-serif;
 }
 .sidebar ul li i{
@@ -635,7 +634,64 @@ td {
 	font-size: 14px;
 	padding: 0px 5px 0px 10px;
 }
-
+h3 button {
+    border: 1px solid rgb(0 166 81)!important;
+    border-radius: 4px;
+	box-shadow: 0px 1px 2px 0px rgb(155,155,155);
+    padding: 5px 8px!important;
+}
+h3 button:hover {
+    color: white;
+	background:rgb(0,166,81);
+}
+.crud{
+	color: rgb(0,166,81);
+    border: none;
+    padding: 3px;
+    float: right;
+    margin: 0px 6px;
+    font-size: 14px;
+    background: white;
+    cursor: pointer;
+}
+.fas.fa-edit{
+	color: rgb(0,166,81);
+}
+.fas.fa-edit:hover{
+	color: rgb(1, 97, 48);
+}
+.fas.fa-trash-alt{
+	color:#F70205;
+}
+.fas.fa-trash-alt:hover{
+	color:#800a0c;
+}
+.form-control {
+	display: table-cell;
+    width: 75%;
+    padding: 0px;
+    font-family: "work sans";
+    font-size: 15px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff9f9;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    cursor: text;
+}
+.form-control:hover{
+    background: rgb(238,238,238);
+}
+.sidebar .btn{
+    background: rgb(0, 166, 81);
+    border: none;
+    color: rgb(255, 255, 255);
+    padding: 4px 10px;
+    font-size: 14px;
+}
+.sidebar .btn:hover{
+    background:rgb(8, 110, 57);
+}
 /* GREETINGS */
 
 .greetings{

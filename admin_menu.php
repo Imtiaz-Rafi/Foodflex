@@ -12,11 +12,30 @@
     <title>Menue</title>
 </head>
 <body>
+    <?php
+        // if($_SERVER['REQUEST_METHOD']=='POST'){
+        //     $Cat_name = test_data($_REQUEST["cat_name"]);
+        //     $sql = "INSERT INTO category(ID,Cat_name) VALUE(0,'$Cat_name')";
+        //     $result = $con->query($sql);
+        //     if($result){
+        //         header('location: admin_menu.php?success');
+        //         return;
+        //     }else{
+        //         echo "WA";
+        //     }
+        // }
+        // function test_data($data){
+        //     $data = trim($data);
+        //     $data = stripslashes($data);
+        //     $data = htmlspecialchars($data);
+        //     return $data;
+        // }
+    ?>
     <!-- HEADER -->
     <section class="header">
         <div class="container">
             <div class="logo">
-                <a href="index.php"><img src="images/logo.png" alt="Logo"></a>
+                <a href="admin.php"><img src="images/logo.png" alt="Logo"></a>
             </div>
             <div class="nav-area">
                 <?php
@@ -61,12 +80,22 @@
                     <div class="sidebar">
                         <h3 class="upper">
                             Menu Items
-                            <button>
-                                Add New
-                            </button>
+                            <a href="admin_menu.php?crud=0">
+                                <button class="crud">
+                                    <i class="far fa-plus-square"></i>
+                                    Add
+                                </button>
+                            </a>
                         </h3>
                         <ul>
                             <?php 
+                                if(isset($_REQUEST['crud'])){
+                                    if($_REQUEST['crud']==0){ ?>
+                                    <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"></form> -->
+                                        <!-- <input type="text" name="cat_name" class="form-control">
+                                        <input type="submit" value="Add" class="btn"> -->
+                                    <?php }
+                                }
                                 $sql = "SELECT * FROM category";
                                 $result = $con->query($sql);
                                 if($result->num_rows > 0){
@@ -75,11 +104,16 @@
                                         <li>
                                             <i class="fas fa-chevron-left"></i>
                                             <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?>
-                                                <button>
-                                                    Update
+                                                <!-- CRUD -->
+                                                <button class="crud">
+                                                    <a href="admin_menu.php?crud=1">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
                                                 </button>
-                                                <button>
-                                                    Delete
+                                                <button class="crud">
+                                                    <a href="admin_menu.php?crud=2">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
                                                 </button>
                                             </a>
                                         </li>
@@ -99,7 +133,8 @@
                                     ?>
                                 <div id="<?= $cat_row['Cat_name'];?>">
                                     <h3> <?= $cat_row['Cat_name'];?> 
-                                        <button>
+                                        <button class="crud">
+                                            <i class="far fa-plus-square"></i>
                                             Add New
                                         </button>
                                     </h3>
@@ -118,11 +153,13 @@
                                                     <h4><?= $row["FoodName"];?></h4> <!-- auto echo -->
                                                     <div class="d-tab w100">
                                                         <span class="price"><?= $row["Price"];?> Taka</span>
-                                                        <button>
-                                                            Update
+                                                        <!-- CRUD -->
+                                                        <button class="crud">
+                                                            <i class="fas fa-edit"></i>
                                                         </button>
-                                                        <button>
-                                                            Delete
+                                                        <button class="crud">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                            
                                                         </button>
                                                         <!-- <button class="add-item">
                                                             <a 
