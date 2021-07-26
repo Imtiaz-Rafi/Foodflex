@@ -137,6 +137,9 @@ ul{
 	float:left;
 	background:rgb(238, 238, 238);
 }
+.padding60{
+	padding: 60px 0!important;
+}
 .main{
 	background: 
 	radial-gradient(
@@ -602,6 +605,37 @@ td {
 .btn-primary:hover {
     background-color: rgb(5, 109, 55);
 }
+
+/* ADMIN BODY */
+
+.admin-container{
+	width: 100%;
+    border: 1px solid rgb(222, 226, 230);
+    padding: 15px 30px;
+	text-align: center;
+}
+.admin-box{
+    display: inline-grid;
+}
+.admin-box a{
+	font-size: 18px;
+	border: 1px solid rgb(0, 166, 81);
+    color: rgb(0, 166, 81);
+    padding: 15px 20px 15px 25px;
+    border-radius: 4px;
+    margin: 20px 100px;
+	font-family: 'Work Sans';
+}
+.admin-box a:hover{
+    border: 1px solid rgb(0, 166, 81);
+    color:rgb(255, 255, 255);
+    background: rgb(0, 166, 81);
+}
+.fas.fa-angle-double-right{
+	font-size: 14px;
+	padding: 0px 5px 0px 10px;
+}
+
 /* GREETINGS */
 
 .greetings{

@@ -29,7 +29,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="profile.php">
+                            <a href="#">
                                 <i class="far fa-user"></i>
                                 <?php echo "Hi! ADMIN"?>
                             </a>
@@ -39,40 +39,30 @@
                 <?php }else{ ?>
                     <ul>
                         <?php header('location: admin/admin_login.php');?>
-                        <!-- <li>
-                            <a href="login/signup.php">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Sign Up
-                            </a>
-                        </li> -->
-                        <li>
-                            <a href="admin/admin_login.php">
-                                <i class="fas fa-sign-in-alt"></i>
-                                Log In
-                            </a>
-                        </li>
                     </ul>
                 <?php }?>
             </div>
         </div>
     </section>
     
+    <!-- BODY -->
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
                 <li class="nav-item"><a href="#">Admin</a></li>
-                <!-- <li class="nav-item"><a href="#">Info</a></li> -->
             </ul>
         </div>
     </section>
-    <section class="grey-bg">
+    <section class="grey-bg padding60">
         <div class="container">
-            <div class="admin_container">
-                <div class="admin_box">
-                    <a href="#">Add New Food to Menue</a>
-                </div>
-                <div class="admin_box">
-                    <a href="#">View Order List</a>
+            <div class="container-full">
+                <div class="admin-container">
+                    <div class="admin-box">
+                        <a href="admin_menu.php">Manage Food Menu<i class="fas fa-angle-double-right"></i></a>
+                    </div>
+                    <div class="admin-box">
+                        <a href="admin/admin_order.php">View Order List<i class="fas fa-angle-double-right"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -99,7 +89,7 @@
                         <?php 
                             if($admin_data){
                                 $Name = $admin_data['Username'];?>
-                                <a href="profile.php"><?= $Name?></a> / 
+                                <a href="#"><?= $Name?></a> / 
                                 <a href="login/logout.php">Log Out</a>
                             <?php }else{?>
                                 <a href="login/signin.php">Sign In/Register</a>
