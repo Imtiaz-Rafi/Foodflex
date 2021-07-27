@@ -44,7 +44,7 @@
                 <li><a href="#">Contact Us</a></li>
             </ul>
             <ul class="feedback">
-                <p>Help Us Serving You Better<a href="#">Give Feedback</a></p>
+                <p>Help Us Serving You Better<a href="feedback.php">Give Feedback</a></p>
                 
             </ul>
             <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
