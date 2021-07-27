@@ -306,7 +306,7 @@ ul{
 	border-spacing: 5px;
 	margin-bottom: 10px;
 }
-.sidebar ul li a{
+.sidebar ul li a,.sidebar ul li span{
 	text-decoration: none;
 	font-size:15px;
 	color: rgb(81,81,81);
@@ -667,8 +667,9 @@ h3 button:hover {
 	color:#800a0c;
 }
 .form-control {
-	display: table-cell;
-    width: 75%;
+	/* display: table-cell; */
+	vertical-align: middle;
+    width: 70%;
     padding: 0px;
     font-family: "work sans";
     font-size: 15px;
@@ -683,15 +684,24 @@ h3 button:hover {
     background: rgb(238,238,238);
 }
 .sidebar .btn{
+	vertical-align: middle;
     background: rgb(0, 166, 81);
     border: none;
     color: rgb(255, 255, 255);
-    padding: 4px 10px;
+    padding: 3px 6px;
     font-size: 14px;
 }
 .sidebar .btn:hover{
     background:rgb(8, 110, 57);
 }
+a.cancel {
+	vertical-align: middle;
+    border: 1px solid rgb(188 186 186);
+    background: rgb(233 233 233);
+    color: rgb(116 116 116);
+    padding: 0px 3px;
+}
+
 /* GREETINGS */
 
 .greetings{

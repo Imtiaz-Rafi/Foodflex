@@ -13,23 +13,52 @@
 </head>
 <body>
     <?php
-        // if($_SERVER['REQUEST_METHOD']=='POST'){
-        //     $Cat_name = test_data($_REQUEST["cat_name"]);
-        //     $sql = "INSERT INTO category(ID,Cat_name) VALUE(0,'$Cat_name')";
-        //     $result = $con->query($sql);
-        //     if($result){
-        //         header('location: admin_menu.php?success');
-        //         return;
-        //     }else{
-        //         echo "WA";
-        //     }
-        // }
-        // function test_data($data){
-        //     $data = trim($data);
-        //     $data = stripslashes($data);
-        //     $data = htmlspecialchars($data);
-        //     return $data;
-        // }
+        $Cat_name = $Cat_nameerror = "";
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            if($_REQUEST['id']==2){
+                $ID = $_REQUEST['row'];
+                $sql = "DELETE FROM category WHERE ID='$ID'";
+                $result = $con->query($sql);
+            }else{
+                $Cat_name = test_data($_REQUEST["cat_name"]);
+                if (!preg_match("/^[a-zA-Z-' ]*$/",$Cat_name)) {
+                    $Cat_nameerror = "Only letters and white space allowed";
+                }
+                $sql = "SELECT * FROM category ORDER BY ID DESC LIMIT 1";
+                $result = $con->query($sql);
+                $ID = 0;
+                while($row=$result->fetch_assoc()){
+                    $ID = $row['ID'];
+                }
+                $ID = $ID+1;
+                if(empty($Cat_nameerror)){
+                    if($_REQUEST['id']==0){
+                        $sql = "INSERT INTO category(ID,Cat_name) VALUES('$ID','$Cat_name')";
+                        $result = $con->query($sql);
+                    }else if($_REQUEST['id']==1){
+                        $ID = $_REQUEST['row'];
+                        $sql = "UPDATE category SET Cat_name='$Cat_name' WHERE ID='$ID'";
+                        $result = $con->query($sql);
+                    }
+                }else{
+                    header("?error");
+                }
+            }
+
+            if($result){
+                //echo $ID;
+                header('location: admin_menu.php?success');
+                return;
+            }else{
+                header("?error");
+            }
+        }
+        function test_data($data){
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
     ?>
     <!-- HEADER -->
     <section class="header">
@@ -89,11 +118,14 @@
                         </h3>
                         <ul>
                             <?php 
+                                // ADD to list
                                 if(isset($_REQUEST['crud'])){
                                     if($_REQUEST['crud']==0){ ?>
-                                    <!-- <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post"></form> -->
-                                        <!-- <input type="text" name="cat_name" class="form-control">
-                                        <input type="submit" value="Add" class="btn"> -->
+                                    <form action="admin_menu.php?id=0" method="post">
+                                        <input type="text" name="cat_name" class="form-control">
+                                        <input type="submit" value="✔" class="btn">
+                                        <a href="admin_menu.php" class="cancel">✖</a>
+                                    </form>
                                     <?php }
                                 }
                                 $sql = "SELECT * FROM category";
@@ -102,20 +134,42 @@
                                     while($row = $result->fetch_assoc()){
                                         ?>
                                         <li>
-                                            <i class="fas fa-chevron-left"></i>
-                                            <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?>
-                                                <!-- CRUD -->
-                                                <button class="crud">
-                                                    <a href="admin_menu.php?crud=1">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                </button>
-                                                <button class="crud">
-                                                    <a href="admin_menu.php?crud=2">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                </button>
-                                            </a>
+                                            <!-- CRUD -->
+                                            <?php
+                                                // UPDATE
+                                                if(isset($_REQUEST['crud']) && $_REQUEST['crud']==1 && $_REQUEST['row']==$row['ID']){
+                                                    ?>
+                                                        <form action="admin_menu.php?id=1&&row=<?=$row['ID']; ?>" method="post">
+                                                            <i class="fas fa-chevron-left"></i>
+                                                            <input type="text" name="cat_name" class="form-control">
+                                                            <input type="submit" value="✔" class="btn">
+                                                            <a href="admin_menu.php" class="cancel">✖</a>
+                                                        </form>
+                                                <!-- DELETE -->
+                                            <?php }else if(isset($_REQUEST['crud']) && $_REQUEST['crud']==2 && $_REQUEST['row']==$row['ID']){
+                                                    ?>
+                                                    <form action="admin_menu.php?id=2&&row=<?=$row['ID']; ?>" method="post">
+                                                        <i class="fas fa-chevron-left"></i>
+                                                        <span class="form-control">ARE YOU SURE?</span>
+                                                        <input type="submit" value="✔" class="btn">
+                                                        <a href="admin_menu.php" class="cancel">✖</a>
+
+                                                    </form>
+                                            <?php }else{ ?>
+                                                <i class="fas fa-chevron-left"></i>
+                                                <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?>
+                                                    <button class="crud">
+                                                        <a href="admin_menu.php?crud=1&&row=<?=$row['ID']; ?>">
+                                                            <i class="fas fa-edit"></i>
+                                                        </a>
+                                                    </button>
+                                                    <button class="crud">
+                                                        <a href="admin_menu.php?crud=2&&row=<?=$row['ID']; ?>">
+                                                            <i class="fas fa-trash-alt"></i>
+                                                        </a>
+                                                    </button>
+                                                </a>
+                                            <?php }?>
                                         </li>
                             <?php }} ?>
                         </ul>
