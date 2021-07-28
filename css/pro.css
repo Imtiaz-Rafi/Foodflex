@@ -87,7 +87,7 @@
 }
 .error{
     color:rgb(255, 0, 0);
-    font-size: small;
+    font-size: 14px;
     position: relative;
     top: -8px;
 }
@@ -117,15 +117,13 @@
 .Change-pass a:hover{
     color:rgb(18, 107, 6);
 }
-
-
-
-
-
-
-
-
-
-
-
+.message{
+    color:rgb(255, 0, 0);
+    font-size: 14px;
+    padding: 0px;
+    text-transform: uppercase;
+    font-size: 14px;
+    position: relative;
+    top: -8px;
+}
 

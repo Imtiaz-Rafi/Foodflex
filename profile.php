@@ -56,7 +56,7 @@
             if($query_run)
             {
                 $_SESSION['status']="Data updated successfully";
-                header("location:profile.php");
+                header("location:profile.php?update=1");
             }
             else
             {
@@ -71,11 +71,11 @@
 
     }
 
-    function test_data($data){
-        $data = trim($data);
-        $data = stripslashes($data);
-        $data = htmlspecialchars($data);
-        return $data;
+    function test_data($value){
+        $value = trim($value);
+        $value = stripslashes($value);
+        $value = htmlspecialchars($value);
+        return $value;
     }
     
     ?>
@@ -84,18 +84,41 @@
             <ul class="nav nav-tabs">
                 <li class="nav-item"><h4>PROFILE</h4></li>
             </ul>
+            
         </div>
+
     </section>
     <!-- BODY -->
+   <?php
+    if(isset($_SESSION['status']))
+            {
+               echo"<h4>".$_SESSION['status']."</h4>";
+                unset($_SESSION['status']);
+            }
+            ?>
     <section class="profile-page">
+        
         <div class="container">
+            <div class="message">
+                <?php
+                if(isset($_REQUEST['update'])&&$_REQUEST['update']==1){
+                   echo "your data has been updated";
+                }
+                ?>
+                <span class="error"><br><?php echo $MobileErr;?></span>
+                <span class="error"><br><?php echo $CityErr;?></span>
+                <span class="error"><br><?php echo $AddressErr;?></span>
+               
+            </div>
             <div class="wrapper">
+
                 <form action="profile.php" method="post">
+
                     <h3 class="personal">Personal Information</h3>
                     <div class="input-Box">
                         <div id="divleft">
                             <label for="name">Name:</lable>
-                            <input type= "Name"class="input-box" id ="name" name="name" placeholder=" Full Name" Value="<?php echo$_SESSION['Name'] ;?>" size="25" required >
+                            <input type= "Name"class="input-box" id ="name" name="name" placeholder=" Full Name" Value="<?php echo$_SESSION['Name'] ;?>" size="25" disabled required >
                         </div>
                     </div>
                     <div class="input-Box">
@@ -108,21 +131,21 @@
                         <div id="divleft">
                             <label for="mobile">Mobile:</lable>
                             <input type="phone" class="input-box"id="mobile" name="mobile" placeholder="Mobile no." value="<?php echo$_SESSION['Mobile'] ;?>" size="25" required>
-                            <span class="error"><br><?php echo $MobileErr;?></span>
+                            
                         </div>
                     </div>
                     <div class="input-Box">
                         <div id="divright">
                             <label for="city">City:</lable> 
                             <input type="text"class="input-box" id="city" name="city" placeholder="Enter your city" value="<?php echo$_SESSION['City'] ;?>" size="25" required>
-                            <span class="error"><br><?php echo $CityErr;?></span>
+                            
                         </div> 
                     </div>
                     <div class="input-Box">
                         <div id="divleft">
                             <label for="Address">Address:</lable> 
                             <input type="text"class="input-box" id="address" name="address" placeholder="Enter your Address" value="<?php echo$_SESSION['Address'] ;?>" size="30" required>
-                            <span class="error"><br><?php echo $AddressErr;?></span>
+                            
                         </div> 
                     </div>
                     <div class="Change-pass">  
@@ -142,6 +165,3 @@
    <?php include 'footer.php';?>
 </body>
 </html>
-
-            
-    
