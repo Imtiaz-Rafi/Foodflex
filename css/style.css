@@ -334,6 +334,7 @@ ul{
 	border:2px rgb(147, 147, 147) solid;
 	width:65px;
 	height:65px;
+	text-align: center;
 	position: absolute;
 }
 .beside-img{
@@ -671,6 +672,7 @@ h3 button:hover {
 	vertical-align: middle;
     width: 70%;
     padding: 0px;
+	margin-bottom: 4px;
     font-family: "work sans";
     font-size: 15px;
     line-height: 1.5;
@@ -683,7 +685,7 @@ h3 button:hover {
 .form-control:hover{
     background: rgb(238,238,238);
 }
-.sidebar .btn{
+.sidebar .btn, .item-mid .btn{
 	vertical-align: middle;
     background: rgb(0, 166, 81);
     border: none;
@@ -691,7 +693,7 @@ h3 button:hover {
     padding: 3px 6px;
     font-size: 14px;
 }
-.sidebar .btn:hover{
+.sidebar .btn:hover, .item-mid .btn:hover{
     background:rgb(8, 110, 57);
 }
 a.cancel {
@@ -700,6 +702,10 @@ a.cancel {
     background: rgb(233 233 233);
     color: rgb(116 116 116);
     padding: 0px 3px;
+}
+a.cancel:hover {
+    background: #F70205;
+    color: white;
 }
 
 /* GREETINGS */
