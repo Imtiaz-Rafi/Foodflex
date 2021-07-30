@@ -96,7 +96,7 @@ table{
     width: 100%;
     padding: 60px 0!important;
     text-align: center;
-    float: left;
+    /* float: left; */
     background: rgb(238, 238, 238);
 }
 .cart-main, .cart-row{

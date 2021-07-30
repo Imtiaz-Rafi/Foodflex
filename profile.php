@@ -40,12 +40,12 @@
             $MobileErr = "*Invalid Mobile Format";
         }
         $City = test_data($_REQUEST['city']);
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$City)) {
+        if (!preg_match("/^[1-9a-zA-Z-', ]*$/",$City)) {
             $CityErr = "Only letters and white space allowed";
         }
 
         $Address = test_data($_REQUEST["address"]);
-        if (!preg_match("/^[a-zA-Z-' ]*$/",$SName)) {
+        if (!preg_match("/^[1-9a-zA-Z-', ]*$/",$Address)) {
             $AddressErr = "Only letters and white space allowed";
         }
 
@@ -103,11 +103,14 @@
                 <?php
                 if(isset($_REQUEST['update'])&&$_REQUEST['update']==1){
                    echo "your data has been updated";
-                }
+                }else if(!empty($MobileErr)){ ?>
+                    <span class="error"><?php echo $MobileErr;?></span>
+                <?php }
                 ?>
-                <span class="error"><br><?php echo $MobileErr;?></span>
-                <span class="error"><br><?php echo $CityErr;?></span>
-                <span class="error"><br><?php echo $AddressErr;?></span>
+                
+                
+                <span class="error"><?php echo $CityErr;?></span>
+                <span class="error"><?php echo $AddressErr;?></span>
                
             </div>
             <div class="wrapper">
