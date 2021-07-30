@@ -8,6 +8,7 @@
 }
 
 .footer p {
+	margin-top: 15px;
     font-family: 'Work Sans';
 }
 body{
@@ -825,7 +826,7 @@ a.cancel:hover {
 	/* text-align: center; */
 	padding:15px 0px;
 	display:inline-block;
-	margin: 0px 0px 20px 0px;
+	margin: 0px;
 }
 .feedback a{
 	padding: 10px;
@@ -835,6 +836,9 @@ a.cancel:hover {
 	border-radius: 4px;
 	font-size: 15px;
 	text-decoration: none;
+}
+.feedback p {
+    margin: 0px;
 }
 .feedback a:hover{
 	background: rgb(71, 71, 71);

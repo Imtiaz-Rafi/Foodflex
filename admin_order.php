@@ -57,12 +57,12 @@
         <div class="container">
             <div class="container-full">
                 <div class="admin-container">
-                    <div class="admin-box">
+                    <!-- <div class="admin-box">
                         <a href="admin_menu.php">Manage Food Menu<i class="fas fa-angle-double-right"></i></a>
                     </div>
                     <div class="admin-box">
                         <a href="admin_order.php">View Order List<i class="fas fa-angle-double-right"></i></a>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -103,10 +103,10 @@
                 <li><a href="#">Terms & Conditions</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-            <!-- <ul class="feedback">
+            <ul class="feedback">
                 <p>Help Us Serving You Better<a href="#">Give Feedback</a></p>
                 
-            </ul> -->
+            </ul>
             <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
             
         </div>
