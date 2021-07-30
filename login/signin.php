@@ -15,7 +15,7 @@
     <script src="../../fontawesome/js/fontawesome.min.js"></script>
     <link rel="stylesheet" href="../css/login.css">
 
-    <title>Sign-In</title>
+    <title>Login</title>
 </head>
     <body class="Sign-In-body">
         <?php
@@ -33,15 +33,21 @@
                     //--Check Duplicate--
                     $query = "SELECT * FROM customers";
                     $result = $con->query($query);
-                    while($row = $result->fetch_assoc()){
-                        if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
-                            $_SESSION['Name'] = $Name = $row["Name"];
-                            $_SESSION['ID'] = $row['ID'];
-                            header("location: ../index.php");
-                            die();
-                        }else{
-                            header("location: signin.php?wrong=0");
+                    if($result->num_rows>0){
+                        while($row = $result->fetch_assoc()){
+                            if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
+                                $_SESSION['Name'] = $Name = $row["Name"];
+                                $_SESSION['ID'] = $row['ID'];
+                                header("location: ../index.php");
+                                die();
+                            }else if(($row["Email"] == $Email) && ($row["Password"]!=$Password)){
+                                header("location: signin.php?wrong=0");
+                            }else{
+                                header("location: signin.php?wrong=1");
+                            }
                         }
+                    }else{
+                        header('location: signin.php?wrong=1');
                     }
                 }else{
                     header("?msg=error");
@@ -63,8 +69,13 @@
             
             <h2>Log In to Your Account</h2>
             <?php
-                if(isset($_GET['wrong'])){ ?>
-                    <p class="recheck">* Wrong E-mail/Password.</p>
+                if(isset($_GET['wrong'])){
+                    if($_GET['wrong']==0){ ?>
+                        <p class="recheck">* Wrong E-mail/Password.</p>
+                    <?php }else if($_GET['wrong']==1){ ?>
+                        <p class="recheck">* Invalid Email. SignUp First.</p>
+                    <?php }?>
+                    
             <?php } ?>
             <hr>
 
