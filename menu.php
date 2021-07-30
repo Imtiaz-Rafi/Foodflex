@@ -60,8 +60,8 @@
                                     <h3> <?= $cat_row['Cat_name'];?> </h3>
                                     <ul>
                                         <?php
-                                            $cat_id = $cat_row['ID'];
-                                            $sql="SELECT * FROM food_list WHERE cat_id=$cat_id";
+                                            $Cat_name = $cat_row['Cat_name'];
+                                            $sql="SELECT * FROM food_list WHERE Cat_name='$Cat_name'";
                                             $result = $con->query($sql);
                                             if($result->num_rows>0){
                                                 while($row = $result->fetch_assoc()){
