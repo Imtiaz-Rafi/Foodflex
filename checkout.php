@@ -47,19 +47,22 @@
             $Payment = test_data($_REQUEST["payment"]);
             $Tips = test_data($_REQUEST["delivery_tips"]);
             $Notes = test_data($_REQUEST["order_notes"]);
-
-            $sql = "INSERT INTO 
-            final_order(ID,Cust_id, Cust_name, Cust_email, Cust_mobile, Cust_address, Del_type, Del_time, 
-                    Payment_mode, Order_item, Order_total, Tips, Notes)
-                VALUES(0,'$ID','$Name','$Email','$Mobile','$Address, $City','$Del_Type','$Del_Time','$Payment',
-                    '$Order_item','$Total','$Tips','$Notes')";
-            $result = $con->query($sql);
-            $sql = "DELETE FROM order_cart";
-            $result = $con->query($sql);
-            if($result){
-                header('location: order.php');
+            if(!empty($Name) && !empty($Email) && !empty($Mobile) && !empty($Address) &&  $Sub_total!=0){
+                $sql = "INSERT INTO 
+                final_order(ID,Cust_id, Cust_name, Cust_email, Cust_mobile, Cust_address, Del_type, Del_time, 
+                        Payment_mode, Order_item, Order_total, Tips, Notes)
+                    VALUES(0,'$ID','$Name','$Email','$Mobile','$Address, $City','$Del_Type','$Del_Time','$Payment',
+                        '$Order_item','$Total','$Tips','$Notes')";
+                $result = $con->query($sql);
+                $sql = "DELETE FROM order_cart";
+                $result = $con->query($sql);
+                if($result){
+                    header('location: order.php');
+                }else{
+                    echo "WA";
+                }
             }else{
-                echo "WA";
+                header('location: checkout.php?error=0');
             }
         }  
 
@@ -78,9 +81,15 @@
             </ul>
         </div>
     </section>
+    
     <!-- BODY -->
     <section class="grey-bg">
         <div class="container">
+            <?php
+                if(isset($_REQUEST['error']) && ($_REQUEST['error']==0)){ ?>
+                    <div class="error"><?php echo "*PLEASE FILL UP ALL INFORMATION"."<br>";?></div>
+                    
+            <?php }?>
             <div class="container-full">
                 <div class="cart-row">
                     <div class="col-sm-8">
@@ -126,10 +135,10 @@
                                             </form>
                                         <?php }else{
                                             if(empty($Address)){ ?>
-                                            <address>Add your Location.</address>
+                                            <address><span style="color:red">* </span>Add your Location.</address>
                                             <?php }else{ ?>
                                                 <h4>Home</h4>
-                                                <address><?= $Address.", ".$City?></address>
+                                                <address required><?= $Address.", ".$City?></address>
                                                 <div class="option">
                                                     <input type="radio" id="id-1" class="radio" checked>
                                                     <label for="id-1">Delivery to this Address</label>    
