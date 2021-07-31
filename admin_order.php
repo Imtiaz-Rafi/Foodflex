@@ -56,29 +56,61 @@
     <section class="grey-bg padding60">
         <div class="container">
             <div class="container-full">
-                <div class="admin-container">
-                    <ul>
-                        <?php
-                            $sql = "SELECT * FROM final_order";
-                            $result = $con->query($sql);
-                            if($result->num_rows>0){
-                                while($row = $result->fetch_assoc()){ ?>
-                                    <li>
-                                        <div class="mini-order-body">
-                                            <?php echo $row['ID'];?>
-                                            <?php echo $row['Cust_name'];?>
-                                            <?php echo $row['Cust_mobile'];?>
-                                            <?php echo $row['Order_total'];?>
-                                        </div>
-                                        
-                                    </li>
-                                <?php }
-                            }else{ ?>
+                    <table>
+                        <thead class="order-table-head">
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer Name</th>
+                                <th>Customer Mobile</th>
+                                <th>Location</th>
+                                <th>Amount</th>
+                                <th>Delivery Type/Time</th>
+                                <th>Time</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody class="order-table-body">
+                            <?php
+                                $sql = "SELECT * FROM final_order ORDER BY ID DESC";
+                                $result = $con->query($sql);
+                                if($result->num_rows>0){
+                                    while($row = $result->fetch_assoc()){ ?>
+                                        <tr>
+                                            <td><?= $row['ID']; ?></td>
+                                            <td><?= $row['Cust_name']; ?></td>
+                                            <td><?= $row['Cust_mobile']; ?></td>
+                                            <td><?= $row['Cust_address']; ?></td>
+                                            <td>৳<?= $row['Order_total']; ?></td>
+                                            <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
+                                            <td><?= $row['Order_time']; ?></td>
+                                            <!-- <td>
+                                                <button class="crud float-none">
+                                                    <a href="admin_menu.php?crud=1&&row=<?=$row['ID']; ?>">
+                                                        <i class="fas fa-edit"></i>
+                                                    </a>
+                                                </button>
+                                                <button class="crud float-none">
+                                                    <a href="admin_menu.php?crud=2&&row=<?=$row['ID']; ?>">
+                                                        <i class="fas fa-trash-alt"></i>
+                                                    </a>
+                                                </button>
+                                            </td> -->
+                                            <td>
+                                                <button class="crud" style="float:none">
+                                                    <a href="admin_menu.php?crud=2&&row=<?=$row['ID']; ?>">
+                                                        <i class="fas fa-angle-double-right green"></i>
+                                                    </a>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                <?php }else{ ?>
 
-                            <?php }
-                        ?>
-                    </ul>
-                </div>
+                               <?php }
+                            ?>
+                            
+                        </tbody>
+                    </table>
             </div>
         </div>
     </section>

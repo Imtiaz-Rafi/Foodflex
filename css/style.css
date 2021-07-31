@@ -34,6 +34,9 @@ a{
 .vertical-middle{
 	vertical-align: middle!important;
 }
+.green{
+	color:rgb(0, 166, 81)!important;
+}
 .w100{
 	width:100%;
 }
@@ -47,6 +50,9 @@ ul{
 	padding:0px;
 	margin:0px;
 	list-style: none;
+}
+.float-none{
+	float: none;
 }
 /* Container */
 .container{
@@ -437,6 +443,30 @@ thead {
     vertical-align: middle;
     border-color: inherit;
 }
+
+thead.order-table-head {
+    background: rgb(0,166,81);
+    color: white;
+    text-align: center;
+}
+tbody.order-table-body{
+	
+background: rgb(250 250 250);
+}
+.ek-line{
+	display: table-cell;
+}
+
+thead.order-table-head th, tbody.order-table-body td {
+    text-align: center;
+    padding: 15px 5px;
+    border-bottom: 1px solid rgb(230 230 230);
+    line-height: 1.5;
+    font-family: 'work sans','calibri';
+}
+thead.order-table-head th{
+	font-family: 'work sans Regular','calibri';
+}
 tr {
     display: table-row;
     vertical-align: inherit;
@@ -634,7 +664,14 @@ td {
 }
 .fas.fa-angle-double-right{
 	font-size: 14px;
-	padding: 0px 5px 0px 10px;
+	padding: 3px;
+}
+.fas.fa-angle-double-right.green:hover{
+	background: rgb(0, 166, 81);
+	color: white!important;
+}
+.admin-container span {
+    margin-right: 6px;
 }
 h3 button {
     border: 1px solid rgb(0 166 81)!important;
@@ -651,7 +688,7 @@ h3 button:hover {
     border: none;
     padding: 3px;
     float: right;
-    margin: 0px 6px;
+    margin: 0px 4px;
     font-size: 14px;
     background: white;
     cursor: pointer;

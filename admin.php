@@ -58,10 +58,10 @@
             <div class="container-full">
                 <div class="admin-container">
                     <div class="admin-box">
-                        <a href="admin_menu.php">Manage Food Menu<i class="fas fa-angle-double-right"></i></a>
+                        <a href="admin_menu.php"><span>Manage Food Menu</span><i class="fas fa-angle-double-right"></i></a>
                     </div>
                     <div class="admin-box">
-                        <a href="admin_order.php">View Order List<i class="fas fa-angle-double-right"></i></a>
+                        <a href="admin_order.php"><span>View Order List</span><i class="fas fa-angle-double-right"></i></a>
                     </div>
                 </div>
             </div>
