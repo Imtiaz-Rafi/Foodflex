@@ -142,7 +142,7 @@
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="#">Menu</a></li>
+                <li class="nav-item"><a href="#">Admin Menu</a></li>
             </ul>
         </div>
     </section>

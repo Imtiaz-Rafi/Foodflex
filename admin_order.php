@@ -9,7 +9,7 @@
 <head>
     <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
-    <title>Admin</title>
+    <title>All Order</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -49,7 +49,7 @@
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="#">Admin</a></li>
+                <li class="nav-item"><a href="#">Order List</a></li>
             </ul>
         </div>
     </section>
@@ -57,12 +57,27 @@
         <div class="container">
             <div class="container-full">
                 <div class="admin-container">
-                    <!-- <div class="admin-box">
-                        <a href="admin_menu.php">Manage Food Menu<i class="fas fa-angle-double-right"></i></a>
-                    </div>
-                    <div class="admin-box">
-                        <a href="admin_order.php">View Order List<i class="fas fa-angle-double-right"></i></a>
-                    </div> -->
+                    <ul>
+                        <?php
+                            $sql = "SELECT * FROM final_order";
+                            $result = $con->query($sql);
+                            if($result->num_rows>0){
+                                while($row = $result->fetch_assoc()){ ?>
+                                    <li>
+                                        <div class="mini-order-body">
+                                            <?php echo $row['ID'];?>
+                                            <?php echo $row['Cust_name'];?>
+                                            <?php echo $row['Cust_mobile'];?>
+                                            <?php echo $row['Order_total'];?>
+                                        </div>
+                                        
+                                    </li>
+                                <?php }
+                            }else{ ?>
+
+                            <?php }
+                        ?>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -103,10 +118,10 @@
                 <li><a href="#">Terms & Conditions</a></li>
                 <li><a href="#">Contact Us</a></li>
             </ul>
-            <ul class="feedback">
+            <!-- <ul class="feedback">
                 <p>Help Us Serving You Better<a href="#">Give Feedback</a></p>
                 
-            </ul>
+            </ul> -->
             <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
             
         </div>
