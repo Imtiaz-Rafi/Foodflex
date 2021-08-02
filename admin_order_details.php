@@ -56,66 +56,76 @@
     <section class="grey-bg padding60">
         <div class="container">
             <div class="container-full">
-                    <table>
-                        <thead>
-                            <tr>
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                                
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php
-                                $ID = $_REQUEST['row'];
-                                $sql = "SELECT * FROM final_order WHERE ID='$ID'";
-                                $result = $con->query($sql);
-                                if($result->num_rows>0){
-                                    while($row = $result->fetch_assoc()){ ?>
-                                    <tr>
-                                        <th>Order ID</th>
-                                        <td><?= $row['ID']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Customer Name</th>
-                                        <td><?= $row['Cust_name']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Customer Mobile</th>
-                                        <td><?= $row['Cust_mobile']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Location</th>
-                                        <td><?= $row['Cust_address']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Amount</th>
-                                        <td>৳<?= $row['Order_total']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Delivery Type/Time</th>
-                                        <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
-                                    </tr>
-                                    <tr>
-                                        <th>Time</th>
-                                        <td><?= $row['Order_time']; ?></td>
-                                    </tr>
-                                    <!-- <tr>
-                                        <th>Details</th>
-                                    </tr> -->
-                                        
-                                    <?php } ?>
-                                <?php }else{ ?>
+                <?php
+                    $ID = $_REQUEST['row'];
+                    $sql = "SELECT * FROM final_order WHERE ID='$ID'";
+                    $result = $con->query($sql);
+                    if($result->num_rows>0){
+                        while($row = $result->fetch_assoc()){ ?>
+                <table class="user-details">
+                    <tbody>
+                        <!-- <h4>User Details</h4> -->
+                        <tr>
+                            <th>Order ID</th>
+                            <td><?= $row['ID']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Customer Name</th>
+                            <td><?= $row['Cust_name']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Customer Mobile</th>
+                            <td><?= $row['Cust_mobile']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Customer Email</th>
+                            <td><?= $row['Cust_email']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Location</th>
+                            <td><?= $row['Cust_address']; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table class="order-details">
+                    <tbody>
+                        <!-- <h4>Order Details</h4> -->
+                        <tr>
+                            <th>Order Items</th>
+                            <td><?= $row['Order_item']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Amount</th>
+                            <td>৳<?= $row['Order_total']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Delivery Type/Time</th>
+                            <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Payment Type</th>
+                            <td><?= $row['Payment_mode']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Tips</th>
+                            <td><?= $row['Tips']; ?></td>
+                        </tr>
+                        <tr>
+                            <th>Notes</th>
+                            <td><?= $row['Notes']; ?></td>
+                        </tr>
+                        
+                        <tr>
+                            <th>Order Time</th>
+                            <td><?= $row['Order_time']; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <?php } ?>
+                        <?php }else{ ?>
 
-                               <?php }
-                            ?>
-                            
-                        </tbody>
-                    </table>
+                        <?php }
+                    ?>
             </div>
         </div>
     </section>
