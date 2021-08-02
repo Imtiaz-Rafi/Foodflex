@@ -57,52 +57,57 @@
         <div class="container">
             <div class="container-full">
                     <table>
-                        <thead class="order-table-head">
+                        <thead>
                             <tr>
-                                <th>Order ID</th>
-                                <th>Customer Name</th>
-                                <th>Customer Mobile</th>
-                                <th>Location</th>
-                                <th>Amount</th>
-                                <th>Delivery Type/Time</th>
-                                <th>Time</th>
-                                <th>Details</th>
+                                
+                                
+                                
+                                
+                                
+                                
+                                
+                                
                             </tr>
                         </thead>
-                        <tbody class="order-table-body">
+                        <tbody>
                             <?php
-                                $sql = "SELECT * FROM final_order ORDER BY ID DESC";
+                                $ID = $_REQUEST['row'];
+                                $sql = "SELECT * FROM final_order WHERE ID='$ID'";
                                 $result = $con->query($sql);
                                 if($result->num_rows>0){
                                     while($row = $result->fetch_assoc()){ ?>
-                                        <tr>
-                                            <td><?= $row['ID']; ?></td>
-                                            <td><?= $row['Cust_name']; ?></td>
-                                            <td><?= $row['Cust_mobile']; ?></td>
-                                            <td><?= $row['Cust_address']; ?></td>
-                                            <td>৳<?= $row['Order_total']; ?></td>
-                                            <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
-                                            <td><?= $row['Order_time']; ?></td>
-                                            <!-- <td>
-                                                <button class="crud float-none">
-                                                    <a href="admin_menu.php?crud=1&&row=<?=$row['ID']; ?>">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                </button>
-                                                <button class="crud float-none">
-                                                    <a href="admin_menu.php?crud=2&&row=<?=$row['ID']; ?>">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                </button>
-                                            </td> -->
-                                            <td>
-                                                <button class="crud" style="float:none">
-                                                    <a href="admin_order_details.php?crud=2&&row=<?=$row['ID']; ?>">
-                                                        <i class="fas fa-angle-double-right green"></i>
-                                                    </a>
-                                                </button>
-                                            </td>
-                                        </tr>
+                                    <tr>
+                                        <th>Order ID</th>
+                                        <td><?= $row['ID']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Name</th>
+                                        <td><?= $row['Cust_name']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Customer Mobile</th>
+                                        <td><?= $row['Cust_mobile']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Location</th>
+                                        <td><?= $row['Cust_address']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Amount</th>
+                                        <td>৳<?= $row['Order_total']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Delivery Type/Time</th>
+                                        <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
+                                    </tr>
+                                    <tr>
+                                        <th>Time</th>
+                                        <td><?= $row['Order_time']; ?></td>
+                                    </tr>
+                                    <!-- <tr>
+                                        <th>Details</th>
+                                    </tr> -->
+                                        
                                     <?php } ?>
                                 <?php }else{ ?>
 
