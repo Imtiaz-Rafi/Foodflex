@@ -418,8 +418,17 @@ table{
     border-color: grey;
 	width:100%;
 }
+
 table{
 	border-collapse: collapse;
+}
+
+table.user-details {margin-bottom: 20px;width: 100%;}
+
+table.user-details td, table.user-details th,table.order-details td, table.order-details th {
+    border: 1px solid rgb(220 220 220);
+    padding: 5px 10px;
+    text-align: left;
 }
 .cart-body{
 	display: inline-block;

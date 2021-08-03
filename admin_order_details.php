@@ -62,9 +62,9 @@
                     $result = $con->query($sql);
                     if($result->num_rows>0){
                         while($row = $result->fetch_assoc()){ ?>
+                <h4 class="before-table">User Details</h4>
                 <table class="user-details">
                     <tbody>
-                        <!-- <h4>User Details</h4> -->
                         <tr>
                             <th>Order ID</th>
                             <td><?= $row['ID']; ?></td>
@@ -87,16 +87,16 @@
                         </tr>
                     </tbody>
                 </table>
+                <h4 class="before-table">Order Details</h4>
                 <table class="order-details">
                     <tbody>
-                        <!-- <h4>Order Details</h4> -->
                         <tr>
                             <th>Order Items</th>
                             <td><?= $row['Order_item']; ?></td>
                         </tr>
                         <tr>
                             <th>Amount</th>
-                            <td>৳<?= $row['Order_total']; ?></td>
+                            <td><?= $row['Order_total']; ?>৳</td>
                         </tr>
                         <tr>
                             <th>Delivery Type/Time</th>
