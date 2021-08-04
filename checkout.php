@@ -31,9 +31,9 @@
         $result = $con->query($sql);
         while($row = $result->fetch_assoc()){
             if(empty($Order_item)){
-                $Order_item = $row['Name'];
+                $Order_item = $row['Name'].' = '.$row['Qty'];
             }else{
-                $Order_item .= ", ". $row['Name'];
+                $Order_item .= ",".'<br>'. $row['Name'].' = '.$row['Qty'];
             }
             $Sub_total = $Sub_total + $row['Total_price'];
         }
