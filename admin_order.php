@@ -66,7 +66,9 @@
                                 <th>Amount</th>
                                 <th>Delivery Type/Time</th>
                                 <th>Time</th>
+                                <th>Status Order</th>
                                 <th>Details</th>
+                                
                             </tr>
                         </thead>
                         <tbody class="order-table-body">
@@ -83,18 +85,7 @@
                                             <td>৳<?= $row['Order_total']; ?></td>
                                             <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
                                             <td><?= $row['Order_time']; ?></td>
-                                            <!-- <td>
-                                                <button class="crud float-none">
-                                                    <a href="admin_menu.php?crud=1&&row=<?=$row['ID']; ?>">
-                                                        <i class="fas fa-edit"></i>
-                                                    </a>
-                                                </button>
-                                                <button class="crud float-none">
-                                                    <a href="admin_menu.php?crud=2&&row=<?=$row['ID']; ?>">
-                                                        <i class="fas fa-trash-alt"></i>
-                                                    </a>
-                                                </button>
-                                            </td> -->
+                                            <td>Pending</td>
                                             <td>
                                                 <button class="crud" style="float:none">
                                                     <a href="admin_order_details.php?crud=2&&row=<?=$row['ID']; ?>">

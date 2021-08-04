@@ -62,6 +62,17 @@
                     $result = $con->query($sql);
                     if($result->num_rows>0){
                         while($row = $result->fetch_assoc()){ ?>
+                <div class="order-status">
+                    <a href="">
+                        Accept Order
+                    </a>
+                    <a href="">
+                        Reject Order
+                    </a>
+                    <a href="">
+                        Delete Order
+                    </a>
+                </div>
                 <h4 class="before-table">User Details</h4>
                 <table class="user-details">
                     <tbody>
