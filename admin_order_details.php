@@ -63,13 +63,13 @@
                     if($result->num_rows>0){
                         while($row = $result->fetch_assoc()){ ?>
                 <div class="order-status">
-                    <a href="">
+                    <a href="" class="green-back">
                         Accept Order
                     </a>
-                    <a href="">
+                    <a href="" class="orange-back">
                         Reject Order
                     </a>
-                    <a href="">
+                    <a href="" class="red-back">
                         Delete Order
                     </a>
                 </div>

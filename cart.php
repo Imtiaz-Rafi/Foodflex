@@ -57,7 +57,7 @@
                                         <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>&&id=2">
                                             <i class="fas fa-plus"></i>
                                         </a>
-                                        <input type="input" value="<?=$row['Qty']?>">
+                                        <input type="input" value="<?=$row['Qty']?>" disabled>
                                         <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>&&id=2">
                                             <i class="fas fa-minus"></i>
                                         </a>
