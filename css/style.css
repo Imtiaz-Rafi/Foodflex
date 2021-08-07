@@ -32,7 +32,7 @@ a{
     text-align: center;
 }
 
-.order-status a {
+.order-status a, .after-table a {
     margin: 0px 15px;
     border-radius: 6px;
     /* border: 1px solid; */
@@ -40,25 +40,52 @@ a{
     color: white;
     font-weight: 500;
 }
+.accept-status{
+	background: rgb(0 166 81);
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.reject-status{
+	background: rgb(230 130 0);;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.after-table {
+    width: 100%;
+    background: #eaeaea;
+    margin-top: 15px;
+    text-align: center;
+    padding: 15px 10px;
+}
 
 a.red-back {
-    background: rgb(210 0 0);
+    background: rgb(210,0,0);
 }
 a.red-back:hover{
-	background: rgb(160 1 1);
+	background: rgb(160,1,1);
 }
 
 a.orange-back {
-    background: rgb(230 130 0);
+    background: rgb(230,130,0);
 }
 a.orange-back:hover {
-    background: rgb(160 83 0);
+    background: rgb(160,83,0);
 }
 a.green-back {
-    background: rgb(0 166 81);
+    background: rgb(0,166,81);
 }
 a.green-back:hover {
-    background: rgb(1 106 57);
+    background: rgb(1,106,57);
 }
 .line{
 	margin-bottom: 15px;
@@ -240,7 +267,7 @@ ul{
 	
 }
 .welcome-text span{
-	font-weight: bold;
+	font-weight: 600;
 	color: rgb(38 76 88);
 }
 .location-form{
@@ -252,6 +279,7 @@ ul{
 .welcome-text a{
 	background: rgb(0,166,81);
 	border-radius: 10px;
+	font-weight: 500;
 	padding: 15px 15px 15px 45px;
 	text-decoration: none;
 	text-transform: uppercase;

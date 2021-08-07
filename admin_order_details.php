@@ -12,6 +12,24 @@
     <title>All Order</title>
 </head>
 <body>
+    <?php
+        $ID = $_REQUEST['row'];
+        if(isset($_REQUEST['status']) && $_REQUEST['status']==1){
+            $sql = "UPDATE final_order SET Status='Accepted' WHERE ID='$ID'";
+            $result = $con->query($sql);
+            //header('location: admin_order_details.php');
+        }else if(isset($_REQUEST['status']) && $_REQUEST['status']==2){
+            $sql = "UPDATE final_order SET Status='Rejected' WHERE ID='$ID'";
+            $result = $con->query($sql);
+            //header('location: admin_order_details.php');
+        }else if(isset($_REQUEST['status']) && $_REQUEST['status']==3){
+            $sql = "DELETE final_order WHERE ID='$ID'";
+            $result = $con->query($sql);
+            header('location: admin_order.php');
+        }
+
+
+    ?>
     <!-- HEADER -->
     <section class="header">
         <div class="container">
@@ -61,18 +79,26 @@
                     $sql = "SELECT * FROM final_order WHERE ID='$ID'";
                     $result = $con->query($sql);
                     if($result->num_rows>0){
-                        while($row = $result->fetch_assoc()){ ?>
-                <div class="order-status">
-                    <a href="" class="green-back">
-                        Accept Order
-                    </a>
-                    <a href="" class="orange-back">
-                        Reject Order
-                    </a>
-                    <a href="" class="red-back">
-                        Delete Order
-                    </a>
-                </div>
+                        while($row = $result->fetch_assoc()){
+                            if($row['Status']=='Pending'){ ?>
+                                <div class="order-status">
+                                    <a href="admin_order_details.php?row=<?=$row['ID']; ?>&&status=1" class="green-back">
+                                        Accept Order
+                                    </a>
+                                    <a href="admin_order_details.php?row=<?=$row['ID']; ?>&&status=2" class="orange-back">
+                                        Reject Order
+                                    </a>
+                                </div>
+                            <?php }else if($row['Status']=='Accepted'){ ?>
+                                <div class="accept-status">
+                                    <span>Order Delivered</span>
+                                </div>
+                            <?php }else if($row['Status']=='Rejected'){ ?>
+                                <div class="reject-status">
+                                    <span>Order Rejected</span>
+                                </div>
+                            <?php }
+                            ?>
                 <h4 class="before-table">User Details</h4>
                 <table class="user-details">
                     <tbody>
@@ -105,9 +131,9 @@
                             <th>Order Items</th>
                             <td><?= $row['Order_item']; ?></td>
                         </tr>
-                        <tr>
+                        <tr class="green" style="background:rgb(248 248 248)">
                             <th>Amount</th>
-                            <td><?= $row['Order_total']; ?>৳</td>
+                            <td ><?= $row['Order_total']; ?>৳</td>
                         </tr>
                         <tr>
                             <th>Delivery Type/Time</th>
@@ -132,6 +158,12 @@
                         </tr>
                     </tbody>
                 </table>
+                <div class="after-table">
+                    <a href="admin_order_details.php?row=<?=$row['ID']; ?>&&status=3" class="red-back">
+                        Delete Order
+                    </a>
+                </div>
+                
                 <?php } ?>
                         <?php }else{ ?>
 

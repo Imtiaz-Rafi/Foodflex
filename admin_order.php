@@ -85,10 +85,10 @@
                                             <td>৳<?= $row['Order_total']; ?></td>
                                             <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
                                             <td><?= $row['Order_time']; ?></td>
-                                            <td>Pending</td>
+                                            <td><?= $row['Status']; ?></td>
                                             <td>
                                                 <button class="crud" style="float:none">
-                                                    <a href="admin_order_details.php?crud=2&&row=<?=$row['ID']; ?>">
+                                                    <a href="admin_order_details.php?row=<?=$row['ID']; ?>">
                                                         <i class="fas fa-angle-double-right green"></i>
                                                     </a>
                                                 </button>
