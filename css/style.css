@@ -931,7 +931,7 @@ a.cancel:hover {
 	border-bottom: 0.5px solid rgb(120,120,120);
 	width:100%;
 	/* text-align: center; */
-	padding:0px;
+	padding:15px 0px;
 	display:inline-block;
 	margin: 0px;
 }
@@ -951,7 +951,14 @@ a.cancel:hover {
 	background: rgb(71, 71, 71);
 	color: rgb(240, 240, 240);
 }
-
+.feedback-response {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+    background: rgb(0,166,81);
+    padding: 15px;
+    color: white;
+}
 
 
 /* Responsive */
