@@ -13,6 +13,9 @@ h4.before-table {
 h3,h4{
 	font-weight: 600;
 }
+.color-white{
+	color: white!important;
+}
 
 .footer p {
 	margin-top: 15px;
@@ -68,23 +71,23 @@ a{
     padding: 15px 10px;
 }
 
-a.red-back {
+.red-back {
     background: rgb(210,0,0);
 }
-a.red-back:hover{
+.red-back:hover{
 	background: rgb(160,1,1);
 }
 
-a.orange-back {
+.orange-back {
     background: rgb(230,130,0);
 }
-a.orange-back:hover {
+.orange-back:hover {
     background: rgb(160,83,0);
 }
-a.green-back {
+.green-back {
     background: rgb(0,166,81);
 }
-a.green-back:hover {
+.green-back:hover {
     background: rgb(1,106,57);
 }
 .line{
@@ -928,7 +931,7 @@ a.cancel:hover {
 	border-bottom: 0.5px solid rgb(120,120,120);
 	width:100%;
 	/* text-align: center; */
-	padding:15px 0px;
+	padding:0px;
 	display:inline-block;
 	margin: 0px;
 }

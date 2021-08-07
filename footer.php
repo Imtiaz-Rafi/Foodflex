@@ -39,9 +39,9 @@
             </ul>
             
             <ul class="footer_mid">
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="terms_&_condition.php">Terms & Conditions</a></li>
+                <li><a href="contact_us.php">Contact Us</a></li>
             </ul>
             <ul class="feedback">
                 <p>Help Us Serving You Better<a href="feedback.php">Give Feedback</a></p>

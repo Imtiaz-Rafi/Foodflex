@@ -23,7 +23,7 @@
             $result = $con->query($sql);
             //header('location: admin_order_details.php');
         }else if(isset($_REQUEST['status']) && $_REQUEST['status']==3){
-            $sql = "DELETE final_order WHERE ID='$ID'";
+            $sql = "DELETE FROM final_order WHERE ID='$ID'";
             $result = $con->query($sql);
             header('location: admin_order.php');
         }

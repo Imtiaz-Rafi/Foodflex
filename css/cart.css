@@ -5,7 +5,7 @@
 /* Millescnous */
 a{
 	text-decoration: none!important;
-	color: white;
+	/* color: white; */
 }
 .line{
 	margin-bottom: 15px;
@@ -161,6 +161,7 @@ th:last-child{
 }
 .chkout a{
     border-radius: 3px;
+    color: white;
     background:rgb(0,166,81);
     font-weight: 500;
     padding:10px 15px;

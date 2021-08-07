@@ -85,7 +85,21 @@
                                             <td>৳<?= $row['Order_total']; ?></td>
                                             <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
                                             <td><?= $row['Order_time']; ?></td>
-                                            <td><?= $row['Status']; ?></td>
+                                            <td><?php
+                                                if($row['Status']=='Accepted'){?>
+                                                    <div class="green-back color-white">
+                                                        <?=$row['Status']; ?>
+                                                    </div>
+                                                <?php }else if($row['Status']=='Rejected'){ ?>
+                                                    <div class="red-back color-white">
+                                                        <?=$row['Status']; ?>   
+                                                    </div>
+                                                <?php }else{ ?>
+                                                    <div class="orange-back color-white">
+                                                        <?=$row['Status']; ?>
+                                                    </div>
+                                                <?php }?>
+                                            </td>
                                             <td>
                                                 <button class="crud" style="float:none">
                                                     <a href="admin_order_details.php?row=<?=$row['ID']; ?>">
