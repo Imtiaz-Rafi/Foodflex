@@ -794,6 +794,20 @@ h3 button:hover {
     border: 1px solid #ced4da;
     cursor: text;
 }
+.feedback-form-control {
+	/* display: table-cell; */
+	vertical-align: middle;
+    width: 100%;
+    padding: 0px;
+	  margin-bottom: 4px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff9f9;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    cursor: text;
+}
 .form-control:hover{
     background: rgb(238,238,238);
 }
@@ -953,7 +967,7 @@ a.cancel:hover {
 }
 .feedback-response {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 25px;
     font-size: 20px;
     background: rgb(0,166,81);
     padding: 15px;

@@ -43,12 +43,17 @@
 
 
     ?>
+    <?php include 'header.php'; ?>
     
     <!-- BODY -->
     <section class="grey-bg">
         <div class="container">
             <div class="imagebg"></div>
                 
+                    
+                
+                <div class="row " style="margin-top: 50px">
+                    <div class="col-md-6 col-md-offset-3 form-container">
                     <?php
                         if(isset($_REQUEST['id']) && $_REQUEST['id']==1){ ?>
                             <div class="feedback-response">
@@ -56,9 +61,6 @@
                         
                             </div>
                     <?php } ?>
-                
-                <div class="row " style="margin-top: 50px">
-                    <div class="col-md-6 col-md-offset-3 form-container">
                         <h2> <u>Feedback Form<u> </h2> 
                         <form role="form" method="post" id="reused_form">
                             <div class="row">
@@ -114,17 +116,17 @@
                             <div class="row">
                                 <div class="col-sm-12 form-group">
                                     <label for="comments"> Tell us more:</label>
-                                    <textarea class="form-control" type="textarea" name="description" id="description" placeholder="Tell us more" maxlength="6000" rows="7"></textarea>
+                                    <textarea class="feedback-form-control" type="textarea" name="description" id="description" placeholder="Tell us more" maxlength="6000" rows="7"></textarea>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-sm-6 form-group">
                                     <label for="name"> Your Name:</label>
-                                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your name..."required>
+                                    <input type="text" class="feedback-form-control" id="name" name="name" placeholder="Enter Your name..."required>
                                 </div>
                                 <div class="col-sm-6 form-group">
                                     <label for="email"> Email:</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your e-mail..."required>
+                                    <input type="email" class="feedback-form-control" id="email" name="email" placeholder="Enter Your e-mail..."required>
                                 </div>
                             </div>
                             <div class="row">
