@@ -41,6 +41,9 @@
                         </div>
                         We Hope To Hear From You Again Soon!
                     </span> 
+                    <div class="back-to" style="margin-top:25px">
+                        <a href="index.php">Continue <i class="fas fa-arrow-right" style="font-size:14px"></i></a>
+                    </div>
 
                     
                 </div>

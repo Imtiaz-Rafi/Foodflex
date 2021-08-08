@@ -56,6 +56,9 @@
     <section class="grey-bg padding60">
         <div class="container">
             <div class="container-full">
+                <div class="back-to">
+                    <a href="admin.php"><i class="fas fa-arrow-left"></i> Back to Admin Home</a>
+                </div>
                     <table>
                         <thead class="order-table-head">
                             <tr>

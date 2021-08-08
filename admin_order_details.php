@@ -9,6 +9,7 @@
 <head>
     <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/cart.css"> -->
     <title>All Order</title>
 </head>
 <body>
@@ -74,6 +75,9 @@
     <section class="grey-bg padding60">
         <div class="container">
             <div class="container-full">
+                <div class="back-to">
+                    <a href="admin_order.php"><i class="fas fa-arrow-left"></i> Back to Order List</a>
+                </div>
                 <?php
                     $ID = $_REQUEST['row'];
                     $sql = "SELECT * FROM final_order WHERE ID='$ID'";
