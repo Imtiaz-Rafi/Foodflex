@@ -394,11 +394,6 @@ ul{
 	color: rgb(81,81,81)
 }
 /* ITEM-MID */
-.top-menu-space{
-	position: relative;
-    top: -100px;
-    visibility: hidden;
-}
 .item-mid ul li{
 	background: white;
     display: inline-block;

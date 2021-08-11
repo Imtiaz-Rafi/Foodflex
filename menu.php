@@ -56,6 +56,7 @@
                                 while($cat_row = $cat_result->fetch_assoc()){
                                         $rid_link = $cat_row['Cat_name'];
                                     ?>
+                                <a id="<?= $cat_row['Cat_name']?>" class="top-menu-space"></a>
                                 <div id="<?= $cat_row['Cat_name'];?>">
                                     <h3> <?= $cat_row['Cat_name'];?> </h3>
                                     <ul>

@@ -271,7 +271,7 @@
                                                         <input type="name" value="<?= $row["FoodName"];?>" name="foodname" class="form-control" required>
                                                         <input type="number" value="<?=$row["Price"]; ?>" name="price" class="form-control" required>
                                                         <input type="text" value="<?= $row["Image"];?>" name="picture" class="form-control">
-                                                        <input type="file" name="uploadfile" placeholder="Image" required>
+                                                        <input type="file" name="uploadfile" placeholder="Image">
                                                         <input type="submit" value="✔" class="btn">
                                                         <a href="admin_menu.php" class="cancel">✖</a>
                                                     </form>
