@@ -717,7 +717,37 @@ td {
 .btn-primary:hover {
     background-color: rgb(5, 109, 55);
 }
+/* CONTACT US */
 
+.contact-content{
+	text-align:center;
+}
+.contact-content h1 {
+	color: rgb(0,10,35);
+    font-size: 60px;
+    font-weight: 600;
+	margin-top:50px;
+	margin-bottom:20px;
+}
+.contact-content p {
+    font-size: 18px;
+	margin-bottom:30px;
+}
+.contact-content .read-more{
+	border: 1px solid rgb(175 175 175);
+    font-size: 16px;
+    font-weight: 500;
+    padding: 15px 30px;
+    border-radius: 50px;
+    background: white;
+	color: rgb(15,100,255);
+    margin-top: 10px;
+	margin-bottom: 100px;
+	cursor: pointer;
+}
+.contact-content .read-more:hover{
+    background: rgb(240, 240, 240);
+}
 /* ADMIN BODY */
 
 .admin-container{
