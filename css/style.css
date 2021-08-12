@@ -125,6 +125,9 @@ ul{
 .float-none{
 	float: none;
 }
+.font-500{
+	font-weight: 500;
+}
 /* Container */
 .container{
 	display:table;
@@ -721,11 +724,12 @@ td {
 
 .contact-content{
 	text-align:center;
+	margin: 0px 150px;
 }
 .contact-content h1 {
 	color: rgb(0,10,35);
     font-size: 60px;
-    font-weight: 600;
+    font-weight: 500;
 	margin-top:50px;
 	margin-bottom:20px;
 }
@@ -737,7 +741,7 @@ td {
 	border: 1px solid rgb(175 175 175);
     font-size: 16px;
     font-weight: 500;
-    padding: 15px 30px;
+    padding: 15px 25px;
     border-radius: 50px;
     background: white;
 	color: rgb(15,100,255);
@@ -746,7 +750,52 @@ td {
 	cursor: pointer;
 }
 .contact-content .read-more:hover{
-    background: rgb(240, 240, 240);
+	border:none;
+    background: #edf2f7;
+}
+.contact-input {
+    display: grid;
+    grid-row-gap: 1rem;
+    grid-column-gap: 2.5rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.contact-input input,.contact-input textarea{
+	width: 100%;
+    border: 1px solid rgb(230 230 230);
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px 10px;
+    margin-bottom: 15px;
+    cursor: auto;
+}
+.contact-input .label{
+	text-align: start;
+    display: block;
+    font-size: 16px;
+}
+.contact-input .grid-col-half{
+	grid-column: 1/ span 2;
+}
+
+.contact-content .confirm {
+    text-align: left;
+    color: rgb(70 70 70);
+    vertical-align: middle;
+    margin-bottom: 50px;
+}
+
+.contact-content .send {
+    width: 100%;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 10px 0px;
+    border-radius: 8px;
+    color: rgb(100,100,100);
+    background: #edf2f7;
+}
+.contact-content .send:hover {
+    background: #d8dfe7;
 }
 /* ADMIN BODY */
 

@@ -18,9 +18,9 @@
                 </li>
                 <li class="text-center" style="width:40%;">
                     <div class="social_media">
-                        <a href="https://www.facebook.com/imtiaz.rafi.79/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-                        <a href="https://www.instagram.com/imtiaz__rafi/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-                        <a href="mailto:imtiazrafi199918@gmail.com" target="_blank"><i class="fas fa-envelope-square"></i></a>
+                        <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a>
+                        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram-square"></i></a>
+                        <a href="contact_us.php#contact" target="_blank"><i class="fas fa-envelope-square"></i></a>
                     </div>
                 </li>
                 <li class="text-right" style="width:30%;">

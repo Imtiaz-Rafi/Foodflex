@@ -29,9 +29,7 @@
                     <div class="contact-content">
                         <h1>Contact Us</h1>
                         <p>
-                            You can send a message at 
-                            <a href="mailto:foodflexadmin@gmail.com" target="_blank">foodflexadmin@gmail.com</a> <br>
-                          or contact us at 0125 0258
+                            You can send a message or contact us at <span class="green font-500">0125 0258</span> 
                         </p>
                         <a href="#contact">
                             <button class="read-more">
@@ -40,17 +38,36 @@
                         </a>
                         <a id="contact" class="after-contact"></a>
                         <form action="" method="post">
-                            <label for="name">Name*</label><br>
-                            <input type="name" id="name" placeholder="Your Name" name="name" required><br>
-                            <label for="email">Email*</label><br>
-                            <input type="email" id="email" placeholder="mail@example.com" name="email" required><br>
-                            <label for="mobile">Mobile*</label><br>
-                            <input type="mobile" id="mobile" placeholder="+012345" name="mobile" required><br>
-                            <label for="message">Message</label><br>
-                            <input type="text" id="message" placeholder="Your message" name="message"><br>
-                            <input type="checkbox" id="confirmation" name="confirm" required>
-                            <label for="confirmation">I confirm that i have read and agree the contents of the privacy statement*</label><br>
-                            <input type="submit" value="Send"><br>
+                            <div class="contact-input">
+                                <div class="grid-col-half">
+                                    <label for="name" class="label">Name*</label>
+                                    <input type="name" id="name" placeholder="Your Name" name="name" required>
+                                </div>
+                                <div class="css-0">
+                                    <label for="email" class="label">Email*</label>
+                                    <input type="email" id="email" placeholder="mail@example.com" name="email" required>
+                                </div>
+                                <div class="css-0">
+                                    <label for="mobile" class="label">Mobile*</label>
+                                    <input type="mobile" id="mobile" placeholder="+012345" name="mobile" required>
+                                </div>
+                                <div class="grid-col-half">
+                                    <label for="message" class="label">Message</label>
+                                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Your message"></textarea>
+                                </div>
+                                <!-- <div class="grid-col-half">  
+                                </div> -->
+                            </div>
+                            <div class="confirm">
+                                <input type="checkbox" id="confirmation" name="confirm" required>
+                                <label for="confirmation">
+                                    I confirm that i have read and agree the contents of the privacy statement*
+                                </label>
+                            </div>
+                            <div>
+                                <input type="submit" value="Send" class="send">
+                            </div>
+                            
                         </form>
                     </div>
                 </div>
