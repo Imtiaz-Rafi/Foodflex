@@ -1010,6 +1010,7 @@ a.cancel:hover {
 }
 .footer_login a:hover {
     color: rgb(0, 166, 81);
+	text-decoration: underline!important;
 }
 .footer_mid{
 	border-bottom: 0.5px solid rgb(120,120,120);
@@ -1032,6 +1033,7 @@ a.cancel:hover {
 }
 .footer_mid li a:hover{
 	color:rgb(0, 166, 81);
+	text-decoration: underline!important;
 }
 .feedback{
 	border-bottom: 0.5px solid rgb(120,120,120);
