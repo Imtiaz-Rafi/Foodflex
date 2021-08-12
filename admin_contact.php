@@ -9,7 +9,7 @@
 <head>
     <?php include 'links.php';?>
     <link rel="stylesheet" href="css/style.css">
-    <title>All Order</title>
+    <title>Contact List</title>
 </head>
 <body>
     <!-- HEADER -->
@@ -49,7 +49,7 @@
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
-                <li class="nav-item"><a href="#">Order List</a></li>
+                <li class="nav-item"><a href="#">Contact List</a></li>
             </ul>
         </div>
     </section>
@@ -62,50 +62,32 @@
                     <table>
                         <thead class="order-table-head">
                             <tr>
-                                <th>Order ID</th>
-                                <th>Customer Name</th>
-                                <th>Customer Mobile</th>
-                                <th>Location</th>
-                                <th>Amount</th>
-                                <th>Delivery Type/Time</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Mobile</th>
+                                <th>Email</th>
+                                <th>Message</th>
                                 <th>Time</th>
-                                <th>Status Order</th>
                                 <th>Details</th>
                                 
                             </tr>
                         </thead>
                         <tbody class="order-table-body">
                             <?php
-                                $sql = "SELECT * FROM final_order ORDER BY ID DESC";
+                                $sql = "SELECT * FROM contact_us ORDER BY ID DESC";
                                 $result = $con->query($sql);
                                 if($result->num_rows>0){
                                     while($row = $result->fetch_assoc()){ ?>
                                         <tr>
                                             <td><?= $row['ID']; ?></td>
-                                            <td><?= $row['Cust_name']; ?></td>
-                                            <td><?= $row['Cust_mobile']; ?></td>
-                                            <td><?= $row['Cust_address']; ?></td>
-                                            <td>৳<?= $row['Order_total']; ?></td>
-                                            <td><?= $row['Del_type']; ?>/<?= $row['Del_time']; ?></td>
-                                            <td><?= $row['Order_time']; ?></td>
-                                            <td><?php
-                                                if($row['Status']=='Accepted'){?>
-                                                    <div class="green-back color-white">
-                                                        <?=$row['Status']; ?>
-                                                    </div>
-                                                <?php }else if($row['Status']=='Rejected'){ ?>
-                                                    <div class="red-back color-white">
-                                                        <?=$row['Status']; ?>   
-                                                    </div>
-                                                <?php }else{ ?>
-                                                    <div class="orange-back color-white">
-                                                        <?=$row['Status']; ?>
-                                                    </div>
-                                                <?php }?>
-                                            </td>
+                                            <td><?= $row['Name']; ?></td>
+                                            <td><?= $row['Mobile']; ?></td>
+                                            <td><?= $row['Email']; ?></td>
+                                            <td><p class="elipsis"><?= $row['Message']; ?></p></td>
+                                            <td><?= $row['Send_time']; ?></td>
                                             <td>
                                                 <button class="crud" style="float:none">
-                                                    <a href="admin_order_details.php?row=<?=$row['ID']; ?>">
+                                                    <a href="admin_contact_details.php?row=<?=$row['ID']; ?>">
                                                         <i class="fas fa-angle-double-right green"></i>
                                                     </a>
                                                 </button>

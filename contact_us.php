@@ -22,7 +22,7 @@
             $Mobile = test_data($_REQUEST["mobile"]);
             $Message = test_data($_REQUEST["message"]);
             $sql = "INSERT INTO contact_us(ID,Name,Mobile,Email,Message)
-            VALUES(0,'$Name','$Email','$Mobile','$Message')";
+            VALUES(0,'$Name','$Mobile','$Email','$Message')";
             $result = $con->query($sql);
             if($result){
                 header('location: contact_us.php?success=1');

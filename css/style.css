@@ -808,6 +808,7 @@ td {
 /* ADMIN BODY */
 
 .admin-container{
+	display: grid;
 	width: 100%;
     border: 1px solid rgb(222, 226, 230);
     padding: 15px 30px;
@@ -899,6 +900,13 @@ h3 button:hover {
     background-clip: padding-box;
     border: 1px solid #ced4da;
     cursor: text;
+}
+.elipsis {
+    text-overflow: ellipsis;
+    width: 200px;
+    overflow: hidden;
+    white-space: nowrap;
+    display: block;
 }
 .form-control:hover{
     background: rgb(238,238,238);
