@@ -14,6 +14,29 @@
 <body>
     <!-- HEADER -->
     <?php include 'header.php';?>
+    <?php
+    $ID = $Name = $Email = $Mobile = $Message = "";
+        if($_SERVER['REQUEST_METHOD']=='POST'){
+            $Name = test_data($_REQUEST["name"]);
+            $Email = test_data($_REQUEST["email"]);
+            $Mobile = test_data($_REQUEST["mobile"]);
+            $Message = test_data($_REQUEST["message"]);
+            $sql = "INSERT INTO contact_us(ID,Name,Mobile,Email,Message)
+            VALUES(0,'$Name','$Email','$Mobile','$Message')";
+            $result = $con->query($sql);
+            if($result){
+                header('location: contact_us.php?success=1');
+            }else{
+                echo "Something Wrong";
+            }
+        }
+        function test_data($data){
+            $data = trim($data);
+            $data = stripslashes($data);
+            $data = htmlspecialchars($data);
+            return $data;
+        }
+    ?>
     <section class="bg-row text-center">
         <div class="container">
             <ul class="nav nav-tabs">
@@ -27,6 +50,13 @@
             <div class="container-full">
                 <div class="cart-main">
                     <div class="contact-content">
+                        <?php
+                            if(isset($_REQUEST['success']) && $_REQUEST['success']==1){ ?>
+                                <div class="success">
+                                    <span>Your Message Sent Successfully.</span>
+                                </div>
+                            <?php }
+                        ?>
                         <h1>Contact Us</h1>
                         <p>
                             You can send a message or contact us at <span class="green font-500">0125 0258</span> 

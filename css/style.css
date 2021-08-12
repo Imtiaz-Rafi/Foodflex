@@ -793,9 +793,17 @@ td {
     border-radius: 8px;
     color: rgb(100,100,100);
     background: #edf2f7;
+	margin-bottom: 40px;
 }
 .contact-content .send:hover {
     background: #d8dfe7;
+}
+.contact-content .success {
+    background: rgb(0,166,81);
+    color: white;
+    padding: 10px;
+    width: 100%;
+	border-radius: 8px;
 }
 /* ADMIN BODY */
 
