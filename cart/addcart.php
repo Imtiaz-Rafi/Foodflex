@@ -6,6 +6,7 @@
         $result = $con->query($sql);
         $row = $result->fetch_assoc();
         $prod_name = $row['FoodName'];
+        $Cat_name = $row['Cat_name'];
         $price = $row['Price'];
         $qty = 1;
 
@@ -27,7 +28,7 @@
         
         $cart_result = $con->query($cart_sql);
         if($cart_result){
-            header("location: ../menu.php");
+            header("location: ../menu.php#$Cat_name");
         }else{
             echo "WA";
         }
