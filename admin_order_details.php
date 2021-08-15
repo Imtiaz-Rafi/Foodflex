@@ -15,18 +15,20 @@
 <body>
     <?php
         $ID = $_REQUEST['row'];
-        if(isset($_REQUEST['status']) && $_REQUEST['status']==1){
-            $sql = "UPDATE final_order SET Status='Accepted' WHERE ID='$ID'";
-            $result = $con->query($sql);
-            //header('location: admin_order_details.php');
-        }else if(isset($_REQUEST['status']) && $_REQUEST['status']==2){
-            $sql = "UPDATE final_order SET Status='Rejected' WHERE ID='$ID'";
-            $result = $con->query($sql);
-            //header('location: admin_order_details.php');
-        }else if(isset($_REQUEST['status']) && $_REQUEST['status']==3){
+        if(isset($_REQUEST['id']) && $_REQUEST['id']==3){
             $sql = "DELETE FROM final_order WHERE ID='$ID'";
             $result = $con->query($sql);
             header('location: admin_order.php');
+        }
+        else if(isset($_REQUEST['id']) && $_REQUEST['id']==2){
+            $sql = "UPDATE final_order SET Status='Rejected' WHERE ID='$ID'";
+            $result = $con->query($sql);
+            //header('location: admin_order_details.php');
+        }
+        else if(isset($_REQUEST['status']) && $_REQUEST['status']==1){
+            $sql = "UPDATE final_order SET Status='Accepted' WHERE ID='$ID'";
+            $result = $con->query($sql);
+            //header('location: admin_order_details.php');
         }
 
 
@@ -84,7 +86,23 @@
                     $result = $con->query($sql);
                     if($result->num_rows>0){
                         while($row = $result->fetch_assoc()){
-                            if($row['Status']=='Pending'){ ?>
+                            if(isset($_REQUEST['status']) && $_REQUEST['status']==3){ ?>
+                                <div class="order-status">
+                                    <form action="admin_order_details.php?id=3&&row=<?=$row['ID']; ?>" method="post">
+                                        <span class="admin-form-control">ARE YOU SURE TO DELETE THIS ORDER?</span><br>
+                                        <input type="submit" value="OK ✔" class="btn confirm ok">
+                                        <a href="admin_order_details.php?row=<?=$ID ?>" class="confirm no">NO ✖</a>
+                                    </form>
+                                </div>
+                            <?php }else if(isset($_REQUEST['status']) && $_REQUEST['status']==2){ ?>
+                                <div class="order-status">
+                                    <form action="admin_order_details.php?id=2&&row=<?=$row['ID']; ?>" method="post">
+                                        <span class="admin-form-control">ARE YOU SURE TO REJECT THIS ORDER?</span><br>
+                                        <input type="submit" value="OK ✔" class="btn confirm ok">
+                                        <a href="admin_order_details.php?row=<?=$ID ?>" class="confirm no">NO ✖</a>
+                                    </form>
+                                </div>
+                            <?php }else if($row['Status']=='Pending'){ ?>
                                 <div class="order-status">
                                     <a href="admin_order_details.php?row=<?=$row['ID']; ?>&&status=1" class="green-back">
                                         Accept Order
