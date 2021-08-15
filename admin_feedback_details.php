@@ -15,7 +15,7 @@
 <body>
     <?php
         $ID = $_REQUEST['row'];
-        if(isset($_REQUEST['status']) && $_REQUEST['status']==3){
+        if(isset($_REQUEST['id']) && $_REQUEST['id']==3){
             $sql = "DELETE FROM feedback WHERE ID='$ID'";
             $result = $con->query($sql);
             header('location: admin_feedback.php');
@@ -59,7 +59,7 @@
     <!-- BODY -->
     <section class="bg-row text-center">
         <div class="container">
-            <ul class="nav nav-tabs">
+            <ul>
                 <li class="nav-item"><a href="#">Feedback Details</a></li>
             </ul>
         </div>
@@ -76,7 +76,15 @@
                     $result = $con->query($sql);
                     if($result->num_rows>0){
                         while($row = $result->fetch_assoc()){
-                            ?>
+                            if(isset($_REQUEST['status']) && $_REQUEST['status']==3){ ?>
+                                <div class="order-status">
+                                    <form action="admin_feedback_details.php?id=3&&row=<?=$row['ID']; ?>" method="post">
+                                        <span class="admin-form-control">ARE YOU SURE TO DELETE THIS FEEDBACK MESSAGE?</span><br>
+                                        <input type="submit" value="OK ✔" class="btn confirm ok">
+                                        <a href="admin_feedback_details.php?row=<?=$ID ?>" class="confirm no">NO ✖</a>
+                                    </form>
+                                </div>
+                            <?php }?>
                 <h4 class="before-table">Feedback Details</h4>
                 <table class="user-details">
                     <tbody>

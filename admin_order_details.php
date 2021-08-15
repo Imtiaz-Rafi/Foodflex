@@ -69,7 +69,7 @@
     <!-- BODY -->
     <section class="bg-row text-center">
         <div class="container">
-            <ul class="nav nav-tabs">
+            <ul>
                 <li class="nav-item"><a href="#">Order List</a></li>
             </ul>
         </div>

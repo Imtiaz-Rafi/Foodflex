@@ -141,7 +141,7 @@
     <!-- BODY -->
     <section class="bg-row text-center">
         <div class="container">
-            <ul class="nav nav-tabs">
+            <ul>
                 <li class="nav-item"><a href="#">Admin Menu</a></li>
             </ul>
         </div>

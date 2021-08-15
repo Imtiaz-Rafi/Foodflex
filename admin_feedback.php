@@ -48,7 +48,7 @@
     <!-- BODY -->
     <section class="bg-row text-center">
         <div class="container">
-            <ul class="nav nav-tabs">
+            <ul>
                 <li class="nav-item"><a href="#">Feedback List</a></li>
             </ul>
         </div>
