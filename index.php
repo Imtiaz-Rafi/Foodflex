@@ -8,7 +8,7 @@
 <html lang="en">
 <head>
     <?php include 'links.php';?>
-    <link rel="stylesheet" href="css/style.css">
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
     <title>Foodflex</title>
 </head>
 <body>

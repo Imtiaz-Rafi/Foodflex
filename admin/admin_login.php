@@ -36,7 +36,7 @@
                         if(($row["Email"] == $Email) && ($row["Password"]==$Password)){
                             $_SESSION['admin_name'] = $Name = $row["Name"];
                             $_SESSION['admin_id'] = $row['ID'];
-                            header("location: ../admin.php");
+                            header("location: index.php");
                             die();
                         }else{
                             header("location: admin_login.php?wrong=0");

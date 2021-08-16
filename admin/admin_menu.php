@@ -1,14 +1,5 @@
-<?php
-    session_start();
-    include 'Connection.php';
-    include 'login/login_check.php';
-    $admin_data = admin_logged($con);
-?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php'; ?>
 <head>
-    <?php include 'links.php';?>
-    <link rel="stylesheet" href="css/style.css">
     <title>Menue</title>
 </head>
 <body>
@@ -66,7 +57,7 @@
                 $altname = $_REQUEST["picture"];
                 $filename = $_FILES["uploadfile"]["name"];
                 $tempname = $_FILES["uploadfile"]["tmp_name"];   
-                $folder = "images/".$filename;
+                $folder = "../images/".$filename;
                 if(empty($FoodNameError)){
                     if($_REQUEST['id']==3){
                         $sql = "INSERT INTO food_list(ID,FoodName,Price,Image,Cat_name) 
@@ -76,7 +67,7 @@
                         if(empty($filename)){
                             $filename = $altname;
                             $name = $altname;   
-                            $folder = "images/".$filename;
+                            $folder = "../images/".$filename;
                         }
                         $ID = $_REQUEST['row'];
                         $sql = "UPDATE food_list SET FoodName='$FoodName',Price='$Price',Image='$filename' WHERE ID='$ID'";
@@ -105,38 +96,6 @@
             return $data;
         }
     ?>
-    <!-- HEADER -->
-    <section class="header">
-        <div class="container">
-            <div class="logo">
-                <a href="admin.php"><img src="images/logo.png" alt="Logo"></a>
-            </div>
-            <div class="nav-area">
-                <?php
-                    if($admin_data){ $Name = $admin_data['Username']; ?>
-                    <ul>
-                        <li class="logout">
-                            <a href="login/logout.php">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Log Out
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="far fa-user"></i>
-                                <?php echo "Hi! ADMIN"?>
-                            </a>
-                        </li>
-                    </ul>
-
-                <?php }else{ ?>
-                    <ul>
-                        <?php header('location: admin/admin_login.php');?>
-                    </ul>
-                <?php }?>
-            </div>
-        </div>
-    </section>
 
     <!-- BODY -->
     <section class="bg-row text-center">
@@ -283,7 +242,7 @@
                                                         <a href="admin_menu.php" class="cancel">✖</a>
                                                     </form>
                                                 <?php }else{ ?>
-                                                    <img src="images/<?= $row["Image"];?>" alt="Image">
+                                                    <img src="../images/<?= $row["Image"];?>" alt="Image">
                                                     <div class="beside-img">
                                                         <h4><?= $row["FoodName"];?></h4> <!-- auto echo -->
                                                         <div class="d-tab w100">
@@ -318,12 +277,5 @@
         </div>
     </section>
     <!-- FOOTER -->
-    <footer class="footer">
-        <div class="container">
-            
-            <p>&copy; Copyright Foodflex.com 2021 | All rights reserved.</p>
-            
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 </body>
-</html>
