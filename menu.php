@@ -83,47 +83,42 @@
                 </div>
                 <!-- MINI CART -->
                 <div class="col-3">
-                    <!-- MINI CART HEADER -->
-                    <div class="cart-top">
-                        <h3>Your Cart 
-                            <span class="item">
-                                <i class="fas fa-cart-plus"></i>
-                                <?php 
-                                    $sql="SELECT * FROM order_cart";
-                                    $result = $con->query($sql);
-                                    $result->fetch_assoc();
-                                    echo $row = $result->num_rows;
-                                ?>
-                            </span>
-                        </h3>
-                        <div class="cart-body">
-                            <table class="table" id="mini-cart">
-                                <thead>
-                                    <tr>
-                                        <th class="text-center">Item</th>
-                                        <th class="text-right">Qty</th>
-                                        <th class="text-center">Price</th>
-                                        <!-- <th><div class="blank"></div> </th> -->
-                                    </tr>
-                                </thead>
-                            </table>
-                        </div>
-                    </div>
-                    <!-- MINI CART ELEMENT -->
-                    <div class="cart-middle">
-                        <table class="table" id="mini-cart">
-                            <tbody>
-                                <?php 
-                                    $sql="SELECT * FROM order_cart";
-                                    $result = $con->query($sql);
-                                    $row = $result->num_rows;
-                                    if($row == 0){
-                                        if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
-                                        <div class="warning">Please Add some food for CHECKOUT</div>
-                                    <?php }else if(isset($_REQUEST['logged']) && $_REQUEST['logged']==0){?>
-                                        <div class="warning">Log In First to ADD Item.</div>
-                                    <?php }}
-                                    while($row = $result->fetch_assoc()){
+                    <table>
+                        <thead>
+                            <tr>
+                                <td><h3>Your Cart </h3></td>
+                                <td>
+                                    <span class="item">
+                                        <i class="fas fa-cart-plus"></i>
+                                        <?php 
+                                            $sql="SELECT * FROM order_cart";
+                                            $result = $con->query($sql);
+                                            $result->fetch_assoc();
+                                            echo $row = $result->num_rows;
+                                        ?>
+                                    </span>
+                                </td>
+                            </tr>
+                        </thead>
+                        <thead>
+                            <tr>
+                                <th class="text-center">Item</th>
+                                <th class="text-right">Qty</th>
+                                <th class="text-center">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                                $sql="SELECT * FROM order_cart";
+                                $result = $con->query($sql);
+                                $row = $result->num_rows;
+                                if($row == 0){
+                                    if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
+                                    <div class="warning">Please Add some food for CHECKOUT</div>
+                                <?php }else if(isset($_REQUEST['logged']) && $_REQUEST['logged']==0){?>
+                                    <div class="warning">Log In First to ADD Item.</div>
+                                <?php }}
+                                while($row = $result->fetch_assoc()){
                                 ?>
                                 <tr>
                                     <td><?= $row['Name'];?></td>
@@ -145,52 +140,48 @@
                                         </a>
                                     </td>
                                 </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
-                    </div>
-                    <!--SUB TOTAL-->
-                    <div class="cart-footer">
-                        <table class="table">
-                            <tbody>
-                                <tr class="green-cart">
-                                    <td>Sub Total</td>
-                                    <td>৳ <?php 
-                                        $sql = "SELECT * FROM order_cart";
+                            <?php } ?>
+                        </tbody>
+                        <tbody>
+                            <tr class="green-cart">
+                                <td>Sub Total</td>
+                                <td>৳ <?php 
+                                    $sql = "SELECT * FROM order_cart";
+                                    $result = $con->query($sql);
+                                    $total_price=0;
+                                    while($row = $result->fetch_assoc()){
+                                        $total_price = $total_price + $row['Total_price'];
+                                    }
+                                    echo $total_price;
+                                    ?>
+                                </td>
+                            </tr>
+                        </tbody>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <?php 
+                                        $sql="SELECT * FROM order_cart";
                                         $result = $con->query($sql);
-                                        $total_price=0;
-                                        while($row = $result->fetch_assoc()){
-                                            $total_price = $total_price + $row['Total_price'];
-                                        }
-                                        echo $total_price;
-                                        ?>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>  
-                    </div>
-                    <!-- CHECKOUT -->
-                    <div class="checkout">
-                        
-                            <?php 
-                                $sql="SELECT * FROM order_cart";
-                                $result = $con->query($sql);
-                                $result->fetch_assoc();
-                                $row = $result->num_rows;
-                                ?>
+                                        $result->fetch_assoc();
+                                        $row = $result->num_rows;
+                                    ?>
                                     <a <?php if($row==0){ ?>
                                         href="menu.php?item=0"
-                                    <?php }else if(!$data){ ?>
-                                        href="menu.php?logged=0";
-                                    <?php }else{ ?>
-                                        href="cart.php"
-                                    <?php ;}?> >
-                                        <button class="btn btn-primary loader">Checkout</button>
+                                        <?php }else if(!$data){ ?>
+                                            href="menu.php?logged=0";
+                                        <?php }else{ ?>
+                                            href="cart.php"
+                                        <?php ;}?> >
+                                            <button class="btn btn-primary loader">
+                                                Checkout
+                                            </button>
                                     </a>
-                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-                
-                
             </div>
         </div>
     </section>
