@@ -1,14 +1,5 @@
-<?php
-    session_start();
-    include 'Connection.php';
-    include 'login/login_check.php';
-    $data = is_logged($con);
-?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php'; ?>
 <head>
-    <?php include 'links.php';?>
-    <link rel="stylesheet" href="css/style.css">
     <title>Feedback</title>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
@@ -38,20 +29,11 @@
                 echo "Something is wrong";
             }
         }
-
-
-
-
     ?>
-    <?php include 'header.php'; ?>
-    
     <!-- BODY -->
     <section class="grey-bg">
         <div class="container">
             <div class="imagebg"></div>
-                
-                    
-                
                 <div class="row " style="margin-top: 50px">
                     <div class="col-md-6 col-md-offset-3 form-container">
                     <?php
@@ -141,7 +123,4 @@
             </div>
         </div>
     </section>
-
-    
 </body>
-</html>

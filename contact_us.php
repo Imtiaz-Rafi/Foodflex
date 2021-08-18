@@ -1,19 +1,8 @@
-<?php
-    session_start();
-    include 'Connection.php';
-    include 'login/login_check.php'; 
-    $data = is_logged($con); 
-?>
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php';?>
 <head>
-    <?php include 'links.php';?>
-    <link rel="stylesheet" href="css/cart.css">
     <title>Contact Us</title>
 </head>
 <body>
-    <!-- HEADER -->
-    <?php include 'header.php';?>
     <?php
     $ID = $Name = $Email = $Mobile = $Message = "";
         if($_SERVER['REQUEST_METHOD']=='POST'){
@@ -107,4 +96,3 @@
     <!-- FOOTER -->
     <?php include 'footer.php';?>
 </body>
-</html>

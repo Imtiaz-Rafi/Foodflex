@@ -1,9 +1,4 @@
-<?php
-    session_start();
-    include 'Connection.php';
-    include 'login/login_check.php';
-    $data = is_logged($con);
-?>
+<?php include 'header.php';?>
 <?php
     $ID = $data['ID'];
     $sql = "SELECT * FROM customers WHERE ID='$ID'";
@@ -15,22 +10,14 @@
             $_SESSION['Mobile']=$row['Mobile'];
             $_SESSION['City']=$row['City'];
             $_SESSION['Address']=$row['Address'];
-
-
         }    
     }
 ?> 
-<!DOCTYPE html>
-<html>
-<head>
-    <?php include 'links.php';?>    
+<head> 
     <link rel="stylesheet" href="css/pro.css">
-    <link rel="stylesheet" href="css/style.css">
     <title>Profile Page</title>
 </head>
 <body>
-    <?php include 'header.php';?>
-
     <?php
     $Mobile = $City = $Address = $CityErr = $MobileErr = $AddressErr ="";
     if(isset($_POST['submit']))
@@ -66,9 +53,6 @@
         }else{
             header("?msg=error");
         }
-        
-        
-
     }
 
     function test_data($value){
@@ -90,14 +74,12 @@
     </section>
     <!-- BODY -->
    <?php
-    if(isset($_SESSION['status']))
-            {
-               echo"<h4>".$_SESSION['status']."</h4>";
-                unset($_SESSION['status']);
-            }
-            ?>
+        if(isset($_SESSION['status'])){
+            echo"<h4>".$_SESSION['status']."</h4>";
+            unset($_SESSION['status']);
+        }
+    ?>
     <section class="profile-page">
-        
         <div class="container">
             <div class="message">
                 <?php
@@ -111,12 +93,9 @@
                 <span class="error"><br><?php echo $MobileErr;?></span>
                 <span class="error"><br><?php echo $CityErr;?></span>
                 <span class="error"><br><?php echo $AddressErr;?></span>
-               
             </div>
             <div class="wrapper">
-
                 <form action="profile.php" method="post">
-
                     <h3 class="personal">Personal Information</h3>
                     <div class="input-Box">
                         <div id="divleft">
@@ -134,27 +113,24 @@
                         <div id="divleft">
                             <label for="mobile">Mobile:</lable>
                             <input type="phone" class="input-box"id="mobile" name="mobile" placeholder="Mobile no." value="<?php echo$_SESSION['Mobile'] ;?>" size="25" required>
-                            
                         </div>
                     </div>
                     <div class="input-Box">
                         <div id="divright">
                             <label for="city">City:</lable> 
                             <input type="text"class="input-box" id="city" name="city" placeholder="Enter your city" value="<?php echo$_SESSION['City'] ;?>" size="25" required>
-                            
                         </div> 
                     </div>
                     <div class="input-Box">
                         <div id="divleft">
                             <label for="Address">Address:</lable> 
                             <input type="text"class="input-box" id="address" name="address" placeholder="Enter your Address" value="<?php echo$_SESSION['Address'] ;?>" size="30" required>
-                            
                         </div> 
                     </div>
                     <div class="Change-pass">  
-                            <p> Do you want to change your password?
-                                <a href="change_pass.php">Click here</a>
-                            </p>
+                        <p> Do you want to change your password?
+                            <a href="change_pass.php">Click here</a>
+                        </p>
                     </div>
 
                     <div>
@@ -167,4 +143,3 @@
    <!-- FOOTER -->
    <?php include 'footer.php';?>
 </body>
-</html>
