@@ -12,26 +12,38 @@
             </ul>
         </div>
     </section>
-    <section class="grey-bg">
+    <section class="grey-bg-menu">
+        <?php
+        $sql="SELECT * FROM order_cart";
+        $result = $con->query($sql);
+        $row = $result->num_rows;
+        if($row == 0){
+            if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
+            <div class="warning">Please Add some food for CHECKOUT</div>
+        <?php }else if(isset($_REQUEST['logged']) && $_REQUEST['logged']==0){?>
+            <div class="warning">Log In First to ADD Item.</div>
+        <?php }} ?>
         <div class="container">
             <div class="contain-flex">
                 <!-- MENU LIST -->
                 <div class="col-1">
-                    <div class="sidebar">
-                        <h3 class="upper">Menu Items</h3>
-                        <ul>
-                            <?php 
-                                $sql = "SELECT * FROM category";
-                                $result = $con->query($sql);
-                                if($result->num_rows > 0){
-                                    while($row = $result->fetch_assoc()){
-                                        ?>
-                                        <li>
-                                            <i class="fas fa-chevron-left"></i>
-                                            <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?></a>
-                                        </li>
-                            <?php }} ?>
-                        </ul>
+                    <div class="pos-fix21">
+                        <div class="sidebar">
+                            <h3 class="upper">Menu Items</h3>
+                            <ul>
+                                <?php 
+                                    $sql = "SELECT * FROM category";
+                                    $result = $con->query($sql);
+                                    if($result->num_rows > 0){
+                                        while($row = $result->fetch_assoc()){
+                                            ?>
+                                            <li>
+                                                <i class="fas fa-chevron-left"></i>
+                                                <a href="#<?= $row['Cat_name'];?>"><?= $row['Cat_name'];?></a>
+                                            </li>
+                                <?php }} ?>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <!-- FOOD LIST -->
@@ -83,104 +95,98 @@
                 </div>
                 <!-- MINI CART -->
                 <div class="col-3">
-                    <table>
-                        <thead>
-                            <tr>
-                                <td><h3>Your Cart </h3></td>
-                                <td>
-                                    <span class="item">
-                                        <i class="fas fa-cart-plus"></i>
-                                        <?php 
-                                            $sql="SELECT * FROM order_cart";
-                                            $result = $con->query($sql);
-                                            $result->fetch_assoc();
-                                            echo $row = $result->num_rows;
+                    <div class="pos-fix">
+                        <table class="cart">
+                            <thead class="cart-top-head">
+                                <tr>
+                                    <td class="text-left"><h3>Your Cart </h3></td>
+                                    <td></td>
+                                    <td>
+                                        <span class="item">
+                                            <i class="fas fa-cart-plus"></i>
+                                            <?php 
+                                                $sql="SELECT * FROM order_cart";
+                                                $result = $con->query($sql);
+                                                $result->fetch_assoc();
+                                                echo $row = $result->num_rows;
+                                            ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </thead>
+                            <thead class="cart-top">
+                                <tr>
+                                    <th class="text-left">Item</th>
+                                    <th class="text-center">Qty</th>
+                                    <th class="text-center">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="cart-body">
+                                <?php 
+                                    $sql="SELECT * FROM order_cart";
+                                    $result = $con->query($sql);
+                                    $row = $result->num_rows;
+                                    while($row = $result->fetch_assoc()){
+                                    ?>
+                                    <tr class="bottom-rgb">
+                                        <td class="text-left"><?= $row['Name'];?></td>
+                                        <td>
+                                            <div class="add">
+                                                <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>&&id=1">
+                                                    <i class="fas fa-plus"></i>
+                                                </a>
+                                                <input type="input" value="<?= $row['Qty']?>">
+                                                <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>&&id=1">
+                                                    <i class="fas fa-minus"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                        <td class="text-right">
+                                            ৳<?= $row['Total_price'];?>
+                                            <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>&&id=1">
+                                                <i class="fas fa-minus-circle"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                            <tbody>
+                                <tr class="green-cart">
+                                    <td class="text-left">Sub Total</td>
+                                    <td></td>
+                                    <td class="text-right">৳ <?php 
+                                        $sql = "SELECT * FROM order_cart";
+                                        $result = $con->query($sql);
+                                        $total_price=0;
+                                        while($row = $result->fetch_assoc()){
+                                            $total_price = $total_price + $row['Total_price'];
+                                        }
+                                        echo $total_price;
                                         ?>
-                                    </span>
-                                </td>
-                            </tr>
-                        </thead>
-                        <thead>
-                            <tr>
-                                <th class="text-center">Item</th>
-                                <th class="text-right">Qty</th>
-                                <th class="text-center">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="cart-bottom">
                             <?php 
                                 $sql="SELECT * FROM order_cart";
                                 $result = $con->query($sql);
+                                $result->fetch_assoc();
                                 $row = $result->num_rows;
-                                if($row == 0){
-                                    if(isset($_REQUEST['item']) && $_REQUEST['item']==0){?>
-                                    <div class="warning">Please Add some food for CHECKOUT</div>
-                                <?php }else if(isset($_REQUEST['logged']) && $_REQUEST['logged']==0){?>
-                                    <div class="warning">Log In First to ADD Item.</div>
-                                <?php }}
-                                while($row = $result->fetch_assoc()){
-                                ?>
-                                <tr>
-                                    <td><?= $row['Name'];?></td>
-                                    <td>
-                                        <div class="add">
-                                            <a href="cart/inccart.php?productid=<?php echo $row['ID'];?>&&id=1">
-                                                <i class="fas fa-plus"></i>
-                                            </a>
-                                            <input type="input" value="<?= $row['Qty']?>">
-                                            <a href="cart/deccart.php?productid=<?php echo $row['ID'];?>&&id=1">
-                                                <i class="fas fa-minus"></i>
-                                            </a>
-                                        </div>
-                                    </td>
-                                    <td class="text-right">
-                                        ৳<?= $row['Total_price'];?>
-                                        <a href="cart/removecart.php?productid=<?php echo $row['ID'];?>&&id=1">
-                                            <i class="fas fa-minus-circle"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                        <tbody>
-                            <tr class="green-cart">
-                                <td>Sub Total</td>
-                                <td>৳ <?php 
-                                    $sql = "SELECT * FROM order_cart";
-                                    $result = $con->query($sql);
-                                    $total_price=0;
-                                    while($row = $result->fetch_assoc()){
-                                        $total_price = $total_price + $row['Total_price'];
-                                    }
-                                    echo $total_price;
-                                    ?>
-                                </td>
-                            </tr>
-                        </tbody>
-                        <tbody>
-                            <tr>
-                                <td>
-                                    <?php 
-                                        $sql="SELECT * FROM order_cart";
-                                        $result = $con->query($sql);
-                                        $result->fetch_assoc();
-                                        $row = $result->num_rows;
-                                    ?>
-                                    <a <?php if($row==0){ ?>
-                                        href="menu.php?item=0"
-                                        <?php }else if(!$data){ ?>
-                                            href="menu.php?logged=0";
-                                        <?php }else{ ?>
-                                            href="cart.php"
-                                        <?php ;}?> >
-                                            <button class="btn btn-primary loader">
-                                                Checkout
-                                            </button>
-                                    </a>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                            ?>
+                            <a <?php if($row==0){ ?>
+                                href="menu.php?item=0"
+                                <?php }else if(!$data){ ?>
+                                    href="menu.php?logged=0";
+                                <?php }else{ ?>
+                                    href="cart.php"
+                                <?php ;}?> >
+                                    <button class="btn btn-primary loader">
+                                        Checkout
+                                    </button>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
