@@ -7,8 +7,19 @@
     <title>Document</title>
 </head>
 <body>
-    <p> I am in here Bro....</p>
-    <p>Welcome</p>
-    <p>Php dite vule gesi</p>
+    <!-- 
+        //Check status
+        git status
+
+        //Push
+        git add .
+        git commit -m "message"
+        git push origin main
+
+        //Pull
+        //fetch then merge
+        git fetch
+        git merge
+     -->
 </body>
 </html>
